@@ -1,8 +1,70 @@
 # Copilot Agent Instructions for Azure Container Networking
 
+## Go Version Strategy
+
+ACN uses **floating minor version tags** across the entire repo. This means:
+- We pin to a **2-part minor version** (e.g., `1.26`, NOT `1.26.2`)
+- The floating tag always resolves to the latest patch via SHA digest pinning
+- Patch-level security updates are handled automatically by digest refresh (no version number change)
+- Only **minor/major** version bumps (e.g., `1.26` → `1.27`) require file changes
+
+### Single Source of Truth
+
+The Go version is defined in **one place** and flows to all other files:
+```
+build/images.mk (GO_IMG=golang:1.XX-azurelinux3.0)
+    ├── → go.mod (go 1.XX)
+    ├── → .devcontainer/Dockerfile (VARIANT="1.XX")
+    ├── → .pipelines/build/scripts/install-go.sh (DEFAULT_IMAGE SHA)
+    ├── → bpf-prog/ipv6-hp-bpf/linux.Dockerfile (Go image SHA)
+    ├── → npm/linux.Dockerfile (tag 1.XX)
+    ├── → npm/windows.Dockerfile (tag 1.XX)
+    └── → All .tmpl Dockerfiles (via `make dockerfiles`)
+```
+
+When upgrading, update `build/images.mk` first, then propagate to all downstream files.
+
 ## Go Version Upgrade Procedure
 
 When assigned an issue to upgrade the Go version in this repository, follow this procedure exactly.
+
+### Step 0: Research the Target Version
+
+**CRITICAL: Before making ANY code changes, read these sources:**
+
+1. **MS Go version-specific notes:**
+   `https://github.com/microsoft/go/blob/microsoft/main/docs/go<MAJOR>.<MINOR>.md`
+   (e.g., `https://github.com/microsoft/go/blob/microsoft/main/docs/go1.27.md`)
+   → Contains MS-specific breaking changes, new requirements, removed features
+
+2. **MS Go Migration Guide:**
+   `https://github.com/microsoft/go/blob/microsoft/main/eng/doc/MigrationGuide.md`
+   → FIPS/crypto policy, systemcrypto requirements, runtime dependencies
+
+3. **MS Go FIPS User Guide:**
+   `https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/UserGuide.md`
+   → Runtime library requirements, which base images are needed
+
+4. **MS Go Additional Features:**
+   `https://github.com/microsoft/go/blob/microsoft/main/eng/doc/AdditionalFeatures.md`
+   → All MS-specific patches and behaviors
+
+5. **Upstream Go release notes:**
+   `https://go.dev/doc/go<MAJOR>.<MINOR>` (e.g., `https://go.dev/doc/go1.27`)
+   → Language changes, deprecated APIs, stdlib changes
+
+6. **MS Go releases page:**
+   `https://github.com/microsoft/go/releases`
+   → Check latest patch version and release notes for the target minor
+
+7. **`.github/go-upgrade-rules.yaml`** (if it exists in this repo)
+   → Known transition requirements maintained by the team
+
+**Summarize your findings in the PR description**, especially:
+- Any new environment variables or build flags required
+- Any removed/deprecated flags (e.g., if GOEXPERIMENT=systemcrypto becomes default)
+- Any new runtime dependencies (libraries, base image changes)
+- Any deprecated stdlib APIs used in this codebase
 
 ### Architecture Overview
 
@@ -15,19 +77,23 @@ This repo uses a **template system** for Dockerfiles:
 ### Files to Update (in order)
 
 1. **`build/images.mk`** — Update `GO_IMG` tag (e.g., `golang:1.27-azurelinux3.0`)
-2. **`go.mod`** — Update `go` directive to match new version
-3. **Run `go mod tidy`** — Fix any dependency issues
-4. **`.pipelines/build/scripts/install-go.sh`** — Update `DEFAULT_IMAGE` SHA
+   - ALWAYS use 2-part floating tag: `1.27`, never `1.27.0` or `1.27.2`
+2. **`go.mod`** — Update `go` directive to match (e.g., `go 1.27`)
+3. **`tools.go.mod`** — Update `go` directive to match
+4. **Run `go mod tidy`** — Fix any dependency issues
+5. **`.pipelines/build/scripts/install-go.sh`** — Update `DEFAULT_IMAGE` SHA
    - Get new SHA: `skopeo inspect docker://mcr.microsoft.com/oss/go/microsoft/golang:<VERSION>-azurelinux3.0 --format "{{.Digest}}"`
-5. **`bpf-prog/ipv6-hp-bpf/linux.Dockerfile`** — Update Go image SHA (this file is NOT template-managed)
+6. **`bpf-prog/ipv6-hp-bpf/linux.Dockerfile`** — Update Go image SHA (NOT template-managed)
    - Uses MCR image: `mcr.microsoft.com/oss/go/microsoft/golang@sha256:...`
-6. **`npm/linux.Dockerfile`** and **`npm/windows.Dockerfile`** — Update Go tag (NOT template-managed, no SHA pin)
-7. **`.devcontainer/Dockerfile`** — Update `VARIANT` arg
-8. **Run `make dockerfiles`** — Regenerate all template-based Dockerfiles
+7. **`npm/linux.Dockerfile`** and **`npm/windows.Dockerfile`** — Update Go tag (NOT template-managed)
+8. **`.devcontainer/Dockerfile`** — Update `VARIANT` arg
+9. **Run `make dockerfiles`** — Regenerate all template-based Dockerfiles
 
-### FIPS / System Crypto (Go 1.26+)
+### FIPS / System Crypto
 
-For Go versions >= 1.26, Microsoft's Go fork requires FIPS-compliant crypto:
+Check the MS Go docs (Step 0) for the current FIPS requirements for your target version.
+
+**As of Go 1.26**, Microsoft's Go fork requires:
 
 - **GOEXPERIMENT=systemcrypto** must be set in:
   - All `.tmpl` Dockerfile templates (as `ENV GOEXPERIMENT=systemcrypto` after the builder FROM line)
@@ -41,15 +107,12 @@ For Go versions >= 1.26, Microsoft's Go fork requires FIPS-compliant crypto:
 
 - **Remove** `MS_GO_NOSYSTEMCRYPTO=1` if present in any Dockerfile
 
-### Checking for Breaking Changes
+**IMPORTANT:** These requirements may change in future versions. For example:
+- Go 1.27+ might make `systemcrypto` the default (remove the explicit GOEXPERIMENT)
+- New env vars might be introduced
+- Different crypto libraries might be required
 
-Before making changes, research the new Go version:
-
-1. Check release notes at `https://go.dev/doc/go<MAJOR>.<MINOR>` (e.g., `https://go.dev/doc/go1.27`)
-2. Look for deprecated APIs used in this codebase
-3. Check if GOEXPERIMENT behavior changed (e.g., if systemcrypto becomes default)
-4. Verify MS Go fork release notes at `https://github.com/nicholasgasior/renderkit` (check if new flags are needed)
-5. Check `.github/go-upgrade-rules.yaml` if it exists for known transition requirements
+**Always check the MS Go docs for your target version before assuming the current FIPS setup is correct.**
 
 ### Validation Steps
 
@@ -66,13 +129,25 @@ After making all changes:
 
 - Title: `chore: upgrade Go <OLD> → <NEW>`
 - Reference the tracking issue in the PR body
-- Include a summary of what changed and any breaking changes found
+- Include a summary of findings from Step 0 (MS Go docs research)
 - List all files modified
-- If FIPS changes were needed, call them out explicitly
+- If FIPS/crypto changes were needed, call them out explicitly
+- If FIPS/crypto requirements CHANGED from the previous version, highlight this prominently
 
 ### Important Notes
 
 - The `npm/` component is no longer being released — update its Dockerfiles but don't worry about testing
 - `cilium-log-collector` uses `CGO_ENABLED=1` (exception to the norm)
 - The `baseimages.yaml` CI workflow will fail if `make dockerfiles` output doesn't match committed Dockerfiles
-- Never use 3-part version tags in `build/images.mk` — use 2-part floating tags (e.g., `1.27`, not `1.27.0`) which resolve to latest patch via skopeo
+- ALWAYS use 2-part floating tags in `build/images.mk` (e.g., `1.27`, not `1.27.0`) — patches come via digest refresh
+- The `go.mod` version should match the minor version (e.g., `go 1.27`), not a specific patch
+
+## Maintaining These Instructions
+
+This file should be updated when:
+- A new Go version introduces new MS-specific requirements
+- The repo's build system changes (new files, new tools)
+- FIPS requirements change (new flags, removed flags, new base images)
+
+The automation workflow (`.github/workflows/go-version-check.yaml`) creates issues
+that reference this file. Keep it accurate so the Copilot agent can execute upgrades correctly.
