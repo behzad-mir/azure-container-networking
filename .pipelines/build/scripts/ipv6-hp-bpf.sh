@@ -39,6 +39,7 @@ function findcp::shared_library() {
 
 export CGO_ENABLED=0
 export C_INCLUDE_PATH=/usr/include/bpf
+export GOEXPERIMENT=systemcrypto
 
 mkdir -p "$OUT_DIR"/bin
 mkdir -p "$OUT_DIR"/lib

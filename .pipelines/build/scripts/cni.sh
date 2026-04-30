@@ -7,9 +7,7 @@ mkdir -p "$OUT_DIR"/files
 mkdir -p "$OUT_DIR"/bin
 
 export CGO_ENABLED=0
-
-
-CNI_NET_DIR="$REPO_ROOT"/cni/network/plugin
+export GOEXPERIMENT=systemcrypto="$REPO_ROOT"/cni/network/plugin
 pushd "$CNI_NET_DIR"
   GOOS="$OS" go build -v -a -trimpath \
     -o "$OUT_DIR"/bin/azure-vnet"$FILE_EXT" \
