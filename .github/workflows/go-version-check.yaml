@@ -598,7 +598,7 @@ jobs:
           # Source: https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#usage-common-configurations
           #
           # Go 1.27+: systemcrypto works without cgo (nocgo backend is default on Linux)
-          # Go 1.26:  systemcrypto REQUIRES CGO_ENABLED=1; CGO_ENABLED=0 needs ms_nocgo_opensslcrypto
+          # Go 1.26:  systemcrypto REQUIRES CGO_ENABLED=1; CGO_ENABLED=0 should not set GOEXPERIMENT
           # Go <1.26: no systemcrypto support
           if [ "$TARGET_MIN_NUM" -ge 27 ]; then
             echo "goexp_cgo1=systemcrypto" >> "$GITHUB_OUTPUT"
@@ -606,7 +606,7 @@ jobs:
             echo "nocgo_default=true" >> "$GITHUB_OUTPUT"
           elif [ "$TARGET_MIN_NUM" -ge 26 ]; then
             echo "goexp_cgo1=systemcrypto" >> "$GITHUB_OUTPUT"
-            echo "goexp_cgo0=ms_nocgo_opensslcrypto" >> "$GITHUB_OUTPUT"
+            echo "goexp_cgo0=" >> "$GITHUB_OUTPUT"
             echo "nocgo_default=false" >> "$GITHUB_OUTPUT"
           else
             echo "goexp_cgo1=" >> "$GITHUB_OUTPUT"
@@ -635,7 +635,7 @@ jobs:
         run: |
           # Check if release branch has correct FIPS setup for the target Go version
           # CGO_ENABLED=1: needs GOEXPERIMENT=systemcrypto
-          # CGO_ENABLED=0: needs GOEXPERIMENT=ms_nocgo_opensslcrypto (Go 1.26)
+          # CGO_ENABLED=0: should not set GOEXPERIMENT for Go 1.26
           FIPS_CORRECT="true"
           FIPS_ISSUES=""
 
@@ -649,12 +649,19 @@ jobs:
             done < <(find .pipelines/build/scripts -name '*.sh' -type f 2>/dev/null || true)
           fi
 
-          # Check scripts that use CGO_ENABLED=0 — these MUST have the correct GOEXPERIMENT
+          # Check scripts that use CGO_ENABLED=0
           if [ -n "$GOEXP_CGO0" ]; then
             while IFS= read -r script; do
               if grep -q "CGO_ENABLED=0" "$script" && ! grep -q "GOEXPERIMENT=$GOEXP_CGO0" "$script"; then
                 FIPS_CORRECT="false"
                 FIPS_ISSUES="${FIPS_ISSUES} ${script}(missing GOEXPERIMENT=$GOEXP_CGO0 for CGO=0)"
+              fi
+            done < <(find .pipelines/build/scripts -name '*.sh' -type f 2>/dev/null || true)
+          else
+            while IFS= read -r script; do
+              if grep -q "CGO_ENABLED=0" "$script" && grep -q "GOEXPERIMENT=systemcrypto" "$script"; then
+                FIPS_CORRECT="false"
+                FIPS_ISSUES="${FIPS_ISSUES} ${script}(unexpected GOEXPERIMENT=systemcrypto for CGO=0)"
               fi
             done < <(find .pipelines/build/scripts -name '*.sh' -type f 2>/dev/null || true)
           fi
@@ -668,6 +675,18 @@ jobs:
               fi
             done < <(find . -name '*.Dockerfile.tmpl' -o -name 'Dockerfile.tmpl' -o -name '*.Dockerfile' | grep -v vendor || true)
           fi
+
+          while IFS= read -r tmpl; do
+            if [ -n "$GOEXP_CGO0" ]; then
+              if grep -q "CGO_ENABLED=0" "$tmpl" && ! grep -q "GOEXPERIMENT=$GOEXP_CGO0" "$tmpl"; then
+                FIPS_CORRECT="false"
+                FIPS_ISSUES="${FIPS_ISSUES} ${tmpl}(missing GOEXPERIMENT=$GOEXP_CGO0 for CGO=0)"
+              fi
+            elif grep -q "CGO_ENABLED=0" "$tmpl" && grep -q "GOEXPERIMENT=systemcrypto" "$tmpl"; then
+              FIPS_CORRECT="false"
+              FIPS_ISSUES="${FIPS_ISSUES} ${tmpl}(unexpected GOEXPERIMENT=systemcrypto for CGO=0)"
+            fi
+          done < <(find . -name '*.Dockerfile.tmpl' -o -name 'Dockerfile.tmpl' -o -name '*.Dockerfile' | grep -v vendor || true)
 
           if [ -n "$FIPS_ISSUES" ]; then
             echo "::warning::FIPS configuration issues:$FIPS_ISSUES"
@@ -990,7 +1009,7 @@ jobs:
             echo "goexp_cgo0=systemcrypto" >> "$GITHUB_OUTPUT"
           elif [ "$TARGET_MIN_NUM" -ge 26 ]; then
             echo "goexp_cgo1=systemcrypto" >> "$GITHUB_OUTPUT"
-            echo "goexp_cgo0=ms_nocgo_opensslcrypto" >> "$GITHUB_OUTPUT"
+            echo "goexp_cgo0=" >> "$GITHUB_OUTPUT"
           else
             echo "goexp_cgo1=" >> "$GITHUB_OUTPUT"
             echo "goexp_cgo0=" >> "$GITHUB_OUTPUT"
@@ -1022,15 +1041,21 @@ jobs:
             done < <(find . -name '*.Dockerfile.tmpl' -o -name 'Dockerfile.tmpl' -o -name '*.Dockerfile' | grep -v vendor || true)
           fi
 
-          # CGO_ENABLED=0 scripts must have the correct GOEXPERIMENT
-          if [ -n "$GOEXP_CGO0" ]; then
-            while IFS= read -r script; do
-              if grep -q "CGO_ENABLED=0" "$script" && ! grep -q "GOEXPERIMENT=$GOEXP_CGO0" "$script"; then
-                FIPS_CORRECT="false"
-                echo "::warning::GOEXPERIMENT=$GOEXP_CGO0 missing from CGO=0 script: $script"
-              fi
-            done < <(find .pipelines/build/scripts -name '*.sh' -type f 2>/dev/null || true)
-          fi
+          # CGO_ENABLED=0 scripts must not set GOEXPERIMENT=systemcrypto on Go 1.26
+          while IFS= read -r script; do
+            if grep -q "CGO_ENABLED=0" "$script" && grep -q "GOEXPERIMENT=systemcrypto" "$script"; then
+              FIPS_CORRECT="false"
+              echo "::warning::GOEXPERIMENT=systemcrypto should not be set for CGO=0 script: $script"
+            fi
+          done < <(find .pipelines/build/scripts -name '*.sh' -type f 2>/dev/null || true)
+
+
+          while IFS= read -r tmpl; do
+            if grep -q "CGO_ENABLED=0" "$tmpl" && grep -q "GOEXPERIMENT=systemcrypto" "$tmpl"; then
+              FIPS_CORRECT="false"
+              echo "::warning::GOEXPERIMENT=systemcrypto should not be set for CGO=0 Dockerfile: $tmpl"
+            fi
+          done < <(find . -name '*.Dockerfile.tmpl' -o -name 'Dockerfile.tmpl' -o -name '*.Dockerfile' | grep -v vendor || true)
 
           HAS_DISTROLESS_BASE="false"
           if grep -q "distroless/base" build/images.mk 2>/dev/null; then
