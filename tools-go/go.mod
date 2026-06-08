@@ -1,6 +1,6 @@
 module github.com/Azure/azure-container-networking
 
-go 1.24.1
+go 1.26.4
 
 // To use/update leverage -modfile=tools.go.mod field in respective go commands
 tool (
