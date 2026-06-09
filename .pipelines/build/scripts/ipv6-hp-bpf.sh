@@ -37,6 +37,7 @@ function findcp::shared_library() {
 
 [[ $OS =~ windows ]] && FILE_EXT='.exe' || FILE_EXT=''
 
+[[ $OS =~ windows ]] || export GOEXPERIMENT=ms_nocgo_opensslcrypto
 export CGO_ENABLED=0
 export C_INCLUDE_PATH=/usr/include/bpf
 

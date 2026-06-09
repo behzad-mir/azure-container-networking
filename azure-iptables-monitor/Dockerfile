@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/azurelinux/base/core@sha256:35149ae8dd179684f969944f54a33
 # mcr.microsoft.com/azurelinux/distroless/base:3.0
 FROM mcr.microsoft.com/azurelinux/distroless/base@sha256:32820d2cf20e896aa9111742dd683dd0ccff370f742e256889bb3bb50320c0d4 AS mariner-distroless
 
-# mcr.microsoft.com/oss/go/microsoft/golang:1.24-azurelinux3.0
-FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang@sha256:bc7423b52b62e8f0281b5f7f564eb1862dc315bc57e1373c6a81e87ef3ac39ab AS go
+# mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0
+FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang@sha256:5f95bf70f4c437de4a6ba1f72ef1532f69fca392c131fff2172993cabbea359c AS go
 
 
 FROM go AS azure-iptables-monitor
@@ -17,6 +17,7 @@ ARG OS
 ARG VERSION
 WORKDIR /azure-iptables-monitor
 COPY ./azure-iptables-monitor .
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/iptables-monitor -trimpath -ldflags "-s -w -X main.version="$VERSION"" -gcflags="-dwarflocationlists=true" .
 
 FROM go AS azure-block-iptables
@@ -45,6 +46,7 @@ RUN if [ "$ARCH" = "amd64" ]; then \
             fi; \
         done; \
     fi
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 RUN GOOS=$OS CGO_ENABLED=0 go generate ./bpf-prog/azure-block-iptables/...
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/azure-block-iptables -trimpath -ldflags "-s -w -X main.version="$AZURE_BLOCK_IPTABLES_VERSION"" -gcflags="-dwarflocationlists=true" ./bpf-prog/azure-block-iptables/cmd/azure-block-iptables
 

@@ -3,6 +3,7 @@ set -eux
 
 [[ $OS =~ windows ]] && { echo "cilium-log-collector is not supported on Windows"; exit 1; }
 # enable cgo for -buildmode=c-shared
+export GOEXPERIMENT=systemcrypto
 export CGO_ENABLED=1
 
 mkdir -p "$OUT_DIR"/bin

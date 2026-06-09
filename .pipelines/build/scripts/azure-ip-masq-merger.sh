@@ -4,6 +4,7 @@ set -eux
 [[ $OS =~ windows ]] && { echo "azure-ip-masq-merger is not supported on Windows"; exit 1; }
 FILE_EXT=''
 
+export GOEXPERIMENT=ms_nocgo_opensslcrypto
 export CGO_ENABLED=0
 
 mkdir -p "$OUT_DIR"/bin
