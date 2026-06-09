@@ -3,6 +3,7 @@ FROM --platform=linux/amd64 mcr.microsoft.com/oss/go/microsoft/golang:1.26.4 AS 
 ARG VERSION
 ARG NPM_AI_PATH
 ARG NPM_AI_ID
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 WORKDIR /usr/local/src
 COPY . .
 RUN GOOS=windows CGO_ENABLED=0 go build -v -o /usr/local/bin/azure-npm.exe -ldflags "-s -w -X main.version="$VERSION" -X "$NPM_AI_PATH"="$NPM_AI_ID"" -gcflags="-dwarflocationlists=true" npm/cmd/*.go
