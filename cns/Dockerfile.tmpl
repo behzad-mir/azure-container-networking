@@ -14,6 +14,7 @@ FROM {{.MARINER_CORE_PIN}} AS mariner-core
 FROM {{.MARINER_DISTROLESS_PIN}} AS mariner-distroless
 
 FROM --platform=linux/${ARCH} go AS builder
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 ARG OS
 ARG CNS_AI_ID
 ARG CNS_AI_PATH

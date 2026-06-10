@@ -12,6 +12,7 @@ FROM --platform=linux/${ARCH} {{.GO_PIN}} AS go
 FROM --platform=linux/${ARCH} {{.MARINER_CORE_PIN}} AS mariner-core
 
 FROM go AS azure-vnet
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 ARG OS
 ARG VERSION
 ARG CNI_AI_PATH
@@ -40,6 +41,7 @@ RUN cd /payload && sha256sum * > sum.txt
 RUN gzip --verbose --best --recursive /payload && for f in /payload/*.gz; do mv -- "$f" "${f%%.gz}"; done
 
 FROM go AS dropgz
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 ARG DROPGZ_VERSION
 ARG OS
 ARG VERSION

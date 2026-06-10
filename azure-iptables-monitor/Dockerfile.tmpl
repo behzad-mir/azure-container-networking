@@ -13,6 +13,7 @@ FROM --platform=linux/${ARCH} {{.GO_PIN}} AS go
 
 
 FROM go AS azure-iptables-monitor
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 ARG OS
 ARG VERSION
 WORKDIR /azure-iptables-monitor
@@ -20,6 +21,7 @@ COPY ./azure-iptables-monitor .
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/iptables-monitor -trimpath -ldflags "-s -w -X main.version="$VERSION"" -gcflags="-dwarflocationlists=true" .
 
 FROM go AS azure-block-iptables
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 ARG OS
 ARG AZURE_BLOCK_IPTABLES_VERSION
 ARG ARCH
