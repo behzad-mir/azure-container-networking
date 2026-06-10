@@ -10,6 +10,7 @@ FROM go AS fluent-bit-plugin
 ARG VERSION
 WORKDIR /cilium-log-collector
 COPY ./cilium-log-collector .
+ENV GOEXPERIMENT=systemcrypto
 RUN go build -buildmode=c-shared -a -o out_azure_app_insights.so -trimpath -ldflags "-X main.version=$VERSION" -gcflags="-dwarflocationlists=true" .
 
 FROM mcr.microsoft.com/oss/v2/fluent/fluent-bit:v4.2.3-8 as linux
