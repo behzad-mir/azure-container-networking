@@ -11,8 +11,8 @@ set -eux
 #   3. Hardcoded fallback digest below
 #
 # To update the fallback, run:
-#   skopeo inspect docker://mcr.microsoft.com/oss/go/microsoft/golang:1.24-azurelinux3.0 --format "{{.Name}}@{{.Digest}}"
-DEFAULT_IMAGE="mcr.microsoft.com/oss/go/microsoft/golang@sha256:3999f970bb52b7413ef9be2803173d4fd7f1f3c59362a98a0c78d155e3a0e59f"
+#   skopeo inspect docker://mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0 --format "{{.Name}}@{{.Digest}}"
+DEFAULT_IMAGE="mcr.microsoft.com/oss/go/microsoft/golang@sha256:5f95bf70f4c437de4a6ba1f72ef1532f69fca392c131fff2172993cabbea359c"
 
 # Resolves the golang image from the source Dockerfile for the given $name.
 # Echoes the image reference, or empty string if it cannot be determined.
@@ -21,8 +21,8 @@ resolve_go_image() {
     # npm uses OS-specific Dockerfiles with a tag-based reference.
     # The image may be field 2 (no --platform) or field 3 (with --platform),
     # so extract the mcr.* token directly.
-    # e.g. FROM mcr.../golang:1.25.5 AS builder
-    # e.g. FROM --platform=linux/amd64 mcr.../golang:1.25.5 AS builder
+    # e.g. FROM mcr.../golang:1.26.4 AS builder
+    # e.g. FROM --platform=linux/amd64 mcr.../golang:1.26.4 AS builder
     local buildfile="${REPO_ROOT}/npm/${OS:-linux}.Dockerfile"
     grep -m1 '^FROM.*golang' "${buildfile}" | grep -o 'mcr[^ ]*'
 
