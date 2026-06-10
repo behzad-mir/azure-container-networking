@@ -6,6 +6,7 @@ set -eux
 mkdir -p "$OUT_DIR"/files
 mkdir -p "$OUT_DIR"/bin
 
+[[ "$OS" != "windows" ]] && export GOEXPERIMENT=ms_nocgo_opensslcrypto
 export CGO_ENABLED=0
 
 

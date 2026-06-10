@@ -20,6 +20,7 @@ function files::remove_exe_extensions() {
 
 [[ $OS =~ windows ]] && FILE_EXT='.exe' || FILE_EXT=''
 
+[[ "$OS" != "windows" ]] && export GOEXPERIMENT=ms_nocgo_opensslcrypto
 export CGO_ENABLED=0
 
 mkdir -p "$GEN_DIR"
