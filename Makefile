@@ -118,10 +118,10 @@ NPM_IMAGE_INFO_FILE			= azure-npm-$(NPM_VERSION).txt
 TOOLS_GO_MOD = $(REPO_ROOT)/tools-go/go.mod
 
 # GOEXPERIMENT for CGO_ENABLED=0 Linux builds (MS Go FIPS requirement)
-ifeq ($(GOOS),windows)
-ACN_GOEXPERIMENT ?=
-else
+ifeq ($(GOOS),linux)
 ACN_GOEXPERIMENT ?= ms_nocgo_opensslcrypto
+else
+ACN_GOEXPERIMENT ?=
 endif
 
 # Default target
