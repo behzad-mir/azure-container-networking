@@ -17,6 +17,7 @@ ARG OS
 ARG VERSION
 WORKDIR /azure-iptables-monitor
 COPY ./azure-iptables-monitor .
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/iptables-monitor -trimpath -ldflags "-s -w -X main.version="$VERSION"" -gcflags="-dwarflocationlists=true" .
 
 FROM go AS azure-block-iptables
@@ -30,6 +31,7 @@ COPY ./go.mod ./go.sum ./
 RUN tdnf install -y llvm clang libbpf-devel gcc binutils glibc
 # Set up C include path for BPF
 ENV C_INCLUDE_PATH=/usr/include/bpf
+ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 # Set up architecture-specific symlinks for cross-compilation support
 RUN if [ "$ARCH" = "amd64" ]; then \
         ARCH_DIR=x86_64-linux-gnu; \
