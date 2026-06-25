@@ -495,7 +495,7 @@ jobs:
 
           ### Verification
           - [ ] CI passes
-          - [ ] \`go build ./...\` succeeds
+          - [ ] Targeted \`go build\` succeeds (exclude bpf-prog/azure-block-iptables)
           - [ ] No unexpected GODEBUG behavior changes
 
           ---
@@ -1164,7 +1164,9 @@ jobs:
           4. Apply FIPS/crypto changes per your doc analysis (do NOT blindly reuse previous version's rules)
           5. Update all SHA references (install-go.sh, bpf-prog, npm Dockerfiles)
           6. Run \`make dockerfiles\`
-          7. Run \`go build ./...\` and \`go vet ./...\`
+          7. Run targeted build/vet (exclude bpf-prog pre-existing issues):
+             \`go build \$(go list ./... | grep -v bpf-prog | grep -v azure-block-iptables)\`
+             \`go vet \$(go list ./... | grep -v bpf-prog | grep -v azure-block-iptables)\`
 
           **Key dependency check:** Verify controller-runtime, client-go, and cilium support Go ${LATEST_MINOR_BASE}
           ${FIPS_SECTION}
@@ -1172,7 +1174,7 @@ jobs:
           ### Acceptance Criteria
           - [ ] Requirements Matrix included in PR description
           - [ ] All version sources updated consistently
-          - [ ] \`go build ./...\` passes
+          - [ ] Targeted \`go build\` passes (excluding bpf-prog/azure-block-iptables)
           - [ ] \`make dockerfiles\` output matches committed files
           - [ ] No new \`replace\` directives (unless necessary and explained)
           - [ ] FIPS/crypto config correct per MS Go docs for THIS specific version
@@ -1186,7 +1188,7 @@ jobs:
           3. If \`release/v1.7\` is missing prerequisites (based on your analysis), add those too
           4. Run \`make dockerfiles\` and \`go mod tidy\` on that branch
           5. Title: \`chore(release/v1.7): upgrade Go ${GO_MINOR} → ${LATEST_MINOR}\`
-          6. Verify \`go build ./...\` passes on release branch
+          6. Verify targeted \`go build\` passes on release branch (exclude bpf-prog)
 
           > **Note:** The release branch may have different dependency versions than master.
           > Run \`go mod tidy\` separately and resolve any conflicts specific to that branch.

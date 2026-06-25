@@ -426,8 +426,16 @@ After making all changes:
    ```bash
    head -5 go.mod  # MUST show "go 1.XX.Y" — if still old version, the upgrade is INCOMPLETE
    ```
-2. `go build ./...` — Verify compilation succeeds (all binaries)
-3. `go vet ./...` — Check for deprecated API usage
+2. **Targeted `go build`** — Verify compilation succeeds (exclude pre-existing BPF issues):
+   ```bash
+   # IMPORTANT: Do NOT run `go build ./...` — it will timeout or fail on pre-existing
+   # bpf-prog generated code issues unrelated to the Go upgrade.
+   go build $(go list ./... | grep -v bpf-prog | grep -v azure-block-iptables)
+   ```
+3. **Targeted `go vet`** — Check for deprecated API usage (same exclusions):
+   ```bash
+   go vet $(go list ./... | grep -v bpf-prog | grep -v azure-block-iptables)
+   ```
 4. `docker build` (spot-check) — Verify at least one container image builds:
    ```bash
    # Quick validation that Dockerfiles + GOEXPERIMENT produce working images
