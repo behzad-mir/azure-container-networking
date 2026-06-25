@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""Scan the ACN repo and output current Go version state for the agent.
+
+Usage: .github/skills/acn-go-version-bump/scripts/find-go-state
+"""
+
+import os
+import re
+import subprocess
+import sys
+
+def run(cmd):
+    return subprocess.check_output(cmd, shell=True, text=True).strip()
+
+def main():
+    # Find repo root
+    try:
+        root = run("git rev-parse --show-toplevel")
+        os.chdir(root)
+    except subprocess.CalledProcessError:
+        print("ERROR: not in a git repository", file=sys.stderr)
+        sys.exit(1)
+
+    print("=" * 60)
+    print("ACN Go Version State")
+    print("=" * 60)
+
+    # 1. Primary image tag from build/images.mk
+    print("\n### build/images.mk (primary source of truth)")
+    try:
+        go_img_line = run("grep -E '^(export\\s+)?GO_IMG' build/images.mk | head -1")
+        print(f"  {go_img_line.strip()}")
+        tag_match = re.search(r'golang:(.+)', go_img_line)
+        if tag_match:
+            go_tag = tag_match.group(1).strip()
+            go_minor = re.match(r'(\d+\.\d+)', go_tag).group(1) if re.match(r'(\d+\.\d+)', go_tag) else "?"
+            print(f"  → GO_TAG: {go_tag}")
+            print(f"  → GO_MINOR: {go_minor}")
+    except subprocess.CalledProcessError:
+        print("  (not found)")
+
+    # 2. All go.mod files
+    print("\n### go.mod files")
+    try:
+        all_files = run("git ls-files").splitlines()
+        mod_files = sorted([f for f in all_files if f.endswith('go.mod')])
+        for f in mod_files:
+            try:
+                with open(f) as fp:
+                    for line in fp:
+                        if line.startswith('go '):
+                            print(f"  {f}: {line.strip()}")
+                            break
+                    else:
+                        print(f"  {f}: (no go directive)")
+            except Exception as e:
+                print(f"  {f}: ERROR {e}")
+    except subprocess.CalledProcessError:
+        print("  (git ls-files failed)")
+
+    # 3. SHA pins
+    print("\n### SHA-pinned digests")
+    sha_files = [
+        (".pipelines/build/scripts/install-go.sh", r'DEFAULT_IMAGE="([^"]+)"'),
+        ("bpf-prog/ipv6-hp-bpf/linux.Dockerfile", r'golang@(sha256:[a-f0-9]+)'),
+    ]
+    for filepath, pattern in sha_files:
+        if os.path.exists(filepath):
+            with open(filepath) as fp:
+                content = fp.read()
+            match = re.search(pattern, content)
+            if match:
+                val = match.group(1)
+                # Truncate long digests for readability
+                if len(val) > 80:
+                    print(f"  {filepath}: ...{val[-40:]}")
+                else:
+                    print(f"  {filepath}: {val}")
+            else:
+                print(f"  {filepath}: (no match)")
+        else:
+            print(f"  {filepath}: (file not found)")
+
+    # 4. npm Dockerfiles
+    print("\n### npm Dockerfiles (plain tags, no OS suffix)")
+    for f in ["npm/linux.Dockerfile", "npm/windows.Dockerfile"]:
+        if os.path.exists(f):
+            with open(f) as fp:
+                for line in fp:
+                    if 'golang' in line.lower() and 'FROM' in line:
+                        print(f"  {f}: {line.strip()}")
+                        break
+        else:
+            print(f"  {f}: (not found)")
+
+    # 5. GOEXPERIMENT state
+    print("\n### GOEXPERIMENT settings")
+    goexp_files = []
+    try:
+        result = run("git ls-files | xargs grep -l 'GOEXPERIMENT\\|MS_GO_NOSYSTEMCRYPTO' 2>/dev/null || true")
+        goexp_files = [f for f in result.splitlines() if f and not f.endswith('SKILL.md')]
+    except:
+        pass
+
+    for f in sorted(goexp_files):
+        try:
+            with open(f) as fp:
+                for line in fp:
+                    if 'GOEXPERIMENT' in line or 'MS_GO_NOSYSTEMCRYPTO' in line:
+                        line = line.strip()
+                        if 'MS_GO_NOSYSTEMCRYPTO' in line:
+                            print(f"  {f}: {line} ← OUTDATED (replace with GOEXPERIMENT)")
+                        else:
+                            print(f"  {f}: {line}")
+                        break
+        except:
+            pass
+
+    # 6. Dockerfile templates (tmpl files)
+    print("\n### Dockerfile templates (.tmpl)")
+    tmpl_files = sorted([f for f in all_files if f.endswith('.tmpl') and 'Dockerfile' in f])
+    for f in tmpl_files:
+        has_goexp = False
+        try:
+            with open(f) as fp:
+                for line in fp:
+                    if 'GOEXPERIMENT' in line:
+                        has_goexp = True
+                        break
+            status = "✓ has GOEXPERIMENT" if has_goexp else "✗ missing GOEXPERIMENT"
+            print(f"  {f}: {status}")
+        except:
+            print(f"  {f}: (error)")
+
+    # 7. .devcontainer
+    print("\n### .devcontainer/Dockerfile")
+    if os.path.exists(".devcontainer/Dockerfile"):
+        with open(".devcontainer/Dockerfile") as fp:
+            for line in fp:
+                if 'VARIANT' in line or ('FROM' in line and 'go' in line.lower()):
+                    print(f"  {line.strip()}")
+                    break
+
+    # 8. Pipeline build scripts
+    print("\n### Pipeline scripts CGO/GOEXPERIMENT state")
+    script_dir = ".pipelines/build/scripts"
+    if os.path.isdir(script_dir):
+        for f in sorted(os.listdir(script_dir)):
+            if not f.endswith('.sh'):
+                continue
+            filepath = os.path.join(script_dir, f)
+            has_cgo = False
+            has_goexp = False
+            has_nosyscrypto = False
+            with open(filepath) as fp:
+                for line in fp:
+                    if 'CGO_ENABLED' in line:
+                        has_cgo = True
+                    if 'GOEXPERIMENT' in line:
+                        has_goexp = True
+                    if 'MS_GO_NOSYSTEMCRYPTO' in line:
+                        has_nosyscrypto = True
+            if has_cgo:
+                if has_nosyscrypto:
+                    print(f"  {f}: CGO ✓ | GOEXPERIMENT ✗ | MS_GO_NOSYSTEMCRYPTO ← OUTDATED")
+                elif has_goexp:
+                    print(f"  {f}: CGO ✓ | GOEXPERIMENT ✓")
+                else:
+                    print(f"  {f}: CGO ✓ | GOEXPERIMENT ✗ ← MISSING")
+
+    print("\n" + "=" * 60)
+    print("END OF STATE SCAN")
+    print("=" * 60)
+
+if __name__ == '__main__':
+    main()

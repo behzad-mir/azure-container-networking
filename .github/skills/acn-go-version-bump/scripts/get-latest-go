@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Fetch the latest MS Go version available on MCR for the configured base OS.
+
+Usage: .github/skills/acn-go-version-bump/scripts/get-latest-go [--base-os azurelinux3.0]
+
+Output (JSON):
+  {
+    "go_minor": "1.26",
+    "latest_patch": "1.26.4",
+    "latest_tag": "1.26.4-azurelinux3.0",
+    "current_tag": "1.24-azurelinux3.0",
+    "current_gomod": "1.24.1",
+    "update_type": "minor"
+  }
+"""
+
+import json
+import os
+import re
+import subprocess
+import sys
+
+MCR_REPO = "mcr.microsoft.com/oss/go/microsoft/golang"
+DEFAULT_BASE_OS = "azurelinux3.0"
+
+def run(cmd):
+    return subprocess.check_output(cmd, shell=True, text=True).strip()
+
+def main():
+    base_os = DEFAULT_BASE_OS
+    if "--base-os" in sys.argv:
+        idx = sys.argv.index("--base-os")
+        if idx + 1 < len(sys.argv):
+            base_os = sys.argv[idx + 1]
+
+    # Find repo root
+    try:
+        root = run("git rev-parse --show-toplevel")
+        os.chdir(root)
+    except subprocess.CalledProcessError:
+        print("ERROR: not in a git repository", file=sys.stderr)
+        sys.exit(1)
+
+    # Get current state from repo
+    try:
+        go_img_line = run("grep -E '^(export\\s+)?GO_IMG' build/images.mk | head -1")
+        tag_match = re.search(r'golang:(.+)', go_img_line)
+        current_tag = tag_match.group(1).strip() if tag_match else "unknown"
+        current_minor = re.match(r'(\d+\.\d+)', current_tag).group(1) if re.match(r'(\d+\.\d+)', current_tag) else "?"
+    except:
+        current_tag = "unknown"
+        current_minor = "?"
+
+    try:
+        gomod_json = run("go mod edit -json go.mod")
+        gomod_ver = json.loads(gomod_json).get("Go", "?")
+    except:
+        gomod_ver = "?"
+
+    # Query MCR for available tags
+    try:
+        tags_json = run(f"skopeo list-tags docker://{MCR_REPO} 2>/dev/null")
+        tags = json.loads(tags_json).get("Tags", [])
+    except:
+        print("ERROR: failed to query MCR tags (is skopeo installed?)", file=sys.stderr)
+        sys.exit(1)
+
+    # Parse versioned tags matching our base OS
+    base_os_escaped = re.escape(base_os)
+    pattern = re.compile(rf'^(\d+\.\d+(?:\.\d+)?)-{base_os_escaped}$')
+    versions = []
+    for t in tags:
+        m = pattern.match(t)
+        if m:
+            ver = m.group(1)
+            parts = tuple(int(p) for p in ver.split('.'))
+            versions.append((parts, t, ver))
+    versions.sort(reverse=True)
+
+    if not versions:
+        print("ERROR: no matching tags found on MCR", file=sys.stderr)
+        sys.exit(1)
+
+    # Latest overall
+    latest_parts, latest_tag, latest_ver = versions[0]
+    latest_minor = f"{latest_parts[0]}.{latest_parts[1]}"
+
+    # Latest in current minor series
+    latest_patch = None
+    latest_patch_tag = None
+    for parts, tag, ver in versions:
+        if ver.startswith(current_minor + ".") or ver == current_minor:
+            latest_patch = ver
+            latest_patch_tag = tag
+            break
+
+    # Determine update type
+    if latest_minor != current_minor:
+        update_type = "minor"
+    elif latest_patch and latest_patch != gomod_ver:
+        update_type = "patch"
+    else:
+        # Check digest drift
+        update_type = "none"
+
+    result = {
+        "current_tag": current_tag,
+        "current_minor": current_minor,
+        "current_gomod": gomod_ver,
+        "latest_version": latest_ver,
+        "latest_tag": latest_tag,
+        "latest_minor": latest_minor,
+        "latest_patch": latest_patch or "none",
+        "latest_patch_tag": latest_patch_tag or "none",
+        "update_type": update_type,
+        "mcr_repo": MCR_REPO,
+        "base_os": base_os,
+    }
+
+    print(json.dumps(result, indent=2))
+
+if __name__ == '__main__':
+    main()

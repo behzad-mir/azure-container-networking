@@ -22,6 +22,24 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(make:*) Bash(skopeo:*) 
 
 # Go Version Upgrade Procedure
 
+
+## Helper Scripts
+
+Run these scripts from the repo root to understand current state before making changes:
+
+- **`scripts/find-go-state`** — Scans the entire repo and outputs current Go versions, SHA pins, GOEXPERIMENT settings, and identifies outdated files:
+  ```bash
+  .github/skills/acn-go-version-bump/scripts/find-go-state
+  ```
+
+- **`scripts/get-latest-go`** — Queries MCR for the latest MS Go version and determines what type of update is needed:
+  ```bash
+  .github/skills/acn-go-version-bump/scripts/get-latest-go
+  ```
+  Returns JSON with `update_type` (none/patch/minor), current vs latest versions, and MCR tag info.
+
+> **TIP:** Run `find-go-state` first to see what needs updating. The output shows files with missing GOEXPERIMENT, outdated `MS_GO_NOSYSTEMCRYPTO`, and version mismatches.
+
 ## Step 0: Analyze MS Go Documentation (MANDATORY)
 
 **CRITICAL: Before making ANY code changes, you MUST fetch and analyze ALL relevant MS Go documentation for the target version. Do not rely on hardcoded rules — requirements change between versions.**
