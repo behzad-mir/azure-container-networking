@@ -4,6 +4,7 @@ set -eux
 [[ $OS =~ windows ]] && { echo "azure-iptables-monitor is not supported on Windows"; exit 1; }
 FILE_EXT=''
 
+export GOEXPERIMENT=ms_nocgo_opensslcrypto
 export CGO_ENABLED=0
 export C_INCLUDE_PATH=/usr/include/bpf
 
