@@ -274,7 +274,7 @@ jobs:
 
       - name: Configure git credentials
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -475,6 +475,9 @@ jobs:
           PR_LATEST_GO_VERSION: ${{ needs.check-go-update.outputs.latest_go_version }}
           REPO: ${{ github.repository }}
         run: |
+          # Fetch existing remote branch (if any) so --force-with-lease has current ref info.
+          # Without this, a stale branch from a prior run causes "stale info" rejection.
+          git fetch origin "$BRANCH" 2>/dev/null || true
           git push origin "$BRANCH" --force-with-lease
 
           if [ "$UPDATE_TYPE" = "patch" ]; then
@@ -556,7 +559,7 @@ jobs:
 
       - name: Configure git credentials
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -924,6 +927,8 @@ jobs:
           PR_LATEST_PATCH: ${{ needs.check-go-update.outputs.latest_patch }}
           REPO: ${{ github.repository }}
         run: |
+          # Fetch existing remote branch (if any) so --force-with-lease has current ref info
+          git fetch origin "$BRANCH" 2>/dev/null || true
           git push origin "$BRANCH" --force-with-lease
 
           if [ "$UPDATE_TYPE" = "patch" ]; then
