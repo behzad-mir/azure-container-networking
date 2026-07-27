@@ -259,6 +259,8 @@ jobs:
   # ═══════════════════════════════════════════════════════════════════
   auto-bump:
     needs: check-go-update
+    # Environment grants ruleset bypass for branch push (same pattern as create-release-tag)
+    environment: auto-pr
     permissions:
       contents: write
       pull-requests: write
@@ -274,7 +276,7 @@ jobs:
 
       - name: Configure git credentials
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -536,6 +538,8 @@ jobs:
   # ═══════════════════════════════════════════════════════════════════
   backport-release:
     needs: [check-go-update, auto-bump]
+    # Environment grants ruleset bypass for branch push (same pattern as create-release-tag)
+    environment: auto-pr
     permissions:
       contents: write
       pull-requests: write
@@ -556,7 +560,7 @@ jobs:
 
       - name: Configure git credentials
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
