@@ -1,6 +1,6 @@
 module github.com/Azure/azure-container-networking/dropgz
 
-go 1.26.1
+go 1.27.0
 
 require (
 	github.com/jsternberg/zap-logfmt v1.3.0

@@ -5,11 +5,11 @@ ARG DROPGZ_VERSION=v0.0.12
 ARG OS_VERSION
 ARG OS
 
-# mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0
-FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0@sha256:0d009d1cb486a1a23c35dcfee3fbd82e22adf9f7ef0cf6bb35020679621d378f AS go
+# mcr.microsoft.com/oss/go/microsoft/golang:1.27-azurelinux3.0
+FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang:1.27-azurelinux3.0@sha256:04c69bbf62eccbbc4b8ecf30deaaaea22b912b8762889635fd88afc7a0b4db4f AS go
 
 # mcr.microsoft.com/azurelinux/base/core:3.0
-FROM --platform=linux/${ARCH} mcr.microsoft.com/azurelinux/base/core:3.0@sha256:8bb51342bd5eba915990ab608f91060d502bb7891a2d3d909e0419b932533029 AS mariner-core
+FROM --platform=linux/${ARCH} mcr.microsoft.com/azurelinux/base/core:3.0@sha256:76325dbdd581f039ac2edffca3ff40aef88951da7aa24cf0c07b40992e6d6bd2 AS mariner-core
 
 # mcr.microsoft.com/azurelinux/distroless/base:3.0
 FROM --platform=linux/${ARCH} mcr.microsoft.com/azurelinux/distroless/base:3.0@sha256:387a603a274e74568fd7a0e6d48ef68e631990e3b5149801515fe749a74b5b29 AS mariner-distroless
@@ -19,7 +19,6 @@ ARG OS
 ARG VERSION
 ARG CNI_AI_PATH
 ARG CNI_AI_ID
-ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 WORKDIR /azure-container-networking
 COPY . .
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/azure-vnet -trimpath -ldflags "-s -w -X main.version="$VERSION"" -gcflags="-dwarflocationlists=true" cni/network/plugin/main.go
@@ -49,7 +48,6 @@ FROM go AS dropgz
 ARG DROPGZ_VERSION
 ARG OS
 ARG VERSION
-ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 RUN go mod download github.com/azure/azure-container-networking/dropgz@$DROPGZ_VERSION
 WORKDIR /go/pkg/mod/github.com/azure/azure-container-networking/dropgz\@$DROPGZ_VERSION
 COPY --from=compressor /payload/* pkg/embed/fs/

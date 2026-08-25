@@ -394,9 +394,11 @@ jobs:
           TARGET_MIN_NUM=$(echo "$TARGET_MINOR" | cut -d. -f2)
 
           # Determine GOEXPERIMENT requirements
+          # Go 1.27+ removed the systemcrypto/ms_nocgo_opensslcrypto experiments;
+          # the backend is selected automatically, so no GOEXPERIMENT is required.
           if [ "$TARGET_MIN_NUM" -ge 27 ]; then
-            GOEXP_CGO1="systemcrypto"
-            GOEXP_CGO0="systemcrypto"
+            GOEXP_CGO1=""
+            GOEXP_CGO0=""
           elif [ "$TARGET_MIN_NUM" -ge 26 ]; then
             GOEXP_CGO1="systemcrypto"
             GOEXP_CGO0="ms_nocgo_opensslcrypto"
@@ -584,9 +586,11 @@ jobs:
           TARGET_MIN_NUM=$(echo "$LATEST_MINOR" | grep -oP '^\d+\.(\d+)' | cut -d. -f2)
 
           # Determine GOEXPERIMENT rules per version
+          # Go 1.27+ removed the systemcrypto/ms_nocgo_opensslcrypto experiments;
+          # the backend is selected automatically, so no GOEXPERIMENT is required.
           if [ "$TARGET_MIN_NUM" -ge 27 ]; then
-            echo "goexp_cgo1=systemcrypto" >> "$GITHUB_OUTPUT"
-            echo "goexp_cgo0=systemcrypto" >> "$GITHUB_OUTPUT"
+            echo "goexp_cgo1=" >> "$GITHUB_OUTPUT"
+            echo "goexp_cgo0=" >> "$GITHUB_OUTPUT"
           elif [ "$TARGET_MIN_NUM" -ge 26 ]; then
             echo "goexp_cgo1=systemcrypto" >> "$GITHUB_OUTPUT"
             echo "goexp_cgo0=ms_nocgo_opensslcrypto" >> "$GITHUB_OUTPUT"
@@ -672,12 +676,13 @@ jobs:
           elif [ "$LATEST_MIN_NUM" -ge 27 ]; then
             FIPS_SECTION="
           ### ⚠️ FIPS / System Crypto Requirements
-          Go 1.27+ lifts the cgo requirement for systemcrypto on Linux.
-          \`GOEXPERIMENT=systemcrypto\` can now be set in ALL scripts/Dockerfiles regardless of CGO setting.
-          Reference: https://github.com/microsoft/go/blob/microsoft/main/eng/doc/NocgoOpenSSL.md
+          Go 1.27+ lifts the cgo requirement for systemcrypto on Linux and REMOVED the
+          \`systemcrypto\` / \`nosystemcrypto\` / \`ms_nocgo_opensslcrypto\` GOEXPERIMENT values.
+          Setting any of them is now a build error.
+          Reference: https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#usage-build
 
-          1. Set \`GOEXPERIMENT=systemcrypto\` in ALL Dockerfile templates and pipeline build scripts
-          2. Remove \`MS_GO_NOSYSTEMCRYPTO=1\` from npm Dockerfiles if present
+          1. Remove \`GOEXPERIMENT=systemcrypto\` and \`GOEXPERIMENT=ms_nocgo_opensslcrypto\` from ALL Dockerfile templates, pipeline build scripts and Makefiles
+          2. Keep \`MS_GO_NOSYSTEMCRYPTO=1\` where the standard Go crypto backend is intentional (npm on the Ubuntu base image)
           3. Ensure \`MARINER_DISTROLESS_IMG\` in \`build/images.mk\` is \`distroless/base\`
           4. Update \`bpf-prog/ipv6-hp-bpf/linux.Dockerfile\` runtime base to \`azurelinux/distroless/base:3.0\`"
           elif [ "$LATEST_MIN_NUM" -ge 26 ]; then
