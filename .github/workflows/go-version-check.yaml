@@ -455,7 +455,7 @@ jobs:
           incorrect FIPS configuration for the current Go version.
 
           **FIPS rules:**
-          - CGO_ENABLED=1: GOEXPERIMENT=\`${GOEXP_CGO1}\`
+          - CGO_ENABLED=1: GOEXPERIMENT=\`${GOEXP_CGO1:-<none>}\`
           - CGO_ENABLED=0: GOEXPERIMENT=\`${GOEXP_CGO0:-<none>}\`
 
           **Reference:** https://github.com/microsoft/go/blob/microsoft/main/eng/doc/NocgoOpenSSL.md
