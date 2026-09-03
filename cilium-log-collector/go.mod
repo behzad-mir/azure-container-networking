@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking/cilium-log-collector
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require (
 	github.com/Azure/azure-container-networking v1.7.12
 	github.com/fluent/fluent-bit-go v0.0.0-20230731091245-a7a013e2473c

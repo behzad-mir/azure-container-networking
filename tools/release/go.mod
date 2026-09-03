@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking/tools/release
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require github.com/spf13/cobra v1.8.1
 
 require (
