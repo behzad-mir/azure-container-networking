@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking/bpf-prog/ipv6-hp-bpf
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require (
 	github.com/cilium/ebpf v0.15.0
 	github.com/vishvananda/netlink v1.1.0

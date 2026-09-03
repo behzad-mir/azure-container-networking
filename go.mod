@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require (
 	github.com/Azure/azure-container-networking/zapai v0.0.3
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.22.0

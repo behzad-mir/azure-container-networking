@@ -3,8 +3,8 @@
 ARG ARCH
 ARG OS
 
-# mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0
-FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang:1.26-azurelinux3.0@sha256:0d009d1cb486a1a23c35dcfee3fbd82e22adf9f7ef0cf6bb35020679621d378f AS go
+# mcr.microsoft.com/oss/go/microsoft/golang:1.27-azurelinux3.0
+FROM --platform=linux/${ARCH} mcr.microsoft.com/oss/go/microsoft/golang:1.27-azurelinux3.0@sha256:78388dc19e5cc1d2262ecee3f34dbc0dc0c38547223bcec0ac5a7cd1bfcb7122 AS go
 
 # mcr.microsoft.com/azurelinux/distroless/base:3.0
 FROM --platform=linux/${ARCH} mcr.microsoft.com/azurelinux/distroless/base:3.0@sha256:387a603a274e74568fd7a0e6d48ef68e631990e3b5149801515fe749a74b5b29 AS mariner-distroless
@@ -12,7 +12,6 @@ FROM --platform=linux/${ARCH} mcr.microsoft.com/azurelinux/distroless/base:3.0@s
 FROM go AS azure-ip-masq-merger
 ARG OS
 ARG VERSION
-ENV GOEXPERIMENT=ms_nocgo_opensslcrypto
 WORKDIR /azure-ip-masq-merger
 COPY ./azure-ip-masq-merger .
 RUN GOOS=$OS CGO_ENABLED=0 go build -a -o /go/bin/ip-masq-merger -trimpath -ldflags "-s -w -X main.version="$VERSION"" -gcflags="-dwarflocationlists=true" .

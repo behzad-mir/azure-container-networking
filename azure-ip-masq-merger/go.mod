@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking/azure-ip-masq-merger
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require (
 	github.com/stretchr/testify v1.9.0
 	gopkg.in/yaml.v2 v2.4.0

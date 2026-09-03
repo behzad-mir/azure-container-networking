@@ -2,6 +2,8 @@ module github.com/Azure/azure-container-networking/zapai
 
 go 1.26.1
 
+toolchain go1.27.1
+
 require (
 	github.com/jsternberg/zap-logfmt v1.3.0
 	github.com/microsoft/ApplicationInsights-Go v0.4.4
