@@ -1,6 +1,7 @@
 ---
 on:
-  workflow_dispatch:
+  push:
+    branches: [try/gh-aw-smoke]
 
 permissions:
   contents: read
