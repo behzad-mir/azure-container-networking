@@ -1,0 +1,4 @@
+{"ts":1791501143058,"event":"TRACK_START","rid":"d450bca3-cfe4-4336-acf2-da9ac26816b1","provider":"copilot","path":"/chat/completions","streaming":true,"ct":"text/event-stream","ce":"(none)","status":200}
+{"ts":1791501143068,"event":"TRACK_END","rid":"d450bca3-cfe4-4336-acf2-da9ac26816b1","result":"ok","streaming":true,"model":"claude-haiku-5.5","input":15713,"output":223,"cache_read":0}
+{"ts":1791501145581,"event":"TRACK_START","rid":"f0c3a693-d22d-44c6-a194-f8eb313c55d5","provider":"copilot","path":"/chat/completions","streaming":true,"ct":"text/event-stream","ce":"(none)","status":200}
+{"ts":1791501145588,"event":"TRACK_END","rid":"f0c3a693-d22d-44c6-a194-f8eb313c55d5","result":"ok","streaming":true,"model":"claude-haiku-5.5","input":2,"output":158,"cache_read":25804}

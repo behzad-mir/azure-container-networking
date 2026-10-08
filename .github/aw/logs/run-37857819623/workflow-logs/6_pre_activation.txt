@@ -1,0 +1,101 @@
+﻿2026-10-08T23:09:27.6332686Z Current runner version: '2.337.0'
+2026-10-08T23:09:27.6450233Z ##[group]Runner Image Provisioner
+2026-10-08T23:09:27.6465459Z Hosted Compute Agent
+2026-10-08T23:09:27.6466295Z Version: 20260901.588
+2026-10-08T23:09:27.6466944Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-08T23:09:27.6467674Z Build Date: 2026-09-01T19:56:44Z
+2026-10-08T23:09:27.6468404Z Worker ID: {6a0ab1e0-f799-4eba-9992-dcc52a9fc69a}
+2026-10-08T23:09:27.6469114Z Azure Region: northcentralus
+2026-10-08T23:09:27.6469705Z ##[endgroup]
+2026-10-08T23:09:27.6471173Z ##[group]VM Image
+2026-10-08T23:09:27.6471755Z - OS: Linux (x64)
+2026-10-08T23:09:27.6472374Z - Source: Docker
+2026-10-08T23:09:27.6472934Z - Name: ubuntu:24.04
+2026-10-08T23:09:27.6473524Z - Version: 20260925.9.1
+2026-10-08T23:09:27.6474438Z ##[endgroup]
+2026-10-08T23:09:27.6486464Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T23:09:27.6488823Z Metadata: read
+2026-10-08T23:09:27.6489411Z ##[endgroup]
+2026-10-08T23:09:27.6494060Z Secret source: Actions
+2026-10-08T23:09:27.6507265Z Cache mode: write
+2026-10-08T23:09:27.6508395Z Prepare workflow directory
+2026-10-08T23:09:27.7874443Z Prepare all required actions
+2026-10-08T23:09:27.7979262Z Getting action download info
+2026-10-08T23:09:28.1385821Z Download action repository 'github/gh-aw-actions@924af5fdc64061cfbf66fb584c8b07e2ac230c60' (SHA:924af5fdc64061cfbf66fb584c8b07e2ac230c60)
+2026-10-08T23:09:28.8840398Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-10-08T23:09:29.3117262Z Complete job name: pre_activation
+2026-10-08T23:09:29.4331772Z ##[group]Run github/gh-aw-actions/setup@924af5fdc64061cfbf66fb584c8b07e2ac230c60
+2026-10-08T23:09:29.4332895Z with:
+2026-10-08T23:09:29.4333421Z   destination: /home/runner/work/_temp/gh-aw/actions
+2026-10-08T23:09:29.4334058Z   job-name: pre_activation
+2026-10-08T23:09:29.4334583Z   safe-output-artifact-client: false
+2026-10-08T23:09:29.4335678Z env:
+2026-10-08T23:09:29.4336120Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:29.4336721Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:29.4338506Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:29.4340401Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:29.4340973Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:29.4341577Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:29.4342141Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:29.4344060Z   GH_AW_SETUP_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:09:29.4345673Z   GH_AW_CURRENT_WORKFLOW_REF: behzad-mir/azure-container-networking/.github/workflows/aw-t0-patch-export.lock.yml@refs/heads/try/gh-aw-t0
+2026-10-08T23:09:29.4346788Z   GH_AW_INFO_VERSION: 1.0.87
+2026-10-08T23:09:29.4347302Z   GH_AW_INFO_AWF_VERSION: v0.28.23
+2026-10-08T23:09:29.4347855Z   GH_AW_INFO_ENGINE_ID: copilot
+2026-10-08T23:09:29.4348354Z ##[endgroup]
+2026-10-08T23:09:31.7915488Z Successfully copied 515 files to /home/runner/work/_temp/gh-aw/actions
+2026-10-08T23:09:31.9943334Z Successfully copied 26 mcp-scripts files to /home/runner/work/_temp/gh-aw/mcp-scripts
+2026-10-08T23:09:32.0936848Z Successfully copied 88 safe-outputs files to /home/runner/work/_temp/gh-aw/safeoutputs
+2026-10-08T23:09:32.1150169Z [info] [otlp] INPUT_TRACE_ID not set, a new trace ID will be generated
+2026-10-08T23:09:32.1157699Z [info] [otlp] no OTLP endpoints have usable credentials, skipping setup span
+2026-10-08T23:09:32.1189475Z [info] [otlp] resolved trace-id=9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:32.1193957Z [info] [otlp] trace-id=9cf5d7ad3aff42624cafa0b9906ee6d7 written to GITHUB_OUTPUT
+2026-10-08T23:09:32.1199296Z [info] [otlp] span-id=920d4cee12663b76 written to GITHUB_OUTPUT
+2026-10-08T23:09:32.1203033Z [info] [otlp] GITHUB_AW_OTEL_TRACE_ID written to GITHUB_ENV
+2026-10-08T23:09:32.1207225Z [info] [otlp] GITHUB_AW_OTEL_PARENT_SPAN_ID written to GITHUB_ENV
+2026-10-08T23:09:32.1210753Z [info] [otlp] GITHUB_AW_OTEL_JOB_START_MS written to GITHUB_ENV
+2026-10-08T23:09:32.1451705Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:32.1452489Z with:
+2026-10-08T23:09:32.1456601Z   github-token: ***
+2026-10-08T23:09:32.1458610Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'check_membership.cjs'));
+await main();
+
+2026-10-08T23:09:32.1460683Z   debug: false
+2026-10-08T23:09:32.1461136Z   user-agent: actions/github-script
+2026-10-08T23:09:32.1461662Z   result-encoding: json
+2026-10-08T23:09:32.1462114Z   retries: 0
+2026-10-08T23:09:32.1462582Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:32.1463179Z env:
+2026-10-08T23:09:32.1463593Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:32.1464137Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:32.1466129Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:32.1467842Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:32.1468393Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:32.1468977Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:32.1469468Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:32.1470038Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:32.1470724Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 920d4cee12663b76
+2026-10-08T23:09:32.1472033Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500972121
+2026-10-08T23:09:32.1472638Z   GH_AW_REQUIRED_ROLES: admin,maintainer,write
+2026-10-08T23:09:32.1473215Z ##[endgroup]
+2026-10-08T23:09:32.2881493Z Checking if user 'behzad-mir' has required permissions for behzad-mir/azure-container-networking
+2026-10-08T23:09:32.2887387Z Required permissions: admin, maintainer, write
+2026-10-08T23:09:32.5453398Z Repository permission level: admin
+2026-10-08T23:09:32.5488554Z ✅ User has admin access to repository
+2026-10-08T23:09:32.6061939Z Post job cleanup.
+2026-10-08T23:09:32.6471341Z [info] [otlp] sending conclusion span "gh-aw.pre_activation.conclusion" to configured endpoints
+2026-10-08T23:09:32.6517975Z [info] [otlp] conclusion span export attempted
+2026-10-08T23:09:32.6523126Z Cleaning up /tmp/gh-aw...
+2026-10-08T23:09:32.6642617Z Cleaned up /tmp/gh-aw
+2026-10-08T23:09:32.6749027Z No /tmp/awf-*-chroot-home directories found
+2026-10-08T23:09:32.6863158Z No /tmp/awf-chroot-* directories found
+2026-10-08T23:09:32.6951489Z Evaluate and set job outputs
+2026-10-08T23:09:32.6959663Z Set output 'activated'
+2026-10-08T23:09:32.6961682Z Set output 'setup-parent-span-id'
+2026-10-08T23:09:32.6962733Z Set output 'setup-span-id'
+2026-10-08T23:09:32.6963450Z Set output 'setup-trace-id'
+2026-10-08T23:09:32.6965053Z Cleaning up orphan processes

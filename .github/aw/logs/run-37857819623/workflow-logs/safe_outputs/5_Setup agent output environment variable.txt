@@ -1,0 +1,63 @@
+﻿2026-10-08T23:12:45.1356897Z ##[group]Run mkdir -p /tmp/gh-aw/
+2026-10-08T23:12:45.1357612Z [36;1mmkdir -p /tmp/gh-aw/[0m
+2026-10-08T23:12:45.1358228Z [36;1mfind "/tmp/gh-aw/" -type f -print[0m
+2026-10-08T23:12:45.1359029Z [36;1mif [ -f "/tmp/gh-aw/agent_output.json" ]; then[0m
+2026-10-08T23:12:45.1360937Z [36;1m  echo "GH_AW_AGENT_OUTPUT=/tmp/gh-aw/agent_output.json" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:45.1361759Z [36;1mfi[0m
+2026-10-08T23:12:45.1366954Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:45.1367503Z env:
+2026-10-08T23:12:45.1367959Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:45.1368564Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:45.1370430Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:45.1372286Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:45.1372869Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:45.1373537Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:45.1374396Z   GH_AW_AGENT_AIC: 14.03299
+2026-10-08T23:12:45.1374898Z   GH_AW_AIC: 14.03299
+2026-10-08T23:12:45.1375373Z   GH_AW_AMBIENT_CONTEXT: 8106
+2026-10-08T23:12:45.1376152Z   GH_AW_CALLER_WORKFLOW_ID: behzad-mir/azure-container-networking/aw-t0-patch-export
+2026-10-08T23:12:45.1376991Z   GH_AW_DETECTION_CONCLUSION: success
+2026-10-08T23:12:45.1377576Z   GH_AW_DETECTION_REASON: 
+2026-10-08T23:12:45.1378088Z   GH_AW_ENGINE_ID: copilot
+2026-10-08T23:12:45.1378586Z   GH_AW_ENGINE_MODEL: auto
+2026-10-08T23:12:45.1379092Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:12:45.1379603Z   GH_AW_THREAT_DETECTION_AIC: 0.705152
+2026-10-08T23:12:45.1380183Z   GH_AW_WORKFLOW_ID: aw-t0-patch-export
+2026-10-08T23:12:45.1380961Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:12:45.1382369Z   GH_AW_WORKFLOW_SOURCE_URL: https://github.com/behzad-mir/azure-container-networking/blob/try/gh-aw-t0/.github/workflows/aw-t0-patch-export.md
+2026-10-08T23:12:45.1383868Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:12:45.1384621Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 192ae38911170803
+2026-10-08T23:12:45.1385288Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501163603
+2026-10-08T23:12:45.1385865Z ##[endgroup]
+2026-10-08T23:12:45.1460097Z /tmp/gh-aw/aw-export.patch
+2026-10-08T23:12:45.1481772Z /tmp/gh-aw/agent_execution.json
+2026-10-08T23:12:45.1489000Z /tmp/gh-aw/agent-stdio.log
+2026-10-08T23:12:45.1497088Z /tmp/gh-aw/agent_usage.json
+2026-10-08T23:12:45.1498439Z /tmp/gh-aw/awf-config.json
+2026-10-08T23:12:45.1499331Z /tmp/gh-aw/safeoutputs.jsonl
+2026-10-08T23:12:45.1501343Z /tmp/gh-aw/pre-agent-audit.txt
+2026-10-08T23:12:45.1502983Z /tmp/gh-aw/agent_output.json
+2026-10-08T23:12:45.1504243Z /tmp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:12:45.1505524Z /tmp/gh-aw/mcp-logs/observed-url-domains.json
+2026-10-08T23:12:45.1506498Z /tmp/gh-aw/mcp-logs/rpc-messages.jsonl
+2026-10-08T23:12:45.1510965Z /tmp/gh-aw/mcp-logs/tools.json
+2026-10-08T23:12:45.1511627Z /tmp/gh-aw/mcp-logs/mcp-gateway.log
+2026-10-08T23:12:45.1512847Z /tmp/gh-aw/mcp-logs/gateway.md
+2026-10-08T23:12:45.1513436Z /tmp/gh-aw/mcp-logs/github.log
+2026-10-08T23:12:45.1514477Z /tmp/gh-aw/mcp-logs/safeoutputs.log
+2026-10-08T23:12:45.1517228Z /tmp/gh-aw/mcp-logs/safeoutputs/server.log
+2026-10-08T23:12:45.1518110Z /tmp/gh-aw/sandbox/agent/logs/process-1791501070533-390.log
+2026-10-08T23:12:45.1519531Z /tmp/gh-aw/sandbox/firewall/audit/awf-resolved-config.json
+2026-10-08T23:12:45.1520376Z /tmp/gh-aw/sandbox/firewall/audit/docker-compose.redacted.yml
+2026-10-08T23:12:45.1521820Z /tmp/gh-aw/sandbox/firewall/audit/image-manifest.json
+2026-10-08T23:12:45.1523270Z /tmp/gh-aw/sandbox/firewall/audit/squid.conf
+2026-10-08T23:12:45.1524367Z /tmp/gh-aw/sandbox/firewall/audit/policy-manifest.json
+2026-10-08T23:12:45.1525085Z /tmp/gh-aw/sandbox/firewall/logs/access.log
+2026-10-08T23:12:45.1528170Z /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/models.json
+2026-10-08T23:12:45.1529873Z /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl
+2026-10-08T23:12:45.1530862Z /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:12:45.1536452Z /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/otel.jsonl
+2026-10-08T23:12:45.1538167Z /tmp/gh-aw/sandbox/firewall/logs/cache.log
+2026-10-08T23:12:45.1538846Z /tmp/gh-aw/sandbox/firewall/logs/audit.jsonl
+2026-10-08T23:12:45.1539530Z /tmp/gh-aw/github_rate_limits.jsonl
+2026-10-08T23:12:45.1540097Z /tmp/gh-aw/otel.jsonl

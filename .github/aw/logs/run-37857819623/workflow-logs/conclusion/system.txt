@@ -1,0 +1,9 @@
+2026-10-08T23:12:51.1670000Z Evaluating conclusion.if
+2026-10-08T23:12:51.1670000Z Evaluating: (always() && (((needs.agent.result != 'skipped') || (needs.activation.outputs.lockdown_check_failed == 'true') || (needs.activation.outputs.oauth_token_check_failed == 'true') || (needs.activation.outputs.stale_lock_file_failed == 'true') || (needs.activation.outputs.daily_ai_credits_exceeded == 'true') || (needs.activation.outputs.daily_ai_credits_guardrail_status == 'structural_error') || (needs.activation.outputs.daily_ai_credits_guardrail_status == 'transient_error'))))
+2026-10-08T23:12:51.1670000Z Expanded: (true && (('success' != 'skipped') || (needs.activation.outputs.lockdown_check_failed == 'true') || (needs.activation.outputs.oauth_token_check_failed == 'true') || (needs.activation.outputs.stale_lock_file_failed == 'true') || (needs.activation.outputs.daily_ai_credits_exceeded == 'true') || (needs.activation.outputs.daily_ai_credits_guardrail_status == 'structural_error') || (needs.activation.outputs.daily_ai_credits_guardrail_status == 'transient_error')))
+2026-10-08T23:12:51.1670000Z Result: true
+2026-10-08T23:12:51.1680000Z Requested labels: ubuntu-slim
+2026-10-08T23:12:51.1680000Z Job defined at: behzad-mir/azure-container-networking/.github/workflows/aw-t0-patch-export.lock.yml@refs/heads/try/gh-aw-t0
+2026-10-08T23:12:51.1680000Z Waiting for a runner to pick up this job...
+2026-10-08T23:12:51.7680000Z Job is about to start running on the hosted runner: GitHub Actions 1000130874
+2026-10-08T23:12:51.7680000Z Job is waiting for a hosted runner to come online.

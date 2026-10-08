@@ -1,0 +1,34 @@
+﻿2026-10-08T23:09:50.2506601Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-08T23:09:50.2507434Z with:
+2026-10-08T23:09:50.2507841Z   name: info
+2026-10-08T23:09:50.2508280Z   path: /tmp/gh-aw/aw_info.json
+2026-10-08T23:09:50.2508805Z   if-no-files-found: ignore
+2026-10-08T23:09:50.2509294Z   compression-level: 6
+2026-10-08T23:09:50.2509752Z   overwrite: false
+2026-10-08T23:09:50.2510196Z   include-hidden-files: false
+2026-10-08T23:09:50.2510687Z   archive: true
+2026-10-08T23:09:50.2511107Z env:
+2026-10-08T23:09:50.2512155Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:50.2512713Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:50.2575068Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:50.2577000Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:50.2577562Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:50.2578206Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:50.2578739Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:50.2579746Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:50.2580416Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:50.2581121Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:50.2581741Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:50.2582294Z ##[endgroup]
+2026-10-08T23:09:50.4392099Z With the provided path, there will be 1 file uploaded
+2026-10-08T23:09:50.4400574Z Artifact name is valid!
+2026-10-08T23:09:50.4403757Z Root directory input is valid!
+2026-10-08T23:09:50.7207294Z Uploading artifact: info.zip
+2026-10-08T23:09:50.7293559Z Beginning upload of artifact content to blob storage
+2026-10-08T23:09:50.8467565Z Uploaded bytes 610
+2026-10-08T23:09:50.8630645Z Finished uploading artifact content to blob storage!
+2026-10-08T23:09:50.8641564Z SHA256 digest of uploaded artifact is 90479abf4586aa11268b710944ca2edb80854dace479f2dc8a1389000e634b5b
+2026-10-08T23:09:50.8646698Z Finalizing artifact upload
+2026-10-08T23:09:51.0857341Z Artifact info successfully finalized. Artifact ID 11584996976
+2026-10-08T23:09:51.0861193Z Artifact info has been successfully uploaded! Final size is 610 bytes. Artifact ID is 11584996976
+2026-10-08T23:09:51.0869381Z Artifact download URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623/artifacts/11584996976

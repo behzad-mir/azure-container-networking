@@ -1,0 +1,84 @@
+﻿2026-10-08T23:12:45.2042568Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:12:45.2047134Z with:
+2026-10-08T23:12:45.2092958Z   github-token: ***
+2026-10-08T23:12:45.2095461Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'process_safe_outputs.cjs'));
+await main();
+
+2026-10-08T23:12:45.2098093Z   debug: false
+2026-10-08T23:12:45.2098607Z   user-agent: actions/github-script
+2026-10-08T23:12:45.2099177Z   result-encoding: json
+2026-10-08T23:12:45.2099666Z   retries: 0
+2026-10-08T23:12:45.2100157Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:12:45.2100776Z env:
+2026-10-08T23:12:45.2101221Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:45.2101811Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:45.2103828Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:45.2105796Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:45.2106380Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:45.2107047Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:45.2107573Z   GH_AW_AGENT_AIC: 14.03299
+2026-10-08T23:12:45.2108072Z   GH_AW_AIC: 14.03299
+2026-10-08T23:12:45.2108552Z   GH_AW_AMBIENT_CONTEXT: 8106
+2026-10-08T23:12:45.2109323Z   GH_AW_CALLER_WORKFLOW_ID: behzad-mir/azure-container-networking/aw-t0-patch-export
+2026-10-08T23:12:45.2121595Z   GH_AW_DETECTION_CONCLUSION: success
+2026-10-08T23:12:45.2123344Z   GH_AW_DETECTION_REASON: 
+2026-10-08T23:12:45.2124795Z   GH_AW_ENGINE_ID: copilot
+2026-10-08T23:12:45.2236811Z   GH_AW_ENGINE_MODEL: auto
+2026-10-08T23:12:45.2237539Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:12:45.2238149Z   GH_AW_THREAT_DETECTION_AIC: 0.705152
+2026-10-08T23:12:45.2239159Z   GH_AW_WORKFLOW_ID: aw-t0-patch-export
+2026-10-08T23:12:45.2239978Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:12:45.2241420Z   GH_AW_WORKFLOW_SOURCE_URL: https://github.com/behzad-mir/azure-container-networking/blob/try/gh-aw-t0/.github/workflows/aw-t0-patch-export.md
+2026-10-08T23:12:45.2242773Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:12:45.2243524Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 192ae38911170803
+2026-10-08T23:12:45.2244801Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501163603
+2026-10-08T23:12:45.2248560Z   GH_HOST: github.com
+2026-10-08T23:12:45.2249589Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:12:45.2250667Z   GH_AW_COMMENT_ID: 
+2026-10-08T23:12:45.2286235Z   GH_AW_ALLOWED_DOMAINS: api.snapcraft.io,archive.ubuntu.com,azure.archive.ubuntu.com,crl.geotrust.com,crl.globalsign.com,crl.identrust.com,crl.sectigo.com,crl.thawte.com,crl.usertrust.com,crl.verisign.com,crl3.digicert.com,crl4.digicert.com,crls.ssl.com,json-schema.org,json.schemastore.org,keyserver.ubuntu.com,ocsp.digicert.com,ocsp.geotrust.com,ocsp.globalsign.com,ocsp.identrust.com,ocsp.sectigo.com,ocsp.ssl.com,ocsp.thawte.com,ocsp.usertrust.com,ocsp.verisign.com,packagecloud.io,packages.cloud.google.com,packages.microsoft.com,ppa.launchpad.net,s.symcb.com,s.symcd.com,security.ubuntu.com,ts-crl.ws.symantec.com,ts-ocsp.ws.symantec.com,www.googleapis.com
+2026-10-08T23:12:45.2330176Z   GITHUB_SERVER_URL: https://github.com
+2026-10-08T23:12:45.2331025Z   GITHUB_API_URL: https://api.github.com
+2026-10-08T23:12:45.2331695Z   GH_AW_SAFE_OUTPUT_JOBS: {"push_branch":""}
+2026-10-08T23:12:45.2333880Z   GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: {"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+2026-10-08T23:12:45.2336130Z ##[endgroup]
+2026-10-08T23:12:45.5605649Z Safe Output Handler Manager starting...
+2026-10-08T23:12:45.5625499Z Loaded config from GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: {"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+2026-10-08T23:12:45.5636781Z Agent output content length: 132
+2026-10-08T23:12:45.5640624Z Found 1 message(s) in agent output
+2026-10-08T23:12:45.5648426Z Loading and initializing safe output handlers based on configuration...
+2026-10-08T23:12:45.5733225Z Max count: unlimited
+2026-10-08T23:12:45.5734645Z ✓ Loaded and initialized handler for: missing_tool
+2026-10-08T23:12:45.5740603Z Max count: unlimited
+2026-10-08T23:12:45.5742327Z ✓ Loaded and initialized handler for: missing_data
+2026-10-08T23:12:45.5747415Z Max count: 1
+2026-10-08T23:12:45.5748974Z ✓ Loaded and initialized handler for: noop
+2026-10-08T23:12:45.5753132Z Max count: unlimited
+2026-10-08T23:12:45.5755219Z ✓ Loaded and initialized handler for: report_incomplete
+2026-10-08T23:12:45.5785069Z Title prefix: [incomplete]
+2026-10-08T23:12:45.5802617Z Default labels: agentic-workflows
+2026-10-08T23:12:45.5805932Z Max count: 1
+2026-10-08T23:12:45.5809365Z ✓ Loaded and initialized handler for: create_report_incomplete_issue
+2026-10-08T23:12:45.5831204Z Loaded 5 handler(s)
+2026-10-08T23:12:46.0427969Z ℹ️ Rate-limit headroom: 5000/5000 requests remaining (100%) [safe_outputs_pre_check]
+2026-10-08T23:12:46.0443616Z Collected 0 missing tool(s), 0 missing data item(s), 0 noop message(s), and 0 incomplete signal(s)
+2026-10-08T23:12:46.0459095Z Loaded 1 custom safe output job type(s): push_branch
+2026-10-08T23:12:46.0462063Z Processing 1 message(s) in order of appearance...
+2026-10-08T23:12:46.0469648Z 📝 Manifest: logged push_branch
+2026-10-08T23:12:46.0489284Z Stored 0 missing tool(s), 0 missing data item(s), 0 noop message(s), and 0 incomplete signal(s) for footer generation
+2026-10-08T23:12:46.0606000Z 📝 Safe output summaries written to step summary
+2026-10-08T23:12:46.0610948Z 
+2026-10-08T23:12:46.0611591Z === Processing Summary ===
+2026-10-08T23:12:46.0615203Z Total messages: 1
+2026-10-08T23:12:46.0617932Z Status: success
+2026-10-08T23:12:46.0620517Z Successful: 0
+2026-10-08T23:12:46.0629735Z Failed: 0
+2026-10-08T23:12:46.0633327Z Skipped (custom safe output job): 1
+2026-10-08T23:12:46.0638976Z   Types: push_branch
+2026-10-08T23:12:46.0642263Z Temporary IDs registered: 0
+2026-10-08T23:12:46.0645548Z Synthetic updates: 0
+2026-10-08T23:12:46.0651098Z Wrote temporary ID map to file for artifact upload
+2026-10-08T23:12:46.0679422Z Safe Output Handler Manager completed

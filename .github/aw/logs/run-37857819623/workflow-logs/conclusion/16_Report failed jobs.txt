@@ -1,0 +1,37 @@
+﻿2026-10-08T23:13:24.5847331Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:13:24.5849000Z with:
+2026-10-08T23:13:24.5862323Z   github-token: ***
+2026-10-08T23:13:24.5869936Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'report_failed_jobs.cjs'));
+await main();
+
+2026-10-08T23:13:24.5890961Z   debug: false
+2026-10-08T23:13:24.5895740Z   user-agent: actions/github-script
+2026-10-08T23:13:24.5897051Z   result-encoding: json
+2026-10-08T23:13:24.5898521Z   retries: 0
+2026-10-08T23:13:24.5899585Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:13:24.5901119Z env:
+2026-10-08T23:13:24.5902306Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:13:24.5903556Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:13:24.5911991Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:13:24.5917943Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:13:24.5919788Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:13:24.5923837Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:13:24.5929372Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:13:24.5932953Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:13:24.5934514Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: bcfb1b5b03ee4a8d
+2026-10-08T23:13:24.5935872Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501188844
+2026-10-08T23:13:24.5938059Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:13:24.5939744Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:13:24.6014278Z   GH_AW_WORKFLOW_SOURCE_URL: https://github.com/behzad-mir/azure-container-networking/blob/try/gh-aw-t0/.github/workflows/aw-t0-patch-export.md
+2026-10-08T23:13:24.6017770Z   GH_AW_RUN_URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623
+2026-10-08T23:13:24.6019924Z   GH_AW_REPORT_FAILED_JOBS: true
+2026-10-08T23:13:24.6021263Z ##[endgroup]
+2026-10-08T23:13:24.9503439Z Checking GitHub API rate limit before querying jobs
+2026-10-08T23:13:25.3616056Z Querying jobs for workflow run 37857819623
+2026-10-08T23:13:25.7784258Z Page 1: retrieved 7 jobs
+2026-10-08T23:13:25.7806914Z Checking GitHub API rate limit after querying jobs
+2026-10-08T23:13:25.9748884Z No failed non-builtin jobs found, skipping issue creation

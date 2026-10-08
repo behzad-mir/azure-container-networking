@@ -1,0 +1,31 @@
+﻿2026-10-08T23:09:40.2721565Z Current runner version: '2.337.0'
+2026-10-08T23:09:40.2759795Z ##[group]Runner Image Provisioner
+2026-10-08T23:09:40.2760955Z Hosted Compute Agent
+2026-10-08T23:09:40.2761583Z Version: 20260901.588
+2026-10-08T23:09:40.2762244Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-08T23:09:40.2764214Z Build Date: 2026-09-01T19:56:44Z
+2026-10-08T23:09:40.2764909Z Worker ID: {a627d5ab-3f4b-4be1-a97e-350c55fdc34c}
+2026-10-08T23:09:40.2765661Z Azure Region: eastus
+2026-10-08T23:09:40.2766225Z ##[endgroup]
+2026-10-08T23:09:40.2767808Z ##[group]VM Image
+2026-10-08T23:09:40.2768909Z - OS: Linux (x64)
+2026-10-08T23:09:40.2771214Z - Source: Docker
+2026-10-08T23:09:40.2774253Z - Name: ubuntu:24.04
+2026-10-08T23:09:40.2776751Z - Version: 20260925.9.1
+2026-10-08T23:09:40.2777332Z ##[endgroup]
+2026-10-08T23:09:40.2778638Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T23:09:40.2781119Z Actions: read
+2026-10-08T23:09:40.2782240Z Contents: read
+2026-10-08T23:09:40.2785302Z Issues: write
+2026-10-08T23:09:40.2787560Z Metadata: read
+2026-10-08T23:09:40.2789348Z ##[endgroup]
+2026-10-08T23:09:40.2791769Z Secret source: Actions
+2026-10-08T23:09:40.2792707Z Cache mode: write
+2026-10-08T23:09:40.2793934Z Prepare workflow directory
+2026-10-08T23:09:40.3910174Z Prepare all required actions
+2026-10-08T23:09:40.4019719Z Getting action download info
+2026-10-08T23:09:40.7716974Z Download action repository 'github/gh-aw-actions@924af5fdc64061cfbf66fb584c8b07e2ac230c60' (SHA:924af5fdc64061cfbf66fb584c8b07e2ac230c60)
+2026-10-08T23:09:41.4297366Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-10-08T23:09:41.5601950Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-10-08T23:09:41.6736759Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T23:09:42.0441846Z Complete job name: activation

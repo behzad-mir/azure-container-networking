@@ -1,0 +1,45 @@
+﻿2026-10-08T23:12:28.2734940Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-08T23:12:28.2735464Z with:
+2026-10-08T23:12:28.2735656Z   name: detection
+2026-10-08T23:12:28.2736519Z   path: /tmp/gh-aw/threat-detection/detection_result.json
+/tmp/gh-aw/threat-detection/execution.json
+/tmp/gh-aw/threat-detection/detection_usage.json
+/tmp/gh-aw/threat-detection/detection_usage.jsonl
+/tmp/gh-aw/threat-detection/sandbox/firewall/logs/
+/tmp/gh-aw/threat-detection/sandbox/firewall/audit/
+
+2026-10-08T23:12:28.2737462Z   if-no-files-found: ignore
+2026-10-08T23:12:28.2737688Z   compression-level: 6
+2026-10-08T23:12:28.2737885Z   overwrite: false
+2026-10-08T23:12:28.2738087Z   include-hidden-files: false
+2026-10-08T23:12:28.2738299Z   archive: true
+2026-10-08T23:12:28.2738478Z env:
+2026-10-08T23:12:28.2738662Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:28.2738910Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:28.2739731Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:28.2740515Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:28.2740764Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:28.2741023Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:28.2741235Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:12:28.2741493Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:12:28.2741790Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:12:28.2742052Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:12:28.2742320Z   GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:12:28.2742588Z   GH_AW_PRIMARY_MODEL: claude-haiku-5.5
+2026-10-08T23:12:28.2742827Z   GH_AW_AIC: 0.705152
+2026-10-08T23:12:28.2743022Z   GH_AW_AMBIENT_CONTEXT: 18293
+2026-10-08T23:12:28.2743241Z ##[endgroup]
+2026-10-08T23:12:28.3926449Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T23:12:28.3928649Z The least common ancestor is /tmp/gh-aw/threat-detection. This will be the root directory of the artifact
+2026-10-08T23:12:28.3929363Z With the provided path, there will be 15 files uploaded
+2026-10-08T23:12:28.3932595Z Artifact name is valid!
+2026-10-08T23:12:28.3932963Z Root directory input is valid!
+2026-10-08T23:12:28.6454457Z Uploading artifact: detection.zip
+2026-10-08T23:12:28.6489294Z Beginning upload of artifact content to blob storage
+2026-10-08T23:12:28.7924848Z Uploaded bytes 20726
+2026-10-08T23:12:28.8189978Z Finished uploading artifact content to blob storage!
+2026-10-08T23:12:28.8190906Z SHA256 digest of uploaded artifact is f7aaec54e4495ec1a2013b35065992e26ac41130c5491852ce3e8b490be3ba07
+2026-10-08T23:12:28.8191516Z Finalizing artifact upload
+2026-10-08T23:12:29.1180812Z Artifact detection successfully finalized. Artifact ID 11584588674
+2026-10-08T23:12:29.1181811Z Artifact detection has been successfully uploaded! Final size is 20726 bytes. Artifact ID is 11584588674
+2026-10-08T23:12:29.1184635Z Artifact download URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623/artifacts/11584588674

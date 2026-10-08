@@ -1,0 +1,120 @@
+﻿2026-10-08T23:09:49.7976910Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:49.7977720Z with:
+2026-10-08T23:09:49.7979677Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'interpolate_prompt.cjs'));
+await main();
+
+2026-10-08T23:09:49.7986234Z   github-token: ***
+2026-10-08T23:09:49.7986706Z   debug: false
+2026-10-08T23:09:49.7987161Z   user-agent: actions/github-script
+2026-10-08T23:09:49.7987701Z   result-encoding: json
+2026-10-08T23:09:49.7988151Z   retries: 0
+2026-10-08T23:09:49.7988617Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:49.7989201Z env:
+2026-10-08T23:09:49.7989624Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:49.7990174Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:49.7991934Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:49.7993908Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:49.7994464Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:49.7995279Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:49.7995790Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:49.7996312Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:49.7996899Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:49.7997602Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:49.7998223Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:49.7998919Z   GH_AW_PROMPT: /home/runner/work/_temp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:09:49.7999603Z   GH_AW_ENGINE_ID: copilot
+2026-10-08T23:09:49.8000097Z   GH_AW_GITHUB_RUN_ID: 37857819623
+2026-10-08T23:09:49.8000612Z ##[endgroup]
+2026-10-08T23:09:49.9357216Z ========================================
+2026-10-08T23:09:49.9362279Z [main] Starting interpolate_prompt processing
+2026-10-08T23:09:49.9365760Z ========================================
+2026-10-08T23:09:49.9368842Z [main] Prompt path: /home/runner/work/_temp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:09:49.9374407Z [main] Workspace directory: /home/runner/work/azure-container-networking/azure-container-networking
+2026-10-08T23:09:49.9377718Z [main] Reading prompt file...
+2026-10-08T23:09:49.9415291Z [main] Original content length: 11238 characters
+2026-10-08T23:09:49.9419889Z [main] First 200 characters: <system>\nImmutable security policy. Sandbox, firewall, credentials, and tool limits are physical boundaries. Do not bypass, weaken, test, or evade them.\n\nNever do: container escape, privilege escalati
+2026-10-08T23:09:49.9424942Z [main] Writing raw template to: /home/runner/work/_temp/gh-aw/aw-prompts/prompt-template.txt
+2026-10-08T23:09:49.9432483Z 
+2026-10-08T23:09:49.9432796Z ========================================
+2026-10-08T23:09:49.9436478Z [main] STEP 1: Runtime Imports
+2026-10-08T23:09:49.9439523Z ========================================
+2026-10-08T23:09:49.9444265Z Processing 1 runtime import macro(s) (files and URLs)
+2026-10-08T23:09:49.9449354Z   Import 1: {{#runtime-import .github/workflows/aw-t0-patch-export.md}}
+2026-10-08T23:09:49.9479738Z Found 2 expression(s) in File workflows/aw-t0-patch-export.md
+2026-10-08T23:09:49.9608235Z Successfully processed 1 safe expression(s) in File workflows/aw-t0-patch-export.md
+2026-10-08T23:09:49.9615967Z Runtime imports processed successfully
+2026-10-08T23:09:49.9617814Z Content length change: 11238 -> 11775 (+537)
+2026-10-08T23:09:49.9620083Z [main] Writing import tree to: /home/runner/work/_temp/gh-aw/aw-prompts/prompt-import-tree.json
+2026-10-08T23:09:49.9626968Z 
+2026-10-08T23:09:49.9627259Z ========================================
+2026-10-08T23:09:49.9628927Z [main] STEP 1.5: Inline Sub-Agent Extraction
+2026-10-08T23:09:49.9631105Z ========================================
+2026-10-08T23:09:49.9633574Z No inline sub-agent markers found, skipping
+2026-10-08T23:09:49.9637085Z 
+2026-10-08T23:09:49.9637305Z ========================================
+2026-10-08T23:09:49.9638497Z [main] STEP 1.6: Inline Skill Extraction
+2026-10-08T23:09:49.9639679Z ========================================
+2026-10-08T23:09:49.9641409Z No inline skill markers found, skipping
+2026-10-08T23:09:49.9644772Z 
+2026-10-08T23:09:49.9645003Z ========================================
+2026-10-08T23:09:49.9646261Z [main] STEP 2: Variable Interpolation
+2026-10-08T23:09:49.9647419Z ========================================
+2026-10-08T23:09:49.9651701Z No expression variables found, skipping interpolation
+2026-10-08T23:09:49.9655063Z 
+2026-10-08T23:09:49.9655292Z ========================================
+2026-10-08T23:09:49.9656591Z [main] STEP 2.5: Experiment Placeholder Substitution
+2026-10-08T23:09:49.9657820Z ========================================
+2026-10-08T23:09:49.9664388Z No experiment placeholders found in prompt
+2026-10-08T23:09:49.9667556Z 
+2026-10-08T23:09:49.9667771Z ========================================
+2026-10-08T23:09:49.9668958Z [main] STEP 3: Template Rendering
+2026-10-08T23:09:49.9670095Z ========================================
+2026-10-08T23:09:49.9672176Z Processing 8 conditional template block(s)
+2026-10-08T23:09:49.9678086Z [renderMarkdownTemplate] Starting template rendering
+2026-10-08T23:09:49.9679633Z [renderMarkdownTemplate] Input length: 11775 characters
+2026-10-08T23:09:49.9682355Z [renderMarkdownTemplate] Preserved 4 fenced code block(s) from template processing
+2026-10-08T23:09:49.9686090Z [renderMarkdownTemplate] Found 8 block conditional(s) and 0 inline conditional(s)
+2026-10-08T23:09:49.9689057Z [renderMarkdownTemplate] Block 1: condition="github.actor" -> evaluating branches
+2026-10-08T23:09:49.9690870Z [renderMarkdownTemplate]   Body preview: "- **actor**: __GH_AW_GITHUB_ACTOR__\n"
+2026-10-08T23:09:49.9699965Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=true
+2026-10-08T23:09:49.9702068Z [renderMarkdownTemplate] Block 2: condition="github.repository" -> evaluating branches
+2026-10-08T23:09:49.9705376Z [renderMarkdownTemplate]   Body preview: "- **repository**: __GH_AW_GITHUB_REPOSITORY__\n"
+2026-10-08T23:09:49.9708635Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9727019Z [renderMarkdownTemplate] Block 3: condition="github.workspace" -> evaluating branches
+2026-10-08T23:09:49.9729335Z [renderMarkdownTemplate]   Body preview: "- **workspace**: __GH_AW_GITHUB_WORKSPACE__\n"
+2026-10-08T23:09:49.9731386Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9733953Z [renderMarkdownTemplate] Block 4: condition="github.event.issue.number || (github.aw.context.item_type == 'issue' && github.aw.context.item_number)" -> evaluating branches
+2026-10-08T23:09:49.9747168Z [renderMarkdownTemplate]   Body preview: "- **issue-number**: #__GH_AW_EXPR_802A9F6A__\n"
+2026-10-08T23:09:49.9748357Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9749947Z [renderMarkdownTemplate] Block 5: condition="github.event.discussion.number || (github.aw.context.item_type == 'discussion' && github.aw.context.item_number)" -> evaluating branches
+2026-10-08T23:09:49.9751550Z [renderMarkdownTemplate]   Body preview: "- **discussion-number**: #__GH_AW_EXPR_1A3A194A__\n"
+2026-10-08T23:09:49.9752640Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9764880Z [renderMarkdownTemplate] Block 6: condition="github.event.pull_request.number || (github.aw.context.item_type == 'pull_request' && github.aw.context.item_number)" -> evaluating branches
+2026-10-08T23:09:49.9766596Z [renderMarkdownTemplate]   Body preview: "- **pull-request-number**: #__GH_AW_EXPR_463A214A__\n"
+2026-10-08T23:09:49.9767949Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9769258Z [renderMarkdownTemplate] Block 7: condition="github.event.comment.id || github.aw.context.comment_id" -> evaluating branches
+2026-10-08T23:09:49.9770558Z [renderMarkdownTemplate]   Body preview: "- **comment-id**: __GH_AW_EXPR_FF1D34CE__\n"
+2026-10-08T23:09:49.9771598Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9772655Z [renderMarkdownTemplate] Block 8: condition="github.run_id" -> evaluating branches
+2026-10-08T23:09:49.9773928Z [renderMarkdownTemplate]   Body preview: "- **workflow-run-id**: __GH_AW_GITHUB_RUN_ID__\n"
+2026-10-08T23:09:49.9774992Z [renderMarkdownTemplate]   Action: Keeping selected branch with leading newline=false
+2026-10-08T23:09:49.9776412Z [renderMarkdownTemplate] First pass complete: 8 kept, 0 removed
+2026-10-08T23:09:49.9777249Z [renderMarkdownTemplate] Second pass complete: 0 kept, 0 removed
+2026-10-08T23:09:49.9778208Z [renderMarkdownTemplate] Final output length: 11196 characters
+2026-10-08T23:09:49.9794117Z Template rendered successfully
+2026-10-08T23:09:49.9794780Z Content length change: 11775 -> 11196 (-579)
+2026-10-08T23:09:49.9795190Z 
+2026-10-08T23:09:49.9795396Z ========================================
+2026-10-08T23:09:49.9795944Z [main] STEP 4: Writing Output
+2026-10-08T23:09:49.9796675Z ========================================
+2026-10-08T23:09:49.9797472Z Writing processed content back to: /home/runner/work/_temp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:09:49.9798301Z Final content length: 11196 characters
+2026-10-08T23:09:49.9798865Z Total length change: 11238 -> 11196 (-42)
+2026-10-08T23:09:49.9800302Z Last 200 characters: sh_branch` tool once with:\n   - `branch`: `aw-t0/probe-37857819623`\n   - `base`: `try/gh-aw-t0`\n   - `title`: `chore: aw-t0 probe`\n\nDo not open issues or pull requests. Do not modify any other file.\n\n
+2026-10-08T23:09:49.9802489Z ========================================
+2026-10-08T23:09:49.9803091Z [main] Processing complete - SUCCESS
+2026-10-08T23:09:49.9806988Z ========================================

@@ -1,0 +1,65 @@
+﻿2026-10-08T23:11:25.8418417Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:11:25.8418747Z with:
+2026-10-08T23:11:25.8419636Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'collect_ndjson_output.cjs'));
+await main();
+
+2026-10-08T23:11:25.8422314Z   github-token: ***
+2026-10-08T23:11:25.8422497Z   debug: false
+2026-10-08T23:11:25.8422692Z   user-agent: actions/github-script
+2026-10-08T23:11:25.8422921Z   result-encoding: json
+2026-10-08T23:11:25.8423257Z   retries: 0
+2026-10-08T23:11:25.8423465Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:11:25.8423699Z env:
+2026-10-08T23:11:25.8423868Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:25.8424104Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:25.8424882Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:25.8425664Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:25.8425892Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:25.8426139Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:25.8426346Z   DEFAULT_BRANCH: master
+2026-10-08T23:11:25.8426544Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:11:25.8426745Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:11:25.8426934Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:11:25.8427174Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:11:25.8427437Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:11:25.8427789Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:11:25.8428006Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:11:25.8428200Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:11:25.8428394Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:11:25.8428590Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:11:25.8428777Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:25.8428985Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:11:25.8429269Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:25.8429568Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:11:25.8429819Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:11:25.8430130Z   GH_AW_SAFE_OUTPUTS: /home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl
+2026-10-08T23:11:25.8434673Z   GH_AW_ALLOWED_DOMAINS: api.snapcraft.io,archive.ubuntu.com,azure.archive.ubuntu.com,crl.geotrust.com,crl.globalsign.com,crl.identrust.com,crl.sectigo.com,crl.thawte.com,crl.usertrust.com,crl.verisign.com,crl3.digicert.com,crl4.digicert.com,crls.ssl.com,json-schema.org,json.schemastore.org,keyserver.ubuntu.com,ocsp.digicert.com,ocsp.geotrust.com,ocsp.globalsign.com,ocsp.identrust.com,ocsp.sectigo.com,ocsp.ssl.com,ocsp.thawte.com,ocsp.usertrust.com,ocsp.verisign.com,packagecloud.io,packages.cloud.google.com,packages.microsoft.com,ppa.launchpad.net,s.symcb.com,s.symcd.com,security.ubuntu.com,ts-crl.ws.symantec.com,ts-ocsp.ws.symantec.com,www.googleapis.com
+2026-10-08T23:11:25.8439307Z   GITHUB_SERVER_URL: https://github.com
+2026-10-08T23:11:25.8439571Z   GITHUB_API_URL: https://api.github.com
+2026-10-08T23:11:25.8439802Z ##[endgroup]
+2026-10-08T23:11:25.9304745Z Loaded validation config from /home/runner/work/_temp/gh-aw/safeoutputs/validation.json
+2026-10-08T23:11:25.9310225Z Found 0 unique mentions in text
+2026-10-08T23:11:25.9310538Z No mentions found in text
+2026-10-08T23:11:25.9311091Z [OUTPUT COLLECTOR] No allowed mentions - all mentions will be escaped
+2026-10-08T23:11:25.9311779Z [INGESTION] Reading config from: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+2026-10-08T23:11:25.9313910Z [INGESTION] Raw config content: {"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"push-branch":{"description":"Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a new branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.","inputs":{"base":{"default":null,"description":"Base branch the patch was made against","required":true,"type":"string"},"branch":{"default":null,"description":"Branch name to push. Must start with aw-t0/","required":true,"type":"string"},"title":{"default":null,"description":"Short PR title","required":true,"type":"string"}}},"report_incomplete":{}}
+2026-10-08T23:11:25.9316491Z [INGESTION] Parsed config keys: ["create_report_incomplete_issue","missing_data","missing_tool","noop","push-branch","report_incomplete"]
+2026-10-08T23:11:25.9317687Z [INGESTION] Output file path: /home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl
+2026-10-08T23:11:25.9318212Z Raw output content length: 109
+2026-10-08T23:11:25.9318909Z [INGESTION] First 500 chars of output: {"base":"try/gh-aw-t0","branch":"aw-t0/probe-37857819623","title":"chore: aw-t0 probe","type":"push_branch"}
+2026-10-08T23:11:25.9319489Z 
+2026-10-08T23:11:25.9319688Z [INGESTION] Normalizing config keys (dash -> underscore)
+2026-10-08T23:11:25.9320579Z [INGESTION] Expected output types after normalization: ["create_report_incomplete_issue","missing_data","missing_tool","noop","push_branch","report_incomplete"]
+2026-10-08T23:11:25.9323325Z [INGESTION] Expected output types full config: {"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"push_branch":{"description":"Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a new branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.","inputs":{"base":{"default":null,"description":"Base branch the patch was made against","required":true,"type":"string"},"branch":{"default":null,"description":"Branch name to push. Must start with aw-t0/","required":true,"type":"string"},"title":{"default":null,"description":"Short PR title","required":true,"type":"string"}}},"report_incomplete":{}}
+2026-10-08T23:11:25.9325330Z [INGESTION] Processing line 1: {"base":"try/gh-aw-t0","branch":"aw-t0/probe-37857819623","title":"chore: aw-t0 probe","type":"push_branch"}...
+2026-10-08T23:11:25.9325891Z [INGESTION] Line 1: Original type='push_branch', Normalized type='push_branch'
+2026-10-08T23:11:25.9326212Z Line 1: type 'push_branch'
+2026-10-08T23:11:25.9354239Z Line 1: Valid push_branch item
+2026-10-08T23:11:25.9354872Z Successfully parsed 1 valid output items
+2026-10-08T23:11:25.9355691Z Stored validated output to: /tmp/gh-aw/agent_output.json
+2026-10-08T23:11:25.9361867Z output_types: push_branch
+2026-10-08T23:11:25.9363045Z Found 1 patch/bundle file(s): aw-export.patch

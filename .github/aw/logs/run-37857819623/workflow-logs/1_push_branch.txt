@@ -1,0 +1,258 @@
+﻿2026-10-08T23:12:35.9134964Z Current runner version: '2.337.0'
+2026-10-08T23:12:35.9156404Z ##[group]Runner Image Provisioner
+2026-10-08T23:12:35.9157114Z Hosted Compute Agent
+2026-10-08T23:12:35.9157658Z Version: 20261002.596
+2026-10-08T23:12:35.9158170Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T23:12:35.9158772Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T23:12:35.9159380Z Worker ID: {601b81a8-83ba-4f1b-b65b-0221a7e33e01}
+2026-10-08T23:12:35.9159944Z Region: westus3
+2026-10-08T23:12:35.9160415Z Cloud: Azure
+2026-10-08T23:12:35.9160930Z ##[endgroup]
+2026-10-08T23:12:35.9162126Z ##[group]Operating System
+2026-10-08T23:12:35.9162703Z Ubuntu
+2026-10-08T23:12:35.9163298Z 24.04.5
+2026-10-08T23:12:35.9163750Z LTS
+2026-10-08T23:12:35.9164220Z ##[endgroup]
+2026-10-08T23:12:35.9164672Z ##[group]Runner Image
+2026-10-08T23:12:35.9165207Z Image: ubuntu-24.04
+2026-10-08T23:12:35.9165684Z Version: 20261004.327.1
+2026-10-08T23:12:35.9166763Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T23:12:35.9168010Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T23:12:35.9168816Z ##[endgroup]
+2026-10-08T23:12:35.9169728Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T23:12:35.9171295Z Contents: write
+2026-10-08T23:12:35.9171846Z Metadata: read
+2026-10-08T23:12:35.9172360Z ##[endgroup]
+2026-10-08T23:12:35.9174321Z Secret source: Actions
+2026-10-08T23:12:35.9175044Z Cache mode: write
+2026-10-08T23:12:35.9175716Z Prepare workflow directory
+2026-10-08T23:12:35.9647613Z Prepare all required actions
+2026-10-08T23:12:35.9687184Z Getting action download info
+2026-10-08T23:12:36.2472938Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-10-08T23:12:37.0510207Z Download action repository 'actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09' (SHA:fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09)
+2026-10-08T23:12:37.2148037Z Complete job name: push_branch
+2026-10-08T23:12:37.2724844Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-10-08T23:12:37.2726435Z with:
+2026-10-08T23:12:37.2727163Z   pattern: {agent,agent-output-fallback}
+2026-10-08T23:12:37.2728095Z   merge-multiple: true
+2026-10-08T23:12:37.2728949Z   path: /home/runner/work/_temp/gh-aw/safe-jobs/
+2026-10-08T23:12:37.2730045Z   repository: behzad-mir/azure-container-networking
+2026-10-08T23:12:37.2731023Z   run-id: 37857819623
+2026-10-08T23:12:37.2731746Z   skip-decompress: false
+2026-10-08T23:12:37.2732515Z   digest-mismatch: error
+2026-10-08T23:12:37.2733563Z env:
+2026-10-08T23:12:37.2734220Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:37.2735192Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:37.2738215Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:37.2741164Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:37.2742055Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:37.2743102Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:37.2743886Z ##[endgroup]
+2026-10-08T23:12:37.6213373Z Found 6 artifact(s)
+2026-10-08T23:12:37.6215310Z Filtering artifacts by pattern '{agent,agent-output-fallback}'
+2026-10-08T23:12:37.6234020Z Preparing to download the following artifacts:
+2026-10-08T23:12:37.6236770Z - agent (ID: 11585042111, Size: 237115, Expected Digest: sha256:2663add4e076ff5b5d5409a7e4896713295d26d39507bafd6053505ef82eb280)
+2026-10-08T23:12:37.6240928Z - agent-output-fallback (ID: 11584942476, Size: 1856, Expected Digest: sha256:0d1f07b28b3925be5814f2f3020c603586edcc872b24f9f206e9a4229d8ae9c9)
+2026-10-08T23:12:38.0604643Z Redirecting to blob download url: https://productionresultssa1.blob.core.windows.net/actions-results/92726ccd-aa4f-8157-a17e-1be55837e652/workflow-job-run-08c4fc0f-0730-58eb-93a6-ff5735abe3c1/artifacts/daa0da78a4f899948f184de1c2267d4cff63de5d280692a88333f56508605a86.zip
+2026-10-08T23:12:38.0606193Z Starting download of artifact to: /home/runner/work/_temp/gh-aw/safe-jobs
+2026-10-08T23:12:38.0618405Z Redirecting to blob download url: https://productionresultssa1.blob.core.windows.net/actions-results/92726ccd-aa4f-8157-a17e-1be55837e652/workflow-job-run-08c4fc0f-0730-58eb-93a6-ff5735abe3c1/artifacts/d4f0bc5a29de06b510f9aa428f1eedba926012b591fef7a518e776a7c9bd1824.zip
+2026-10-08T23:12:38.0620238Z Starting download of artifact to: /home/runner/work/_temp/gh-aw/safe-jobs
+2026-10-08T23:12:38.2747329Z (node:1959) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-08T23:12:38.2748368Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T23:12:38.2895617Z SHA256 digest of downloaded artifact is 0d1f07b28b3925be5814f2f3020c603586edcc872b24f9f206e9a4229d8ae9c9
+2026-10-08T23:12:38.2896441Z Artifact download completed successfully.
+2026-10-08T23:12:38.4830086Z SHA256 digest of downloaded artifact is 2663add4e076ff5b5d5409a7e4896713295d26d39507bafd6053505ef82eb280
+2026-10-08T23:12:38.4830847Z Artifact download completed successfully.
+2026-10-08T23:12:38.4831286Z Total of 2 artifact(s) downloaded
+2026-10-08T23:12:38.4833747Z Download artifact has finished successfully
+2026-10-08T23:12:38.4993322Z ##[group]Run set -euo pipefail
+2026-10-08T23:12:38.4993831Z [36;1mset -euo pipefail[0m
+2026-10-08T23:12:38.4994357Z [36;1mITEM=$(jq -c '[.items[] | select(.type == "push_branch")][0] // empty' "$GH_AW_AGENT_OUTPUT")[0m
+2026-10-08T23:12:38.4994953Z [36;1mif [ -z "$ITEM" ]; then echo "::error::no push_branch item"; exit 1; fi[0m
+2026-10-08T23:12:38.4995516Z [36;1mBRANCH=$(jq -r '.branch' <<<"$ITEM"); BASE=$(jq -r '.base' <<<"$ITEM"); TITLE=$(jq -r '.title' <<<"$ITEM")[0m
+2026-10-08T23:12:38.4996151Z [36;1m[[ "$BRANCH" =~ ^aw-t0/[A-Za-z0-9._/-]+$ ]] || { echo "::error::branch not allowed: $BRANCH"; exit 1; }[0m
+2026-10-08T23:12:38.4996859Z [36;1m[[ "$BASE" =~ ^(master|try/gh-aw-t0|release/v[0-9]+\.[0-9]+)$ ]] || { echo "::error::base not allowed: $BASE"; exit 1; }[0m
+2026-10-08T23:12:38.4997423Z [36;1mROOT=$(dirname "$GH_AW_AGENT_OUTPUT")[0m
+2026-10-08T23:12:38.4997917Z [36;1mecho "Artifact root: $ROOT"; find "$ROOT" -maxdepth 6 -type f | head -50[0m
+2026-10-08T23:12:38.4998498Z [36;1mPATCH=$(find "$ROOT" -type f -name 'aw-export.patch' | head -1)[0m
+2026-10-08T23:12:38.4999068Z [36;1m[ -n "$PATCH" ] || { echo "::error::aw-export.patch not found in agent artifact"; exit 1; }[0m
+2026-10-08T23:12:38.4999663Z [36;1mecho "branch=$BRANCH" >> "$GITHUB_OUTPUT"; echo "base=$BASE" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.5000163Z [36;1mecho "patch=$PATCH" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.5000635Z [36;1m{ echo 'title<<EOF_T'; echo "$TITLE"; echo 'EOF_T'; } >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.7015110Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:38.7015551Z env:
+2026-10-08T23:12:38.7015884Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:38.7016280Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:38.7017272Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:38.7018207Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:38.7018587Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:38.7018979Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:38.7019430Z   GH_AW_AGENT_OUTPUT: /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:38.7019891Z ##[endgroup]
+2026-10-08T23:12:38.7226081Z Artifact root: /home/runner/work/_temp/gh-aw/safe-jobs
+2026-10-08T23:12:38.7240535Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/image-manifest.json
+2026-10-08T23:12:38.7241729Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/awf-resolved-config.json
+2026-10-08T23:12:38.7242679Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/docker-compose.redacted.yml
+2026-10-08T23:12:38.7243538Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/policy-manifest.json
+2026-10-08T23:12:38.7244114Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/squid.conf
+2026-10-08T23:12:38.7244660Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/access.log
+2026-10-08T23:12:38.7245189Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/audit.jsonl
+2026-10-08T23:12:38.7246064Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/otel.jsonl
+2026-10-08T23:12:38.7247075Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl
+2026-10-08T23:12:38.7248151Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:12:38.7249130Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/models.json
+2026-10-08T23:12:38.7250126Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/cache.log
+2026-10-08T23:12:38.7251003Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/agent/logs/process-1791501070533-390.log
+2026-10-08T23:12:38.7251790Z /home/runner/work/_temp/gh-aw/safe-jobs/otel.jsonl
+2026-10-08T23:12:38.7252769Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/rpc-messages.jsonl
+2026-10-08T23:12:38.7253728Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/tools.json
+2026-10-08T23:12:38.7254373Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/mcp-gateway.log
+2026-10-08T23:12:38.7254875Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/gateway.md
+2026-10-08T23:12:38.7255548Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/safeoutputs.log
+2026-10-08T23:12:38.7256339Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/safeoutputs/server.log
+2026-10-08T23:12:38.7256941Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/observed-url-domains.json
+2026-10-08T23:12:38.7257464Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/github.log
+2026-10-08T23:12:38.7258099Z /home/runner/work/_temp/gh-aw/safe-jobs/pre-agent-audit.txt
+2026-10-08T23:12:38.7258584Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_execution.json
+2026-10-08T23:12:38.7259062Z /home/runner/work/_temp/gh-aw/safe-jobs/awf-config.json
+2026-10-08T23:12:38.7259535Z /home/runner/work/_temp/gh-aw/safe-jobs/github_rate_limits.jsonl
+2026-10-08T23:12:38.7260002Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_usage.json
+2026-10-08T23:12:38.7260444Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:38.7261194Z /home/runner/work/_temp/gh-aw/safe-jobs/aw-export.patch
+2026-10-08T23:12:38.7262117Z /home/runner/work/_temp/gh-aw/safe-jobs/safeoutputs.jsonl
+2026-10-08T23:12:38.7262707Z /home/runner/work/_temp/gh-aw/safe-jobs/agent-stdio.log
+2026-10-08T23:12:38.7263335Z /home/runner/work/_temp/gh-aw/safe-jobs/aw-prompts/prompt.txt
+2026-10-08T23:12:38.7374829Z ##[group]Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+2026-10-08T23:12:38.7375288Z with:
+2026-10-08T23:12:38.7375570Z   path: repo
+2026-10-08T23:12:38.7375863Z   ref: try/gh-aw-t0
+2026-10-08T23:12:38.7376260Z   repository: behzad-mir/azure-container-networking
+2026-10-08T23:12:38.7379966Z   token: ***
+2026-10-08T23:12:38.7380377Z   ssh-strict: true
+2026-10-08T23:12:38.7380778Z   ssh-user: git
+2026-10-08T23:12:38.7381215Z   persist-credentials: true
+2026-10-08T23:12:38.7381681Z   clean: true
+2026-10-08T23:12:38.7382080Z   sparse-checkout-cone-mode: true
+2026-10-08T23:12:38.7382433Z   fetch-depth: 1
+2026-10-08T23:12:38.7382735Z   fetch-tags: false
+2026-10-08T23:12:38.7383246Z   show-progress: true
+2026-10-08T23:12:38.7383595Z   lfs: false
+2026-10-08T23:12:38.7383887Z   submodules: false
+2026-10-08T23:12:38.7384198Z   set-safe-directory: true
+2026-10-08T23:12:38.7384539Z   allow-unsafe-pr-checkout: false
+2026-10-08T23:12:38.7384871Z env:
+2026-10-08T23:12:38.7385401Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:38.7385801Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:38.7386731Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:38.7443360Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:38.7443826Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:38.7444255Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:38.7444751Z   GH_AW_AGENT_OUTPUT: /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:38.7445249Z ##[endgroup]
+2026-10-08T23:12:38.8199091Z Syncing repository: behzad-mir/azure-container-networking
+2026-10-08T23:12:38.8200980Z ##[group]Getting Git version info
+2026-10-08T23:12:38.8201876Z Working directory is '/home/runner/work/azure-container-networking/azure-container-networking/repo'
+2026-10-08T23:12:38.8203354Z [command]/usr/bin/git version
+2026-10-08T23:12:38.8259599Z git version 2.55.0
+2026-10-08T23:12:38.8276706Z ##[endgroup]
+2026-10-08T23:12:38.8289076Z Temporarily overriding HOME='/home/runner/work/_temp/07824167-7771-4f38-b46b-3cd3b5317a82' before making global git config changes
+2026-10-08T23:12:38.8290262Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T23:12:38.8294532Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-container-networking/azure-container-networking/repo
+2026-10-08T23:12:38.8334210Z ##[group]Initializing the repository
+2026-10-08T23:12:38.8338355Z [command]/usr/bin/git init /home/runner/work/azure-container-networking/azure-container-networking/repo
+2026-10-08T23:12:38.8436860Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T23:12:38.8437961Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T23:12:38.8438908Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T23:12:38.8439575Z hint: call:
+2026-10-08T23:12:38.8439984Z hint:
+2026-10-08T23:12:38.8440560Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T23:12:38.8441173Z hint:
+2026-10-08T23:12:38.8441744Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T23:12:38.8442580Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T23:12:38.8443473Z hint:
+2026-10-08T23:12:38.8443915Z hint: 	git branch -m <name>
+2026-10-08T23:12:38.8444383Z hint:
+2026-10-08T23:12:38.8444968Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T23:12:38.8446059Z Initialized empty Git repository in /home/runner/work/azure-container-networking/azure-container-networking/repo/.git/
+2026-10-08T23:12:38.8448862Z [command]/usr/bin/git remote add origin https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:12:38.8497763Z ##[endgroup]
+2026-10-08T23:12:38.8498787Z ##[group]Disabling automatic garbage collection
+2026-10-08T23:12:38.8500310Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T23:12:38.8527486Z ##[endgroup]
+2026-10-08T23:12:38.8528280Z ##[group]Setting up auth
+2026-10-08T23:12:38.8533190Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T23:12:38.8560126Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T23:12:38.8894825Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T23:12:38.8927351Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T23:12:38.9117336Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T23:12:38.9146684Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T23:12:38.9334429Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T23:12:38.9368514Z ##[endgroup]
+2026-10-08T23:12:38.9369090Z ##[group]Fetching the repository
+2026-10-08T23:12:38.9375876Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/try/gh-aw-t0*:refs/remotes/origin/try/gh-aw-t0* +refs/tags/try/gh-aw-t0*:refs/tags/try/gh-aw-t0*
+2026-10-08T23:12:40.3067813Z From https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:12:40.3068360Z  * [new branch]      try/gh-aw-t0 -> origin/try/gh-aw-t0
+2026-10-08T23:12:40.3071763Z ##[endgroup]
+2026-10-08T23:12:40.3072208Z ##[group]Determining the checkout info
+2026-10-08T23:12:40.3081160Z [command]/usr/bin/git branch --list --remote origin/try/gh-aw-t0
+2026-10-08T23:12:40.3110168Z   origin/try/gh-aw-t0
+2026-10-08T23:12:40.3121465Z ##[endgroup]
+2026-10-08T23:12:40.3122041Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T23:12:40.3180248Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T23:12:40.3208976Z ##[group]Checking out the ref
+2026-10-08T23:12:40.3213538Z [command]/usr/bin/git checkout --progress --force -B try/gh-aw-t0 refs/remotes/origin/try/gh-aw-t0
+2026-10-08T23:12:40.4212280Z Switched to a new branch 'try/gh-aw-t0'
+2026-10-08T23:12:40.4215720Z branch 'try/gh-aw-t0' set up to track 'origin/try/gh-aw-t0'.
+2026-10-08T23:12:40.4222413Z ##[endgroup]
+2026-10-08T23:12:40.4264661Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T23:12:40.4289035Z fdf74cb336cfbb5d465f9eadad1d4e6726823422
+2026-10-08T23:12:40.4403680Z ##[group]Run set -euo pipefail
+2026-10-08T23:12:40.4403983Z [36;1mset -euo pipefail[0m
+2026-10-08T23:12:40.4404213Z [36;1mgit apply --check "$PATCH"[0m
+2026-10-08T23:12:40.4404464Z [36;1mgit apply --index "$PATCH"[0m
+2026-10-08T23:12:40.4404780Z [36;1mif git diff --cached --name-only | grep -E '^\.github/workflows/'; then[0m
+2026-10-08T23:12:40.4405233Z [36;1m  echo "::error::patch touches .github/workflows; GITHUB_TOKEN cannot push it (A2)"; exit 1[0m
+2026-10-08T23:12:40.4405607Z [36;1mfi[0m
+2026-10-08T23:12:40.4406052Z [36;1mgit -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "$TITLE"[0m
+2026-10-08T23:12:40.4406584Z [36;1mgit push origin "HEAD:refs/heads/$BRANCH" --force-with-lease[0m
+2026-10-08T23:12:40.4406911Z [36;1menc() { jq -rn --arg s "$1" '$s|@uri'; }[0m
+2026-10-08T23:12:40.4407379Z [36;1mBODY="Automated change from run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"[0m
+2026-10-08T23:12:40.4407996Z [36;1mLINK="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/${BASE}...${BRANCH}?expand=1&title=$(enc "$TITLE")&body=$(enc "$BODY")"[0m
+2026-10-08T23:12:40.4408465Z [36;1mecho "::notice title=Create PR::$LINK"[0m
+2026-10-08T23:12:40.4408942Z [36;1m{ echo "### One-click PR"; echo; echo "[Create pull request]($LINK)"; echo; git show --stat HEAD; } >> "$GITHUB_STEP_SUMMARY"[0m
+2026-10-08T23:12:40.4464542Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:40.4464765Z env:
+2026-10-08T23:12:40.4464950Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:40.4465217Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:40.4466032Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:40.4466798Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:40.4467049Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:40.4467297Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:40.4467514Z   BASE: try/gh-aw-t0
+2026-10-08T23:12:40.4467847Z   BRANCH: aw-t0/probe-37857819623
+2026-10-08T23:12:40.4468183Z   GH_AW_AGENT_OUTPUT: /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:40.4468560Z   PATCH: /home/runner/work/_temp/gh-aw/safe-jobs/aw-export.patch
+2026-10-08T23:12:40.4468852Z   TITLE: chore: aw-t0 probe
+2026-10-08T23:12:40.4469053Z ##[endgroup]
+2026-10-08T23:12:41.9822901Z remote: 
+2026-10-08T23:12:41.9823795Z remote: Create a pull request for 'aw-t0/probe-37857819623' on GitHub by visiting:        
+2026-10-08T23:12:41.9824637Z remote:      https://github.com/behzad-mir/azure-container-networking/pull/new/aw-t0/probe-37857819623        
+2026-10-08T23:12:41.9825051Z remote: 
+2026-10-08T23:12:41.9834600Z To https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:12:41.9835334Z  * [new branch]      HEAD -> aw-t0/probe-37857819623
+2026-10-08T23:12:41.9950947Z ##[notice]https://github.com/behzad-mir/azure-container-networking/compare/try/gh-aw-t0...aw-t0/probe-37857819623?expand=1&title=chore%3A%20aw-t0%20probe&body=Automated%20change%20from%20run%20https%3A%2F%2Fgithub.com%2Fbehzad-mir%2Fazure-container-networking%2Factions%2Fruns%2F37857819623
+2026-10-08T23:12:42.0070011Z Post job cleanup.
+2026-10-08T23:12:42.0756972Z [command]/usr/bin/git version
+2026-10-08T23:12:42.0796984Z git version 2.55.0
+2026-10-08T23:12:42.0827225Z Temporarily overriding HOME='/home/runner/work/_temp/65e5e703-2ad3-46a9-9f94-6cb827ffb281' before making global git config changes
+2026-10-08T23:12:42.0828266Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T23:12:42.0831889Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-container-networking/azure-container-networking/repo
+2026-10-08T23:12:42.0869044Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T23:12:42.0900161Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T23:12:42.1112949Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T23:12:42.1140023Z http.https://github.com/.extraheader
+2026-10-08T23:12:42.1150226Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T23:12:42.1185236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T23:12:42.1399255Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T23:12:42.1430761Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T23:12:42.1756213Z Cleaning up orphan processes

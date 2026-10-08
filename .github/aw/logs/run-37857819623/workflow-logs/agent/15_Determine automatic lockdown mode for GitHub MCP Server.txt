@@ -1,0 +1,49 @@
+﻿2026-10-08T23:10:17.8858087Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:10:17.8858440Z with:
+2026-10-08T23:10:17.8859230Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const determineAutomaticLockdown = require(path.join(actionsDir, 'determine_automatic_lockdown.cjs'));
+await determineAutomaticLockdown(github, context, core);
+
+2026-10-08T23:10:17.8861855Z   github-token: ***
+2026-10-08T23:10:17.8862061Z   debug: false
+2026-10-08T23:10:17.8862255Z   user-agent: actions/github-script
+2026-10-08T23:10:17.8862518Z   result-encoding: json
+2026-10-08T23:10:17.8862715Z   retries: 0
+2026-10-08T23:10:17.8862919Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:10:17.8863177Z env:
+2026-10-08T23:10:17.8863351Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:17.8863603Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:17.8864400Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:17.8865209Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:17.8865458Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:17.8865714Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:17.8865918Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:17.8866118Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:17.8866324Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:17.8866528Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:17.8866783Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:17.8867051Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:17.8867265Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:17.8867627Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:17.8867849Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:17.8868057Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:17.8868252Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:17.8868618Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:17.8868839Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:17.8869133Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:17.8869434Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:10:17.8869706Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:10:17.8869939Z   GH_AW_GITHUB_TOKEN: 
+2026-10-08T23:10:17.8870139Z   GH_AW_GITHUB_MCP_SERVER_TOKEN: 
+2026-10-08T23:10:17.8870351Z ##[endgroup]
+2026-10-08T23:10:17.9623725Z Determining automatic guard policy for GitHub MCP server
+2026-10-08T23:10:17.9625004Z Checking repository: behzad-mir/azure-container-networking
+2026-10-08T23:10:18.4068572Z Repository visibility: public
+2026-10-08T23:10:18.4069165Z Repository is private: false
+2026-10-08T23:10:18.4072725Z Configured min-integrity: (not set)
+2026-10-08T23:10:18.4073140Z Configured repos: (not set)
+2026-10-08T23:10:18.4074337Z min-integrity not configured — automatically setting to 'approved' for public repository
+2026-10-08T23:10:18.4075271Z repos not configured — automatically setting to 'public' for public repository
+2026-10-08T23:10:18.4075901Z Automatic guard policy determination complete for public repository
+2026-10-08T23:10:18.4076693Z GitHub MCP guard policy automatically applied for public repository. min-integrity='approved' and repos='public'.

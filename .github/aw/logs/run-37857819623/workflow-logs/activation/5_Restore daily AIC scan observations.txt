@@ -1,0 +1,31 @@
+﻿2026-10-08T23:09:45.3472402Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:45.3473904Z with:
+2026-10-08T23:09:45.3478895Z   github-token: ***
+2026-10-08T23:09:45.3480917Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'restore_aic_scan_cache.cjs'));
+await main();
+
+2026-10-08T23:09:45.3483592Z   debug: false
+2026-10-08T23:09:45.3484487Z   user-agent: actions/github-script
+2026-10-08T23:09:45.3485020Z   result-encoding: json
+2026-10-08T23:09:45.3485465Z   retries: 0
+2026-10-08T23:09:45.3485915Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:45.3486469Z env:
+2026-10-08T23:09:45.3486878Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:45.3487418Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:45.3489164Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:45.3490934Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:45.3492622Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:45.3493212Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:45.3494294Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:45.3495065Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:45.3496453Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:45.3497152Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:45.3498048Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:45.3498708Z   GH_AW_HAS_SLASH_COMMAND: false
+2026-10-08T23:09:45.3499218Z   GH_AW_HAS_LABEL_COMMAND: false
+2026-10-08T23:09:45.3499696Z ##[endgroup]
+2026-10-08T23:09:45.9810238Z [daily-aic-cache] No trusted scan snapshot found; resolve the complete window from usage artifacts.

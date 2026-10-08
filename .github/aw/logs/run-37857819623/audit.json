@@ -1,0 +1,1418 @@
+{
+  "schema_version": 2,
+  "cache_source": "full",
+  "overview": {
+    "run_id": 37857819623,
+    "workflow_name": "T0: export a patch from the agent without opening a PR",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-08T23:09:22Z",
+    "started_at": "2026-10-08T23:09:22Z",
+    "updated_at": "2026-10-08T23:13:29Z",
+    "duration": "4.1m",
+    "event": "push",
+    "branch": "try/gh-aw-t0",
+    "url": "https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623",
+    "logs_path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623"
+  },
+  "comparison": {
+    "baseline_found": false
+  },
+  "task_domain": {
+    "name": "code_fix",
+    "label": "Code Fix",
+    "reason": "The workflow appears oriented toward code changes or pull request review."
+  },
+  "behavior_fingerprint": {
+    "execution_style": "directed",
+    "tool_breadth": "narrow",
+    "actuation_style": "selective_write",
+    "resource_profile": "lean",
+    "dispatch_mode": "standalone",
+    "agentic_fraction": 0
+  },
+  "metrics": {
+    "token_usage": 4780,
+    "aic": 14.03299,
+    "ambient_context": {
+      "input_tokens": 4216,
+      "cached_tokens": 0
+    },
+    "working_set": {
+      "measurement_state": "measured",
+      "rebuild_factor": 1.0018975332068312,
+      "cumulative_input_tokens": 4224,
+      "peak_input_tokens": 4216,
+      "rebuild_excess_tokens": 8,
+      "invocations": 5
+    },
+    "action_minutes": 5,
+    "error_count": 0,
+    "warning_count": 0
+  },
+  "key_findings": [
+    {
+      "code": "workflow_succeeded",
+      "category": "success",
+      "severity": "info",
+      "title": "Workflow Completed Successfully",
+      "description": "Completed in 0 turns with no errors",
+      "impact": "No action needed"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "low",
+      "action": "Monitor workflow performance over time",
+      "reason": "Tracking metrics helps identify trends and optimization opportunities",
+      "example": "Run 'gh aw logs' periodically to review cost and performance trends"
+    }
+  ],
+  "observability_insights": [
+    {
+      "category": "execution",
+      "severity": "info",
+      "title": "Directed execution path",
+      "summary": "The run remained relatively linear with 0 turns and 1 tool types.",
+      "evidence": "turns=0 tool_types=1"
+    },
+    {
+      "category": "actuation",
+      "severity": "info",
+      "title": "Write path executed",
+      "summary": "The workflow crossed from analysis into action, producing 1 created item(s) and 1 safe output action(s).",
+      "evidence": "created_items=1 safe_items=1"
+    },
+    {
+      "category": "network",
+      "severity": "info",
+      "title": "Network policy aligned",
+      "summary": "The firewall observed 12 request(s) with 0 blocked, for a 0% block rate.",
+      "evidence": "blocked=0 total=12"
+    },
+    {
+      "category": "execution",
+      "severity": "info",
+      "title": "Log template patterns mined",
+      "summary": "Analysis identified 3 distinct event templates across 6 pipeline stages from 2 events.",
+      "evidence": "finish=1 plan=1 tool_call=1"
+    },
+    {
+      "category": "reliability",
+      "severity": "low",
+      "title": "1 anomalous event pattern(s) detected",
+      "summary": "Anomaly detection flagged 1 event(s) as unusual based on template similarity and cluster rarity.",
+      "evidence": "stage=tool_call score=0.65: new log template discovered; rare cluster (few observations)"
+    },
+    {
+      "category": "execution",
+      "severity": "info",
+      "title": "Agent stage sequence",
+      "summary": "The observed pipeline stage sequence for this run.",
+      "evidence": "tool_call finish"
+    }
+  ],
+  "performance_metrics": {
+    "tokens_per_minute": 1161.1336032388665,
+    "most_used_tool": "safeoutputs.push_branch (1 calls)",
+    "network_requests": 12
+  },
+  "engine_config": {
+    "engine_id": "copilot",
+    "engine_name": "GitHub Copilot CLI",
+    "model": "auto",
+    "version": "1.0.87",
+    "cli_version": "v0.89.21",
+    "firewall_version": "v0.28.23",
+    "trigger_event": "push",
+    "repository": "behzad-mir/azure-container-networking"
+  },
+  "prompt_analysis": {
+    "prompt_size": 11269,
+    "prompt_file": "aw-prompts/prompt.txt"
+  },
+  "session_analysis": {
+    "wall_time": "4.1m",
+    "timeout_detected": false
+  },
+  "safe_output_summary": {
+    "total_items": 1,
+    "items_by_type": {
+      "push_branch": 1
+    },
+    "summary": "1 push_branch",
+    "temporary_id_map_status": "loaded",
+    "type_details": [
+      {
+        "type": "push_branch",
+        "count": 1
+      }
+    ]
+  },
+  "mcp_server_health": {
+    "total_servers": 1,
+    "healthy_servers": 1,
+    "degraded_servers": 0,
+    "failed_servers": 0,
+    "summary": "1 server(s), 1 healthy, 0 degraded, 0 failed",
+    "total_requests": 1,
+    "total_errors": 0,
+    "error_rate": 0,
+    "servers": [
+      {
+        "server_name": "safeoutputs",
+        "request_count": 1,
+        "tool_calls": 1,
+        "error_count": 0,
+        "error_rate": 0,
+        "error_rate_str": "0.0%",
+        "avg_latency": "0ns",
+        "status": "✅ healthy"
+      }
+    ]
+  },
+  "downloaded_files": [
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/.downloaded-artifacts/all",
+      "size": 0,
+      "description": ""
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/agent-stdio.log",
+      "size": 11949,
+      "description": "Agent standard output/error logs"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/agent_execution.json",
+      "size": 89,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/agent_output.json",
+      "size": 132,
+      "description": "Validated safe outputs"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/agent_usage.json",
+      "size": 177,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/agentic-workflow-usage-scan-v2.jsonl",
+      "size": 1,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/aw-export.patch",
+      "size": 190,
+      "description": "Git patch file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/aw-prompts/prompt-import-tree.json",
+      "size": 12353,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/aw-prompts/prompt-template.txt",
+      "size": 11262,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/aw-prompts/prompt.txt",
+      "size": 11269,
+      "description": "Input prompt for AI agent"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/aw_info.json",
+      "size": 862,
+      "description": "Engine configuration and workflow metadata"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/awf-config.json",
+      "size": 5854,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/detection_result.json",
+      "size": 118,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/detection_usage.json",
+      "size": 177,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/execution.json",
+      "size": 93,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/audit/awf-resolved-config.json",
+      "size": 8842,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/audit/docker-compose.redacted.yml",
+      "size": 25178,
+      "description": ""
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/audit/image-manifest.json",
+      "size": 531,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/audit/policy-manifest.json",
+      "size": 2520,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/audit/squid.conf",
+      "size": 7604,
+      "description": ""
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/access.log",
+      "size": 1568,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/api-proxy-logs/models.json",
+      "size": 21112,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/api-proxy-logs/otel.jsonl",
+      "size": 2000,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl",
+      "size": 782,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl",
+      "size": 1481,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/audit.jsonl",
+      "size": 3004,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/detection/sandbox/firewall/logs/cache.log",
+      "size": 2786,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/github_rate_limits.jsonl",
+      "size": 1578,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/gateway.md",
+      "size": 3276,
+      "description": "Markdown documentation"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/github.log",
+      "size": 2278,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/mcp-gateway.log",
+      "size": 303395,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/observed-url-domains.json",
+      "size": 2,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/rpc-messages.jsonl",
+      "size": 77208,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/safeoutputs/server.log",
+      "size": 5486,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/safeoutputs.log",
+      "size": 24503,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/mcp-logs/tools.json",
+      "size": 6900,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/models.json",
+      "size": 15894,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/otel.jsonl",
+      "size": 3592,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/pre-agent-audit.txt",
+      "size": 50652,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/run_summary.json",
+      "size": 19981,
+      "description": "Cached summary of workflow run analysis"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/safe-output-items.jsonl",
+      "size": 82,
+      "description": "Created items manifest (audit trail)"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/safeoutputs.jsonl",
+      "size": 109,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/agent/logs/process-1791501070533-390.log",
+      "size": 449481,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/audit/awf-resolved-config.json",
+      "size": 10492,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/audit/docker-compose.redacted.yml",
+      "size": 26399,
+      "description": ""
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/audit/image-manifest.json",
+      "size": 531,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/audit/policy-manifest.json",
+      "size": 4198,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/audit/squid.conf",
+      "size": 12624,
+      "description": ""
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/access.log",
+      "size": 2852,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/api-proxy-logs/models.json",
+      "size": 21112,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/api-proxy-logs/otel.jsonl",
+      "size": 4981,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl",
+      "size": 1957,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl",
+      "size": 3690,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/audit.jsonl",
+      "size": 5611,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/sandbox/firewall/logs/cache.log",
+      "size": 2787,
+      "description": "Log file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/temporary-id-map.json",
+      "size": 3,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/activity/summary.json",
+      "size": 2038,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/agent/execution.json",
+      "size": 89,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/agent/token_usage.jsonl",
+      "size": 3690,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/agent_usage.json",
+      "size": 177,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/detection/execution.json",
+      "size": 93,
+      "description": "JSON data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/detection/token_usage.jsonl",
+      "size": 1481,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/usage/github_rate_limits.jsonl",
+      "size": 1827,
+      "description": "JSON Lines data file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/0_conclusion.txt",
+      "size": 46946,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/1_push_branch.txt",
+      "size": 23518,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/2_safe_outputs.txt",
+      "size": 32204,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/3_detection.txt",
+      "size": 125109,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/4_agent.txt",
+      "size": 391598,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/5_activation.txt",
+      "size": 90357,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/6_pre_activation.txt",
+      "size": 7411,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/10_Save agent config folders for base branch restoration.txt",
+      "size": 1668,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/11_Check workflow lock file.txt",
+      "size": 3626,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/12_Check compile-agentic version.txt",
+      "size": 2436,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/14_Create prompt with built-in context.txt",
+      "size": 4917,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/15_Interpolate variables and render templates.txt",
+      "size": 10405,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/16_Substitute placeholders.txt",
+      "size": 3763,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/17_Validate prompt placeholders.txt",
+      "size": 1762,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/18_Print prompt.txt",
+      "size": 16445,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/19_Upload info artifact.txt",
+      "size": 2595,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/1_Set up job.txt",
+      "size": 2103,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/20_Stage prompt files for artifact upload.txt",
+      "size": 1367,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/21_Upload activation artifact.txt",
+      "size": 3154,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/2_Setup Scripts.txt",
+      "size": 3102,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/3_Mask OTLP telemetry headers.txt",
+      "size": 1314,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/41_Post Checkout .github and .agents folders.txt",
+      "size": 1779,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/42_Post Setup Scripts.txt",
+      "size": 494,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/43_Complete job.txt",
+      "size": 869,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/4_Generate agentic run info.txt",
+      "size": 5657,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/5_Restore daily AIC scan observations.txt",
+      "size": 2160,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/6_Check daily workflow token guardrail.txt",
+      "size": 3865,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/7_Publish daily AIC scan observations.txt",
+      "size": 2719,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/8_Check for OAuth tokens.txt",
+      "size": 1431,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/9_Checkout .github and .agents folders.txt",
+      "size": 12792,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/activation/system.txt",
+      "size": 744,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/10_Download activation artifact.txt",
+      "size": 3590,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/11_Configure Git credentials.txt",
+      "size": 2279,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/13_Install GitHub Copilot CLI.txt",
+      "size": 5329,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/14_Install AWF binary.txt",
+      "size": 2932,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/15_Determine automatic lockdown mode for GitHub MCP Server.txt",
+      "size": 3496,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/17_Restore inline sub-agents from activation artifact.txt",
+      "size": 2317,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/18_Restore inline skills from activation artifact.txt",
+      "size": 2245,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/19_Download container images.txt",
+      "size": 7398,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/1_Set up job.txt",
+      "size": 2659,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/20_Prepare Safe Outputs Directories.txt",
+      "size": 2102,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/21_Generate Safe Outputs Config.txt",
+      "size": 3584,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/22_Generate Safe Outputs Tools.txt",
+      "size": 4990,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/23_Start MCP Gateway.txt",
+      "size": 25464,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/24_Mount MCP servers as CLIs.txt",
+      "size": 3995,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/25_Clean credentials.txt",
+      "size": 2422,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/26_Audit pre-agent workspace.txt",
+      "size": 2090,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/27_Execute GitHub Copilot CLI.txt",
+      "size": 34321,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/28_Detect agent errors.txt",
+      "size": 2706,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/29_Configure Git credentials.txt",
+      "size": 2279,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/2_Setup Scripts.txt",
+      "size": 3759,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/30_Copy Copilot session state files to logs.txt",
+      "size": 2221,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/31_Stop MCP Gateway.txt",
+      "size": 2629,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/32_Redact secrets in logs.txt",
+      "size": 3741,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/33_Append agent step summary.txt",
+      "size": 1991,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/34_Copy Safe Outputs.txt",
+      "size": 2122,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/35_Ingest agent output.txt",
+      "size": 6914,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/36_Parse agent logs for step summary.txt",
+      "size": 3078,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/37_Parse MCP Gateway logs for step summary.txt",
+      "size": 193413,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/38_Print firewall logs.txt",
+      "size": 4597,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/39_Parse token usage for step summary.txt",
+      "size": 4179,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/3_Set runtime paths.txt",
+      "size": 2641,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/40_Print AWF reflect summary.txt",
+      "size": 2947,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/41_Generate observability summary.txt",
+      "size": 2917,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/42_Write agent output placeholder if missing.txt",
+      "size": 2351,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/43_Upload agent output fallback artifact.txt",
+      "size": 4146,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/44_Upload agent artifacts.txt",
+      "size": 4104,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/4_Mask OTLP telemetry headers.txt",
+      "size": 1975,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/5_Check OTLP telemetry configuration.txt",
+      "size": 2120,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/6_Checkout repository.txt",
+      "size": 13300,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/7_Initialize agent execution evidence.txt",
+      "size": 2282,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/87_Post Checkout repository.txt",
+      "size": 1919,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/88_Post Setup Scripts.txt",
+      "size": 489,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/89_Complete job.txt",
+      "size": 1402,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/8_Create gh-aw temp directory.txt",
+      "size": 2082,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/9_Configure gh CLI for GitHub Enterprise.txt",
+      "size": 2213,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/agent/system.txt",
+      "size": 754,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/11_Process no-op messages.txt",
+      "size": 2879,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/12_Log detection run.txt",
+      "size": 2867,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/13_Record missing tool.txt",
+      "size": 2312,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/14_Record incomplete.txt",
+      "size": 2330,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/15_Handle agent failure.txt",
+      "size": 7936,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/16_Report failed jobs.txt",
+      "size": 2763,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/1_Set up job.txt",
+      "size": 2076,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/2_Setup Scripts.txt",
+      "size": 3039,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/32_Post Setup Scripts.txt",
+      "size": 494,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/33_Complete job.txt",
+      "size": 119,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/3_Download agent output artifact.txt",
+      "size": 3718,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/4_Setup agent output environment variable.txt",
+      "size": 3767,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/5_Download detection artifact.txt",
+      "size": 2897,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/6_Download Safe Outputs Items Manifest.txt",
+      "size": 2954,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/7_Collect usage artifact files.txt",
+      "size": 3474,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/8_Upload usage artifact.txt",
+      "size": 3366,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/conclusion/system.txt",
+      "size": 1590,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/10_Download container images.txt",
+      "size": 4290,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/11_Check if detection needed.txt",
+      "size": 1940,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/12_Clear MCP Config for detection.txt",
+      "size": 1417,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/13_Prepare threat detection files.txt",
+      "size": 1972,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/14_Setup threat detection.txt",
+      "size": 2736,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/15_Ensure threat-detection directory and log.txt",
+      "size": 1376,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/16_Install AWF binary.txt",
+      "size": 2285,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/17_Setup Node.js.txt",
+      "size": 1726,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/18_Install GitHub Copilot CLI.txt",
+      "size": 4622,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/19_Install threat-detect binary.txt",
+      "size": 2455,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/1_Set up job.txt",
+      "size": 2835,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/20_Execute threat detection with AWF.txt",
+      "size": 29991,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/21_Render detection log.txt",
+      "size": 17834,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/22_Copy detection firewall logs.txt",
+      "size": 1820,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/23_Parse threat detection token usage for step summary.txt",
+      "size": 3439,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/24_Upload threat detection artifact.txt",
+      "size": 3334,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/25_Conclude threat detection.txt",
+      "size": 4292,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/2_Setup Scripts.txt",
+      "size": 3038,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/3_Download activation artifact.txt",
+      "size": 2865,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/48_Post Setup Node.js.txt",
+      "size": 50,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/49_Post Checkout repository for patch context.txt",
+      "size": 1779,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/4_Download agent output artifact.txt",
+      "size": 3718,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/50_Post Setup Scripts.txt",
+      "size": 493,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/51_Complete job.txt",
+      "size": 288,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/5_Setup agent output environment variable.txt",
+      "size": 7855,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/6_Checkout repository for patch context.txt",
+      "size": 12575,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/7_Initialize detection execution evidence.txt",
+      "size": 1617,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/8_Clear inherited Copilot session state.txt",
+      "size": 1254,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/9_Clean stale firewall files from agent artifact.txt",
+      "size": 1297,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/detection/system.txt",
+      "size": 731,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/1_Set up job.txt",
+      "size": 1652,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/2_Setup Scripts.txt",
+      "size": 2678,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/3_Check team membership for workflow.txt",
+      "size": 2248,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/6_Post Setup Scripts.txt",
+      "size": 498,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/7_Complete job.txt",
+      "size": 347,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/pre_activation/system.txt",
+      "size": 622,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/10_Post Run actions_checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09.txt",
+      "size": 1752,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/11_Complete job.txt",
+      "size": 61,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/1_Set up job.txt",
+      "size": 2109,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/2_Download agent output artifact.txt",
+      "size": 3507,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/3_Locate request and patch.txt",
+      "size": 5703,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/4_Run actions_checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09.txt",
+      "size": 6998,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/5_Apply, guard, commit, push.txt",
+      "size": 3406,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/push_branch/system.txt",
+      "size": 998,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/16_Post Setup Scripts.txt",
+      "size": 496,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/17_Complete job.txt",
+      "size": 950,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/1_Set up job.txt",
+      "size": 2065,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/2_Setup Scripts.txt",
+      "size": 3974,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/3_Mask OTLP telemetry headers.txt",
+      "size": 2183,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/4_Download agent output artifact.txt",
+      "size": 4651,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/5_Setup agent output environment variable.txt",
+      "size": 4700,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/6_Configure GH_HOST for enterprise compatibility.txt",
+      "size": 2591,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/7_Process Safe Outputs.txt",
+      "size": 6739,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/8_Upload Safe Outputs Items.txt",
+      "size": 3882,
+      "description": "Text file"
+    },
+    {
+      "path": "/home/behzadm/go/acn-aw-t0/.github/aw/logs/run-37857819623/workflow-logs/safe_outputs/system.txt",
+      "size": 809,
+      "description": "Text file"
+    }
+  ],
+  "firewall_token_usage": {
+    "total_input_tokens": 4224,
+    "total_output_tokens": 556,
+    "total_cache_read_tokens": 169119,
+    "total_cache_write_tokens": 43764,
+    "total_requests": 5,
+    "total_duration_ms": 10819,
+    "total_response_bytes": 22950,
+    "cache_efficiency": 0,
+    "total_aic": 14.03299,
+    "ambient_context": {
+      "input_tokens": 4216,
+      "cached_tokens": 0
+    },
+    "by_model": {
+      "claude-sonnet-5.5": {
+        "provider": "copilot",
+        "input_tokens": 4224,
+        "output_tokens": 556,
+        "cache_read_tokens": 169119,
+        "cache_write_tokens": 43764,
+        "requests": 5,
+        "duration_ms": 10819,
+        "response_bytes": 22950,
+        "aic": 14.032990000000002
+      }
+    },
+    "subagent_model_requests": [
+      {
+        "agent_name": "container",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5.5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      },
+      {
+        "agent_name": "host",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5.5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      },
+      {
+        "agent_name": "peer",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5.5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      }
+    ],
+    "subagent_model_actuals": [
+      {
+        "model": "claude-sonnet-5.5",
+        "provider": "copilot",
+        "requests": 5
+      }
+    ],
+    "mismatch_count": 3,
+    "warnings": [
+      "partial or incorrect data: sub-agent model requests are inferred from agent-stdio.log; use token_usage.jsonl for reliable token consumption"
+    ]
+  },
+  "github_rate_limit_usage": {
+    "total_requests_made": 8,
+    "core_consumed": 2,
+    "core_consumed_source": "response_headers_delta",
+    "core_remaining": 4997,
+    "core_limit": 5000,
+    "resources": [
+      {
+        "resource": "core",
+        "requests_made": 8,
+        "quota_consumed": 2,
+        "final_remaining": 4997,
+        "limit": 5000
+      }
+    ]
+  },
+  "firewall_analysis": {
+    "allowed_domains": [
+      "api.githubcopilot.com:443"
+    ],
+    "total_requests": 12,
+    "allowed_requests": 12,
+    "blocked_requests": 0,
+    "requests_by_domain": {
+      "api.githubcopilot.com:443": {
+        "allowed": 12,
+        "blocked": 0
+      }
+    }
+  },
+  "policy_analysis": {
+    "policy_summary": "9 rules, SSL Bump disabled, DLP disabled",
+    "rule_hits": [],
+    "total_requests": 0,
+    "allowed_count": 0,
+    "denied_count": 0,
+    "unique_domains": 0
+  },
+  "tool_usage": [
+    {
+      "name": "safeoutputs.push_branch",
+      "call_count": 1
+    }
+  ],
+  "mcp_tool_usage": {
+    "summary": [
+      {
+        "server_name": "safeoutputs",
+        "tool_name": "push_branch",
+        "call_count": 1,
+        "total_input_size": 0,
+        "total_output_size": 0,
+        "max_input_size": 0,
+        "max_output_size": 0
+      }
+    ],
+    "tool_calls": [
+      {
+        "timestamp": "2026-10-08T23:11:19.845Z",
+        "server_name": "safeoutputs",
+        "tool_name": "push_branch",
+        "input_size": 0,
+        "output_size": 0,
+        "status": "unknown"
+      }
+    ],
+    "servers": [
+      {
+        "server_name": "safeoutputs",
+        "tool_call_count": 1,
+        "request_count": 1,
+        "total_input_size": 0,
+        "total_output_size": 0,
+        "avg_duration": "0ns"
+      }
+    ]
+  },
+  "created_items": [
+    {
+      "type": "push_branch",
+      "provider": "github",
+      "timestamp": "2026-10-08T23:12:46.047Z"
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_status": "pending",
+      "evidence_strength": "medium",
+      "signal": "pending",
+      "type": "push_branch",
+      "repo": "Azure/azure-container-networking",
+      "detail": "no object reference to check",
+      "created_at": "2026-10-08T23:12:46.047Z",
+      "checked_at": "2026-10-08T23:13:59Z"
+    }
+  ],
+  "outcome_summary": {
+    "total": 1,
+    "accepted": 0,
+    "rejected": 0,
+    "ignored": 0,
+    "pending": 1,
+    "lifecycle": 0,
+    "errors": 0,
+    "zero_touch": 0,
+    "acceptance_rate": 0,
+    "waste_rate": 0,
+    "zero_touch_rate": 0,
+    "domain_breakdowns": [
+      {
+        "label": "unmapped",
+        "attempted": 1,
+        "accepted": 0,
+        "rejected": 0,
+        "pending": 1,
+        "total_objective_value": 0,
+        "accepted_objective_value": 0
+      }
+    ]
+  }
+}

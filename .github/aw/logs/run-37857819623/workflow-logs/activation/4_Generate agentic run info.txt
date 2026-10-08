@@ -1,0 +1,89 @@
+﻿2026-10-08T23:09:45.0230398Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:45.0259717Z with:
+2026-10-08T23:09:45.0265149Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'generate_aw_info.cjs'));
+await main(core, context);
+
+2026-10-08T23:09:45.0277937Z   github-token: ***
+2026-10-08T23:09:45.0289881Z   debug: false
+2026-10-08T23:09:45.0375243Z   user-agent: actions/github-script
+2026-10-08T23:09:45.0377820Z   result-encoding: json
+2026-10-08T23:09:45.0378402Z   retries: 0
+2026-10-08T23:09:45.0378885Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:45.0379815Z env:
+2026-10-08T23:09:45.0380247Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:45.0381423Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:45.0386550Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:45.0436063Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:45.0436712Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:45.0437312Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:45.0437823Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:45.0438804Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:45.0439387Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:45.0440894Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:45.0441760Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:45.0442337Z   GH_AW_INFO_ENGINE_ID: copilot
+2026-10-08T23:09:45.0442862Z   GH_AW_INFO_ENGINE_NAME: GitHub Copilot CLI
+2026-10-08T23:09:45.0443588Z   GH_AW_INFO_MODEL: auto
+2026-10-08T23:09:45.0444113Z   GH_AW_INFO_VERSION: 1.0.87
+2026-10-08T23:09:45.0444611Z   GH_AW_INFO_AGENT_VERSION: 1.0.87
+2026-10-08T23:09:45.0445126Z   GH_AW_INFO_CLI_VERSION: v0.89.21
+2026-10-08T23:09:45.0445849Z   GH_AW_INFO_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:09:45.0446707Z   GH_AW_INFO_EXPERIMENTAL: false
+2026-10-08T23:09:45.0447381Z   GH_AW_INFO_SUPPORTS_TOOLS_ALLOWLIST: true
+2026-10-08T23:09:45.0447949Z   GH_AW_INFO_STAGED: false
+2026-10-08T23:09:45.0448445Z   GH_AW_INFO_ALLOWED_DOMAINS: ["defaults"]
+2026-10-08T23:09:45.0448996Z   GH_AW_INFO_FIREWALL_ENABLED: true
+2026-10-08T23:09:45.0449517Z   GH_AW_INFO_AWF_VERSION: v0.28.23
+2026-10-08T23:09:45.0450031Z   GH_AW_INFO_AWMG_VERSION: 
+2026-10-08T23:09:45.0451019Z   GH_AW_INFO_FIREWALL_TYPE: squid
+2026-10-08T23:09:45.0451901Z   GH_AW_INFO_AGENT_RUNTIME: 
+2026-10-08T23:09:45.0452421Z   GH_AW_COMPILED_STRICT: true
+2026-10-08T23:09:45.0452910Z ##[endgroup]
+2026-10-08T23:09:45.2961293Z Starting context variable validation...
+2026-10-08T23:09:45.2970078Z ✓ github.event.repository.id is valid: 504675411
+2026-10-08T23:09:45.2976260Z ✓ github.event.sender.id is valid: 13154712
+2026-10-08T23:09:45.2981714Z Validated 2 context variables
+2026-10-08T23:09:45.2988761Z ✅ All context variables validated successfully
+2026-10-08T23:09:45.2993603Z Lockdown mode not explicitly enabled, skipping validation
+2026-10-08T23:09:45.2998422Z Repository visibility: unknown
+2026-10-08T23:09:45.3003963Z Compiled with strict mode: true
+2026-10-08T23:09:45.3087408Z Generated merged models.json at: /tmp/gh-aw/models.json
+2026-10-08T23:09:45.3094233Z Generated aw_info.json at: /tmp/gh-aw/aw_info.json
+2026-10-08T23:09:45.3097542Z {
+2026-10-08T23:09:45.3135898Z   "engine_id": "copilot",
+2026-10-08T23:09:45.3136491Z   "engine_name": "GitHub Copilot CLI",
+2026-10-08T23:09:45.3137037Z   "model": "auto",
+2026-10-08T23:09:45.3137472Z   "version": "1.0.87",
+2026-10-08T23:09:45.3137929Z   "agent_version": "1.0.87",
+2026-10-08T23:09:45.3138593Z   "workflow_name": "T0: export a patch from the agent without opening a PR",
+2026-10-08T23:09:45.3139698Z   "experimental": false,
+2026-10-08T23:09:45.3140182Z   "supports_tools_allowlist": true,
+2026-10-08T23:09:45.3140717Z   "cache_memory": false,
+2026-10-08T23:09:45.3141176Z   "run_id": 37857819623,
+2026-10-08T23:09:45.3141624Z   "run_number": 1,
+2026-10-08T23:09:45.3142050Z   "run_attempt": "1",
+2026-10-08T23:09:45.3142581Z   "repository": "behzad-mir/azure-container-networking",
+2026-10-08T23:09:45.3143213Z   "ref": "refs/heads/try/gh-aw-t0",
+2026-10-08T23:09:45.3144149Z   "sha": "fdf74cb336cfbb5d465f9eadad1d4e6726823422",
+2026-10-08T23:09:45.3144756Z   "actor": "behzad-mir",
+2026-10-08T23:09:45.3145237Z   "event_name": "push",
+2026-10-08T23:09:45.3145683Z   "target_repo": "",
+2026-10-08T23:09:45.3146112Z   "staged": false,
+2026-10-08T23:09:45.3146538Z   "allowed_domains": [
+2026-10-08T23:09:45.3146977Z     "defaults"
+2026-10-08T23:09:45.3147376Z   ],
+2026-10-08T23:09:45.3147785Z   "firewall_enabled": true,
+2026-10-08T23:09:45.3148280Z   "awf_version": "v0.28.23",
+2026-10-08T23:09:45.3148758Z   "awmg_version": "",
+2026-10-08T23:09:45.3149205Z   "agent_runtime": "",
+2026-10-08T23:09:45.3149641Z   "steps": {
+2026-10-08T23:09:45.3150043Z     "firewall": "squid"
+2026-10-08T23:09:45.3150472Z   },
+2026-10-08T23:09:45.3150880Z   "created_at": "2026-10-08T23:09:45.300Z",
+2026-10-08T23:09:45.3151423Z   "cli_version": "v0.89.21"
+2026-10-08T23:09:45.3151876Z }
+2026-10-08T23:09:45.3182385Z Generated workflow overview in step summary

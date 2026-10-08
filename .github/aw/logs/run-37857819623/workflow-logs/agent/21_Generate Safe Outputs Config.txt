@@ -1,0 +1,43 @@
+﻿2026-10-08T23:10:37.9234909Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:10:37.9235234Z with:
+2026-10-08T23:10:37.9236102Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'create_files.cjs'));
+await main();
+
+2026-10-08T23:10:37.9239334Z   github-token: ***
+2026-10-08T23:10:37.9239539Z   debug: false
+2026-10-08T23:10:37.9239730Z   user-agent: actions/github-script
+2026-10-08T23:10:37.9239959Z   result-encoding: json
+2026-10-08T23:10:37.9240147Z   retries: 0
+2026-10-08T23:10:37.9240354Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:10:37.9240595Z env:
+2026-10-08T23:10:37.9240768Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:37.9241190Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:37.9241970Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:37.9242735Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:37.9242966Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:37.9243216Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:37.9243423Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:37.9243619Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:37.9243822Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:37.9244017Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:37.9244245Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:37.9244491Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:37.9244692Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:37.9244912Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:37.9245108Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:37.9245301Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:37.9245491Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:37.9245683Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:37.9245892Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:37.9246171Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:37.9246459Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:10:37.9246722Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:10:37.9246977Z   GH_AW_FILE_ROOT: /home/runner/work/_temp/gh-aw
+2026-10-08T23:10:37.9247370Z   GH_AW_FILE_CONFIG: {"files":[{"path":"safeoutputs/config.json","content_env":"GH_AW_SAFE_OUTPUTS_CONFIG"}]}
+2026-10-08T23:10:37.9249435Z   GH_AW_SAFE_OUTPUTS_CONFIG: {"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"push-branch":{"description":"Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a new branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.","inputs":{"base":{"default":null,"description":"Base branch the patch was made against","required":true,"type":"string"},"branch":{"default":null,"description":"Branch name to push. Must start with aw-t0/","required":true,"type":"string"},"title":{"default":null,"description":"Short PR title","required":true,"type":"string"}}},"report_incomplete":{}}
+2026-10-08T23:10:37.9251109Z ##[endgroup]
+2026-10-08T23:10:38.0060365Z Created 1 generated file(s) under /home/runner/work/_temp/gh-aw

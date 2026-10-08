@@ -1,0 +1,45 @@
+﻿2026-10-08T23:09:46.0091108Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:46.0091944Z with:
+2026-10-08T23:09:46.0096822Z   github-token: ***
+2026-10-08T23:09:46.0099287Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'check_daily_aic_workflow_guardrail.cjs'));
+await main();
+
+2026-10-08T23:09:46.0102426Z   debug: false
+2026-10-08T23:09:46.0102880Z   user-agent: actions/github-script
+2026-10-08T23:09:46.0103615Z   result-encoding: json
+2026-10-08T23:09:46.0104067Z   retries: 0
+2026-10-08T23:09:46.0104525Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:46.0105089Z env:
+2026-10-08T23:09:46.0105508Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:46.0106062Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:46.0107858Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:46.0109589Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:46.0110132Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:46.0110717Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:46.0111232Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:46.0111741Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:46.0112316Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:46.0113001Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:46.0113758Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:46.0114485Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:09:46.0115233Z   GH_AW_WORKFLOW_ID: aw-t0-patch-export
+2026-10-08T23:09:46.0116095Z   GH_AW_RUN_URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623
+2026-10-08T23:09:46.0117191Z   GH_AW_WORKFLOW_DISPATCH_AW_CONTEXT: 
+2026-10-08T23:09:46.0117736Z   GH_AW_HAS_SLASH_COMMAND: false
+2026-10-08T23:09:46.0118242Z   GH_AW_HAS_LABEL_COMMAND: false
+2026-10-08T23:09:46.0122819Z   GH_AW_GITHUB_TOKEN: ***
+2026-10-08T23:09:46.0123486Z   GH_AW_MAX_AI_CREDITS: 1000
+2026-10-08T23:09:46.0123974Z ##[endgroup]
+2026-10-08T23:09:46.1700867Z [daily-workflow-aic] Resolved daily AIC guardrail limits: {"dailyAICThreshold":5000,"perRunMaxAICredits":1000,"perRunFallbackAvailable":true}
+2026-10-08T23:09:46.3849116Z [daily-workflow-aic] Started authoritative AIC scan: {"repository":"behzad-mir/azure-container-networking","currentRunId":37857819623,"workflowId":379108645,"fallbackAIC":1000}
+2026-10-08T23:09:46.3854733Z [daily-workflow-aic] Loaded scan observations: {"workflowId":379108645,"cachedEntries":0}
+2026-10-08T23:09:46.6328722Z [daily-workflow-aic] Listed workflow run candidates: {"page":1,"lookupMode":"workflow_id","sourceRunCount":0,"returnedRunCount":0}
+2026-10-08T23:09:46.6330651Z [daily-workflow-aic] Persisted scan observations: {"cachePath":"/tmp/gh-aw/agentic-workflow-usage-scan-v2.jsonl","entries":0}
+2026-10-08T23:09:46.6332054Z [daily-workflow-aic] Completed authoritative AIC scan: {"candidateRuns":0,"countedRuns":0,"cacheHits":0}
+2026-10-08T23:09:46.6344319Z [daily-workflow-aic] Completed AIC inspection window: {"candidateRunsCount":0,"inspectedRunsCount":0,"countedRunIds":[],"currentAIC":0,"threshold":5000,"exceeded":false}
+2026-10-08T23:09:46.6346000Z [daily-workflow-aic] Daily AIC business API requests: {"requests":2,"cacheHits":0}
+2026-10-08T23:09:46.6402262Z Daily workflow AIC guardrail not exceeded (0/5000).

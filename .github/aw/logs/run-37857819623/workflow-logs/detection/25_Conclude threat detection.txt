@@ -1,0 +1,47 @@
+﻿2026-10-08T23:12:29.1286058Z ##[group]Run bash "${RUNNER_TEMP}/gh-aw/actions/conclude_threat_detection.sh" /tmp/gh-aw/threat-detection/detection_result.json
+2026-10-08T23:12:29.1286757Z [36;1mbash "${RUNNER_TEMP}/gh-aw/actions/conclude_threat_detection.sh" /tmp/gh-aw/threat-detection/detection_result.json[0m
+2026-10-08T23:12:29.1342888Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:29.1343120Z env:
+2026-10-08T23:12:29.1343309Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:29.1343570Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:29.1344377Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:29.1345520Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:29.1345784Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:29.1346047Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:29.1346265Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:12:29.1346564Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:12:29.1346879Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:12:29.1347154Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:12:29.1347433Z   GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:12:29.1347707Z   GH_AW_PRIMARY_MODEL: claude-haiku-5.5
+2026-10-08T23:12:29.1347947Z   GH_AW_AIC: 0.705152
+2026-10-08T23:12:29.1348155Z   GH_AW_AMBIENT_CONTEXT: 18293
+2026-10-08T23:12:29.1348374Z   RUN_DETECTION: true
+2026-10-08T23:12:29.1348589Z   DETECTION_AGENTIC_EXECUTION_OUTCOME: success
+2026-10-08T23:12:29.1348860Z   THREAT_DETECT_INSTALL_OUTCOME: success
+2026-10-08T23:12:29.1349111Z   GH_AW_DETECTION_CONTINUE_ON_ERROR: true
+2026-10-08T23:12:29.1349346Z ##[endgroup]
+2026-10-08T23:12:29.1460101Z ════════════════════════════════════════════════════════
+2026-10-08T23:12:29.1460816Z 🛡️  Threat Detection: Parse Results & Conclude
+2026-10-08T23:12:29.1461480Z ════════════════════════════════════════════════════════
+2026-10-08T23:12:29.1461865Z 📋 RUN_DETECTION env: "true"
+2026-10-08T23:12:29.1462171Z 📋 continue-on-error: true
+2026-10-08T23:12:29.1462544Z 📋 detection execution outcome: "success"
+2026-10-08T23:12:29.1463011Z 📁 Threat detection directory: /tmp/gh-aw/threat-detection
+2026-10-08T23:12:29.1463527Z 📄 Detection log path: /tmp/gh-aw/threat-detection/detection.log
+2026-10-08T23:12:29.1464136Z 📄 Structured result path: /tmp/gh-aw/threat-detection/detection_result.json
+2026-10-08T23:12:29.1464743Z 📄 Full result path: /tmp/gh-aw/threat-detection/detection_result_full.json
+2026-10-08T23:12:29.1465360Z 🔍 Detection is required. Proceeding to parse detection result...
+2026-10-08T23:12:29.1466029Z 🔎 Checking for structured result file: /tmp/gh-aw/threat-detection/detection_result.json
+2026-10-08T23:12:29.1466642Z ✔️  Structured result file found and parsed successfully.
+2026-10-08T23:12:29.1467066Z ✔️  Full result file found; recovered 0 reason(s).
+2026-10-08T23:12:29.1467561Z 📋 Threat detection verdict (from structured result file):
+2026-10-08T23:12:29.1467911Z    prompt_injection : false
+2026-10-08T23:12:29.1468189Z    secret_leak      : false
+2026-10-08T23:12:29.1468406Z    malicious_patch  : false
+2026-10-08T23:12:29.1468674Z    reasons          : (none)
+2026-10-08T23:12:29.1469023Z    warnings         : (none)
+2026-10-08T23:12:29.1469604Z ✅ No security threats detected. Safe outputs may proceed.
+2026-10-08T23:12:29.1470284Z ════════════════════════════════════════════════════════
+2026-10-08T23:12:29.1470806Z 🛡️  Threat detection conclusion complete.
+2026-10-08T23:12:29.1471286Z ════════════════════════════════════════════════════════

@@ -1,0 +1,24 @@
+﻿2026-10-08T23:11:57.4173536Z ##[group]Run if [[ -n "$OUTPUT_TYPES" || "$HAS_PATCH" == "true" ]]; then
+2026-10-08T23:11:57.4173941Z [36;1mif [[ -n "$OUTPUT_TYPES" || "$HAS_PATCH" == "true" ]]; then[0m
+2026-10-08T23:11:57.4174263Z [36;1m  echo "run_detection=true" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:11:57.4174622Z [36;1m  echo "Detection will run: output_types=$OUTPUT_TYPES, has_patch=$HAS_PATCH"[0m
+2026-10-08T23:11:57.4174949Z [36;1melse[0m
+2026-10-08T23:11:57.4175175Z [36;1m  echo "run_detection=false" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:11:57.4175853Z [36;1m  echo "Detection skipped: no agent outputs or patches to analyze"[0m
+2026-10-08T23:11:57.4176229Z [36;1mfi[0m
+2026-10-08T23:11:57.4231568Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:11:57.4231800Z env:
+2026-10-08T23:11:57.4231981Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:57.4232235Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:57.4233049Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:57.4233877Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:57.4234133Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:57.4234387Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:57.4234594Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:57.4234846Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:57.4235138Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:11:57.4235620Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:11:57.4235870Z   OUTPUT_TYPES: push_branch
+2026-10-08T23:11:57.4236080Z   HAS_PATCH: true
+2026-10-08T23:11:57.4236262Z ##[endgroup]
+2026-10-08T23:11:57.4302502Z Detection will run: output_types=push_branch, has_patch=true

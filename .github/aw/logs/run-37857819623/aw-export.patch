@@ -1,0 +1,7 @@
+diff --git a/hack/aw-t0/probe.txt b/hack/aw-t0/probe.txt
+new file mode 100644
+index 0000000..0bd5ed1
+--- /dev/null
++++ b/hack/aw-t0/probe.txt
+@@ -0,0 +1 @@
++aw-t0 probe from run 37857819623

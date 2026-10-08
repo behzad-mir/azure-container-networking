@@ -1,0 +1,57 @@
+﻿2026-10-08T23:12:38.4993299Z ##[group]Run set -euo pipefail
+2026-10-08T23:12:38.4993827Z [36;1mset -euo pipefail[0m
+2026-10-08T23:12:38.4994352Z [36;1mITEM=$(jq -c '[.items[] | select(.type == "push_branch")][0] // empty' "$GH_AW_AGENT_OUTPUT")[0m
+2026-10-08T23:12:38.4994944Z [36;1mif [ -z "$ITEM" ]; then echo "::error::no push_branch item"; exit 1; fi[0m
+2026-10-08T23:12:38.4995512Z [36;1mBRANCH=$(jq -r '.branch' <<<"$ITEM"); BASE=$(jq -r '.base' <<<"$ITEM"); TITLE=$(jq -r '.title' <<<"$ITEM")[0m
+2026-10-08T23:12:38.4996148Z [36;1m[[ "$BRANCH" =~ ^aw-t0/[A-Za-z0-9._/-]+$ ]] || { echo "::error::branch not allowed: $BRANCH"; exit 1; }[0m
+2026-10-08T23:12:38.4996856Z [36;1m[[ "$BASE" =~ ^(master|try/gh-aw-t0|release/v[0-9]+\.[0-9]+)$ ]] || { echo "::error::base not allowed: $BASE"; exit 1; }[0m
+2026-10-08T23:12:38.4997420Z [36;1mROOT=$(dirname "$GH_AW_AGENT_OUTPUT")[0m
+2026-10-08T23:12:38.4997915Z [36;1mecho "Artifact root: $ROOT"; find "$ROOT" -maxdepth 6 -type f | head -50[0m
+2026-10-08T23:12:38.4998447Z [36;1mPATCH=$(find "$ROOT" -type f -name 'aw-export.patch' | head -1)[0m
+2026-10-08T23:12:38.4999064Z [36;1m[ -n "$PATCH" ] || { echo "::error::aw-export.patch not found in agent artifact"; exit 1; }[0m
+2026-10-08T23:12:38.4999660Z [36;1mecho "branch=$BRANCH" >> "$GITHUB_OUTPUT"; echo "base=$BASE" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.5000161Z [36;1mecho "patch=$PATCH" >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.5000632Z [36;1m{ echo 'title<<EOF_T'; echo "$TITLE"; echo 'EOF_T'; } >> "$GITHUB_OUTPUT"[0m
+2026-10-08T23:12:38.7015077Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:38.7015548Z env:
+2026-10-08T23:12:38.7015880Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:38.7016277Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:38.7017253Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:38.7018204Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:38.7018579Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:38.7018974Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:38.7019426Z   GH_AW_AGENT_OUTPUT: /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:38.7019889Z ##[endgroup]
+2026-10-08T23:12:38.7226027Z Artifact root: /home/runner/work/_temp/gh-aw/safe-jobs
+2026-10-08T23:12:38.7240509Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/image-manifest.json
+2026-10-08T23:12:38.7241720Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/awf-resolved-config.json
+2026-10-08T23:12:38.7242674Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/docker-compose.redacted.yml
+2026-10-08T23:12:38.7243533Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/policy-manifest.json
+2026-10-08T23:12:38.7244111Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/audit/squid.conf
+2026-10-08T23:12:38.7244640Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/access.log
+2026-10-08T23:12:38.7245187Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/audit.jsonl
+2026-10-08T23:12:38.7246058Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/otel.jsonl
+2026-10-08T23:12:38.7247068Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl
+2026-10-08T23:12:38.7248144Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:12:38.7249125Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/api-proxy-logs/models.json
+2026-10-08T23:12:38.7250122Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/firewall/logs/cache.log
+2026-10-08T23:12:38.7250999Z /home/runner/work/_temp/gh-aw/safe-jobs/sandbox/agent/logs/process-1791501070533-390.log
+2026-10-08T23:12:38.7251784Z /home/runner/work/_temp/gh-aw/safe-jobs/otel.jsonl
+2026-10-08T23:12:38.7252502Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/rpc-messages.jsonl
+2026-10-08T23:12:38.7253722Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/tools.json
+2026-10-08T23:12:38.7254367Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/mcp-gateway.log
+2026-10-08T23:12:38.7254872Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/gateway.md
+2026-10-08T23:12:38.7255540Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/safeoutputs.log
+2026-10-08T23:12:38.7256335Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/safeoutputs/server.log
+2026-10-08T23:12:38.7256934Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/observed-url-domains.json
+2026-10-08T23:12:38.7257461Z /home/runner/work/_temp/gh-aw/safe-jobs/mcp-logs/github.log
+2026-10-08T23:12:38.7258093Z /home/runner/work/_temp/gh-aw/safe-jobs/pre-agent-audit.txt
+2026-10-08T23:12:38.7258581Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_execution.json
+2026-10-08T23:12:38.7259057Z /home/runner/work/_temp/gh-aw/safe-jobs/awf-config.json
+2026-10-08T23:12:38.7259523Z /home/runner/work/_temp/gh-aw/safe-jobs/github_rate_limits.jsonl
+2026-10-08T23:12:38.7260000Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_usage.json
+2026-10-08T23:12:38.7260441Z /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:38.7261189Z /home/runner/work/_temp/gh-aw/safe-jobs/aw-export.patch
+2026-10-08T23:12:38.7262110Z /home/runner/work/_temp/gh-aw/safe-jobs/safeoutputs.jsonl
+2026-10-08T23:12:38.7262701Z /home/runner/work/_temp/gh-aw/safe-jobs/agent-stdio.log
+2026-10-08T23:12:38.7263324Z /home/runner/work/_temp/gh-aw/safe-jobs/aw-prompts/prompt.txt

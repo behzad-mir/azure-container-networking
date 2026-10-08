@@ -1,0 +1,32 @@
+﻿2026-10-08T23:09:32.1451681Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:32.1452486Z with:
+2026-10-08T23:09:32.1456597Z   github-token: ***
+2026-10-08T23:09:32.1458589Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'check_membership.cjs'));
+await main();
+
+2026-10-08T23:09:32.1460670Z   debug: false
+2026-10-08T23:09:32.1461132Z   user-agent: actions/github-script
+2026-10-08T23:09:32.1461659Z   result-encoding: json
+2026-10-08T23:09:32.1462110Z   retries: 0
+2026-10-08T23:09:32.1462578Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:32.1463175Z env:
+2026-10-08T23:09:32.1463590Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:32.1464133Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:32.1466088Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:32.1467838Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:32.1468389Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:32.1468974Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:32.1469464Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:32.1470034Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:32.1470712Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 920d4cee12663b76
+2026-10-08T23:09:32.1472025Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500972121
+2026-10-08T23:09:32.1472634Z   GH_AW_REQUIRED_ROLES: admin,maintainer,write
+2026-10-08T23:09:32.1473212Z ##[endgroup]
+2026-10-08T23:09:32.2881421Z Checking if user 'behzad-mir' has required permissions for behzad-mir/azure-container-networking
+2026-10-08T23:09:32.2887313Z Required permissions: admin, maintainer, write
+2026-10-08T23:09:32.5453303Z Repository permission level: admin
+2026-10-08T23:09:32.5488508Z ✅ User has admin access to repository

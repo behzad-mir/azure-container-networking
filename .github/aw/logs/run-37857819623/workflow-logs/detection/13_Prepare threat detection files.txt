@@ -1,0 +1,24 @@
+﻿2026-10-08T23:11:57.4508048Z ##[group]Run bash "${RUNNER_TEMP}/gh-aw/actions/prepare_threat_detection_files.sh"
+2026-10-08T23:11:57.4508496Z [36;1mbash "${RUNNER_TEMP}/gh-aw/actions/prepare_threat_detection_files.sh"[0m
+2026-10-08T23:11:57.4556330Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:11:57.4556555Z env:
+2026-10-08T23:11:57.4556734Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:57.4556990Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:57.4557988Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:57.4558786Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:57.4559028Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:57.4559288Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:57.4559502Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:57.4559758Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:57.4560081Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:11:57.4560344Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:11:57.4560570Z ##[endgroup]
+2026-10-08T23:11:57.4724326Z Prepared threat detection files:
+2026-10-08T23:11:57.4735476Z total 28
+2026-10-08T23:11:57.4735827Z drwxr-xr-x 3 runner runner 4096 Oct  8 23:11 .
+2026-10-08T23:11:57.4736295Z drwxr-xr-x 7 runner runner 4096 Oct  8 23:11 ..
+2026-10-08T23:11:57.4736714Z -rw-r--r-- 1 runner runner  132 Oct  8 23:11 agent_output.json
+2026-10-08T23:11:57.4737080Z -rw-r--r-- 1 runner runner  190 Oct  8 23:11 aw-export.patch
+2026-10-08T23:11:57.4737414Z drwxr-xr-x 2 runner runner 4096 Oct  8 23:11 aw-prompts
+2026-10-08T23:11:57.4737724Z -rw-r--r-- 1 runner runner  862 Oct  8 23:11 aw_info.json
+2026-10-08T23:11:57.4738030Z -rw-r--r-- 1 runner runner   97 Oct  8 23:11 execution.json

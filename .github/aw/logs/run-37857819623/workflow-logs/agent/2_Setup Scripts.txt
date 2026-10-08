@@ -1,0 +1,46 @@
+﻿2026-10-08T23:10:00.6334852Z ##[group]Run github/gh-aw-actions/setup@924af5fdc64061cfbf66fb584c8b07e2ac230c60
+2026-10-08T23:10:00.6336214Z with:
+2026-10-08T23:10:00.6336914Z   destination: /home/runner/work/_temp/gh-aw/actions
+2026-10-08T23:10:00.6337923Z   job-name: agent
+2026-10-08T23:10:00.6338614Z   trace-id: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:00.6339458Z   parent-span-id: 920d4cee12663b76
+2026-10-08T23:10:00.6340256Z   safe-output-artifact-client: false
+2026-10-08T23:10:00.6341156Z env:
+2026-10-08T23:10:00.6341761Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:00.6342557Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:00.6345157Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:00.6347841Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:00.6348663Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:00.6349563Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:00.6350279Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:00.6350958Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:00.6351655Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:00.6352315Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:00.6353107Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:00.6353982Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:00.6354917Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:00.6355644Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:00.6356335Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:00.6357034Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:00.6357979Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:00.6358631Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:00.6359396Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:00.6360545Z   GH_AW_SETUP_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:10:00.6362469Z   GH_AW_CURRENT_WORKFLOW_REF: behzad-mir/azure-container-networking/.github/workflows/aw-t0-patch-export.lock.yml@refs/heads/try/gh-aw-t0
+2026-10-08T23:10:00.6364116Z   GH_AW_INFO_VERSION: 1.0.87
+2026-10-08T23:10:00.6364836Z   GH_AW_INFO_AWF_VERSION: v0.28.23
+2026-10-08T23:10:00.6365574Z   GH_AW_INFO_ENGINE_ID: copilot
+2026-10-08T23:10:00.6366330Z ##[endgroup]
+2026-10-08T23:10:02.0431265Z Successfully copied 515 files to /home/runner/work/_temp/gh-aw/actions
+2026-10-08T23:10:02.2797878Z Successfully copied 26 mcp-scripts files to /home/runner/work/_temp/gh-aw/mcp-scripts
+2026-10-08T23:10:02.3956716Z Successfully copied 88 safe-outputs files to /home/runner/work/_temp/gh-aw/safeoutputs
+2026-10-08T23:10:02.4072021Z [info] [otlp] INPUT_TRACE_ID=9cf5d7ad3aff42624cafa0b9906ee6d7 (will reuse activation trace)
+2026-10-08T23:10:02.4073024Z [info] [otlp] INPUT_PARENT_SPAN_ID=920d4cee12663b76 (will parent setup span)
+2026-10-08T23:10:02.4074340Z [info] [otlp] no OTLP endpoints have usable credentials, skipping setup span
+2026-10-08T23:10:02.4097444Z [info] [otlp] resolved trace-id=9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:02.4098615Z [info] [otlp] trace-id=9cf5d7ad3aff42624cafa0b9906ee6d7 written to GITHUB_OUTPUT
+2026-10-08T23:10:02.4099609Z [info] [otlp] span-id=3ec1479e69d0d643 written to GITHUB_OUTPUT
+2026-10-08T23:10:02.4100578Z [info] [otlp] parent-span-id=920d4cee12663b76 written to GITHUB_OUTPUT
+2026-10-08T23:10:02.4101897Z [info] [otlp] GITHUB_AW_OTEL_TRACE_ID written to GITHUB_ENV
+2026-10-08T23:10:02.4102650Z [info] [otlp] GITHUB_AW_OTEL_PARENT_SPAN_ID written to GITHUB_ENV
+2026-10-08T23:10:02.4103156Z [info] [otlp] GITHUB_AW_OTEL_JOB_START_MS written to GITHUB_ENV

@@ -1,0 +1,57 @@
+﻿2026-10-08T23:10:18.4681390Z ##[group]Run bash "${RUNNER_TEMP}/gh-aw/actions/download_docker_images.sh" ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2 ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64 ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0 ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086 ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6
+2026-10-08T23:10:18.4686014Z [36;1mbash "${RUNNER_TEMP}/gh-aw/actions/download_docker_images.sh" ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2 ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64 ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0 ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086 ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6[0m
+2026-10-08T23:10:18.4736231Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:10:18.4736457Z env:
+2026-10-08T23:10:18.4736641Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:18.4736886Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:18.4737814Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:18.4738584Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:18.4738819Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:18.4739210Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:18.4739427Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:18.4739621Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:18.4739827Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:18.4740013Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:18.4740249Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:18.4740503Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:18.4740704Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:18.4740911Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:18.4741104Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:18.4741304Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:18.4741492Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:18.4741676Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:18.4741881Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:18.4742167Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:18.4742463Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:10:18.4742742Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:10:18.4742971Z ##[endgroup]
+2026-10-08T23:10:18.4820752Z Starting download of 6 image(s) with max 4 concurrent downloads...
+2026-10-08T23:10:18.4905570Z Attempt 1 of 3: Pulling ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2...
+2026-10-08T23:10:18.4908732Z Attempt 1 of 3: Pulling ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64...
+2026-10-08T23:10:18.4910535Z Attempt 1 of 3: Pulling ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0...
+2026-10-08T23:10:18.4924172Z Attempt 1 of 3: Pulling ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086...
+2026-10-08T23:10:19.1428862Z ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0
+2026-10-08T23:10:19.1450077Z Successfully pulled ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0
+2026-10-08T23:10:19.1451173Z Tagging digest-pinned image as ghcr.io/github/gh-aw-firewall/squid:0.28.23
+2026-10-08T23:10:19.1575189Z Aliasing ghcr.io/github/gh-aw-firewall/squid:0.28.23 as ghcr.io/github/gh-aw-firewall/squid:latest
+2026-10-08T23:10:19.1706251Z Attempt 1 of 3: Pulling ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f...
+2026-10-08T23:10:24.1634068Z ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64
+2026-10-08T23:10:24.1646382Z Successfully pulled ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64
+2026-10-08T23:10:24.1647068Z Tagging digest-pinned image as ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23
+2026-10-08T23:10:24.1762302Z Aliasing ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23 as ghcr.io/github/gh-aw-firewall/api-proxy:latest
+2026-10-08T23:10:24.1902452Z Attempt 1 of 3: Pulling ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6...
+2026-10-08T23:10:24.2071712Z ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086
+2026-10-08T23:10:24.2092458Z Successfully pulled ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086
+2026-10-08T23:10:24.2095534Z Tagging digest-pinned image as ghcr.io/github/gh-aw-mcpg:v0.4.25
+2026-10-08T23:10:24.2212385Z Aliasing ghcr.io/github/gh-aw-mcpg:v0.4.25 as ghcr.io/github/gh-aw-mcpg:latest
+2026-10-08T23:10:26.3269179Z ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6
+2026-10-08T23:10:26.3289216Z Successfully pulled ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6
+2026-10-08T23:10:26.3291643Z Tagging digest-pinned image as ghcr.io/github/github-mcp-server:v1.12.2
+2026-10-08T23:10:28.2870177Z ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f
+2026-10-08T23:10:28.2882962Z Successfully pulled ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f
+2026-10-08T23:10:28.2883777Z Tagging digest-pinned image as ghcr.io/github/gh-aw-node:latest
+2026-10-08T23:10:37.8733463Z ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2
+2026-10-08T23:10:37.8747747Z Successfully pulled ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2
+2026-10-08T23:10:37.8748648Z Tagging digest-pinned image as ghcr.io/github/gh-aw-firewall/agent:0.28.23
+2026-10-08T23:10:37.8861905Z Aliasing ghcr.io/github/gh-aw-firewall/agent:0.28.23 as ghcr.io/github/gh-aw-firewall/agent:latest
+2026-10-08T23:10:37.8987458Z All images downloaded successfully

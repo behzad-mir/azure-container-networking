@@ -1,5 +1,5 @@
-# gh-aw-metadata: {"schema_version":"v4","frontmatter_hash":"e36032b851f017004ccd802177fbfb70c2236e49676ebf9ceb26756a2246caaa","body_hash":"d0adf78ff9e575ffde181b6f4ae3f307de036c24283a37e9a7cc0cd6c2b72522","compiler_version":"v0.89.21","strict":true,"agent_id":"copilot","engine_versions":{"copilot":"1.0.87"}}
-# gh-aw-manifest: {"version":1,"secrets":["GH_AW_DEFAULT_OTLP_ENDPOINT","GH_AW_DEFAULT_OTLP_HEADERS","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN"],"actions":[{"repo":"actions/checkout","sha":"3d3c42e5aac5ba805825da76410c181273ba90b1","version":"v7.0.1"},{"repo":"actions/checkout","sha":"fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09","version":"v5"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"820762786026740c76f36085b0efc47a31fe5020","version":"v7.0.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"924af5fdc64061cfbf66fb584c8b07e2ac230c60","version":"v0.89.21"}],"containers":[{"image":"ghcr.io/github/gh-aw-firewall/agent:0.28.23","digest":"sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23","digest":"sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.28.23","digest":"sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.4.25","digest":"sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086"},{"image":"ghcr.io/github/gh-aw-node","digest":"sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f","pinned_image":"ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f"},{"image":"ghcr.io/github/github-mcp-server:v1.12.2","digest":"sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6","pinned_image":"ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6"}],"mcp_servers":[{"name":"github","tools":["get_commit","get_file_contents","get_latest_release","get_me","get_pull_request","get_pull_request_comments","get_pull_request_diff","get_pull_request_files","get_pull_request_review_comments","get_pull_request_reviews","get_pull_request_status","get_release_by_tag","get_tag","issue_read","list_branches","list_commits","list_issue_types","list_issues","list_pull_requests","list_releases","list_starred_repositories","list_tags","pull_request_read","search_code","search_issues","search_pull_requests","search_repositories"]},{"name":"safeoutputs","tools":["missing_data","missing_tool","noop","push_branch"]}]}
+# gh-aw-metadata: {"schema_version":"v4","frontmatter_hash":"9052621292868942b26cbceda99abe9d3d74ff748d1a2c91d558ff4298370277","body_hash":"50c28941bf4eaed47e11b86b16272ecdd75494602c67bd59d8cc2b3edc4c4490","compiler_version":"v0.89.21","strict":true,"agent_id":"copilot","engine_versions":{"copilot":"1.0.87"}}
+# gh-aw-manifest: {"version":1,"secrets":["GH_AW_DEFAULT_OTLP_ENDPOINT","GH_AW_DEFAULT_OTLP_HEADERS","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN"],"actions":[{"repo":"actions/checkout","sha":"3d3c42e5aac5ba805825da76410c181273ba90b1","version":"v7.0.1"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"820762786026740c76f36085b0efc47a31fe5020","version":"v7.0.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"924af5fdc64061cfbf66fb584c8b07e2ac230c60","version":"v0.89.21"}],"containers":[{"image":"ghcr.io/github/gh-aw-firewall/agent:0.28.23","digest":"sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.28.23@sha256:2c78aaba1c108e130e2d6d01e4f2cca334ea04c53e6f258913ac34173fe7e3b2"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23","digest":"sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.23@sha256:c15c3d1208df10c5b588a3657be53742aa982ae0909d1eb1812525268794ca64"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.28.23","digest":"sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.28.23@sha256:02ffc56dd40158223064ef03a78c2d9717473c93723b4e403d455ea6f0b09ae0"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.4.25","digest":"sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.4.25@sha256:9be0a86220e807a0ecc89e53d7453468f7a53fbc6b3d1efd2299025ffe01d086"},{"image":"ghcr.io/github/gh-aw-node","digest":"sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f","pinned_image":"ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f"},{"image":"ghcr.io/github/github-mcp-server:v1.12.2","digest":"sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6","pinned_image":"ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6"}],"mcp_servers":[{"name":"github","tools":["get_commit","get_file_contents","get_latest_release","get_release_by_tag","get_tag","list_branches","list_commits","list_releases","list_starred_repositories","list_tags","search_code","search_repositories"]},{"name":"safeoutputs","tools":["create_issue","missing_data","missing_tool","noop"]}]}
 # This file was automatically generated by gh-aw (v0.89.21). DO NOT EDIT. To debug this workflow, load the skill at https://github.com/github/gh-aw/blob/main/debug.md
 #
 #    ___                   _   _
@@ -33,7 +33,6 @@
 #
 # Custom actions used:
 #   - actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-#   - actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 #   - actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
 #   - actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
 #   - actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0 (source v9)
@@ -49,11 +48,11 @@
 #   - ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f
 #   - ghcr.io/github/github-mcp-server:v1.12.2@sha256:508a0857ec762b1ab1cece29193345b501fab1dd9d1228a7b617062954cecac6
 
-name: "T0: export a patch from the agent without opening a PR"
+name: "Agentic Workflows smoke test"
 on:
   push:
     branches:
-      - try/gh-aw-t0
+      - try/gh-aw-smoke
 
 permissions: {}
 
@@ -61,12 +60,12 @@ concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.ref || github.run_id }}"
   queue: max
 
-run-name: "T0: export a patch from the agent without opening a PR"
+run-name: "Agentic Workflows smoke test"
 
 env:
   OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.GH_AW_DEFAULT_OTLP_ENDPOINT || vars.GH_AW_DEFAULT_OTLP_ENDPOINT }}
-  OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
-  OTEL_RESOURCE_ATTRIBUTES: 'gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=${{ github.repository }},gh-aw.run.id=${{ github.run_id }},github.run_id=${{ github.run_id }},gh-aw.engine.id=copilot'
+  OTEL_SERVICE_NAME: gh-aw.aw-smoke-test
+  OTEL_RESOURCE_ATTRIBUTES: 'gh-aw.workflow.name=Agentic%20Workflows%20smoke%20test,gh-aw.repository=${{ github.repository }},gh-aw.run.id=${{ github.run_id }},github.run_id=${{ github.run_id }},gh-aw.engine.id=copilot'
   OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.GH_AW_DEFAULT_OTLP_HEADERS }}
   GH_AW_OTLP_ENDPOINTS: '[{"url":"${{ secrets.GH_AW_DEFAULT_OTLP_ENDPOINT || vars.GH_AW_DEFAULT_OTLP_ENDPOINT }}","headers":"${{ secrets.GH_AW_DEFAULT_OTLP_HEADERS }}"}]'
   GH_AW_OTLP_IF_MISSING: ignore
@@ -110,8 +109,8 @@ jobs:
           parent-span-id: ${{ needs.pre_activation.outputs.setup-parent-span-id || needs.pre_activation.outputs.setup-span-id }}
           safe-output-artifact-client: ${{ env.GH_AW_MAX_DAILY_AI_CREDITS != '' }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -126,7 +125,7 @@ jobs:
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AGENT_VERSION: "1.0.87"
           GH_AW_INFO_CLI_VERSION: "v0.89.21"
-          GH_AW_INFO_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
+          GH_AW_INFO_WORKFLOW_NAME: "Agentic Workflows smoke test"
           GH_AW_INFO_EXPERIMENTAL: "false"
           GH_AW_INFO_SUPPORTS_TOOLS_ALLOWLIST: "true"
           GH_AW_INFO_STAGED: "false"
@@ -167,8 +166,8 @@ jobs:
         if: ${{ env.GH_AW_MAX_DAILY_AI_CREDITS != '' }}
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_ID: "aw-t0-patch-export"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_ID: "aw-smoke-test"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_WORKFLOW_DISPATCH_AW_CONTEXT: ${{ github.event.inputs.aw_context || '' }}
           GH_AW_HAS_SLASH_COMMAND: "false"
@@ -224,7 +223,7 @@ jobs:
         id: check-lock-file
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          GH_AW_WORKFLOW_FILE: "aw-t0-patch-export.lock.yml"
+          GH_AW_WORKFLOW_FILE: "aw-smoke-test.lock.yml"
           GH_AW_CONTEXT_WORKFLOW_REF: "${{ github.workflow_ref }}"
         with:
           script: |
@@ -239,7 +238,7 @@ jobs:
         env:
           GH_AW_COMPILED_VERSION: "v0.89.21"
           GH_AW_BLOCKED_VERSION_REPORT_AS_ISSUE: "true"
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
         with:
           script: |
             const path = require('path');
@@ -267,11 +266,11 @@ jobs:
           GH_AW_GITHUB_RUN_ID: ${{ github.run_id }}
           GH_AW_GITHUB_WORKSPACE: ${{ github.workspace }}
           GH_AW_PROMPT_CONTENT_0000: "<system>\n"
-          GH_AW_PROMPT_CONTENT_0001: "<safe-output-tools>\nTools: missing_tool, missing_data, noop, push_branch\n"
+          GH_AW_PROMPT_CONTENT_0001: "<safe-output-tools>\nTools: create_issue, missing_tool, missing_data, noop\n"
           GH_AW_PROMPT_CONTENT_0002: "</safe-output-tools>\n"
           GH_AW_PROMPT_CONTENT_0003: "<github-context>\nThe following GitHub context information is available for this workflow:\n{{#if github.actor}}\n- **actor**: __GH_AW_GITHUB_ACTOR__\n{{/if}}\n{{#if github.repository}}\n- **repository**: __GH_AW_GITHUB_REPOSITORY__\n{{/if}}\n{{#if github.workspace}}\n- **workspace**: __GH_AW_GITHUB_WORKSPACE__\n{{/if}}\n{{#if github.event.issue.number || (github.aw.context.item_type == 'issue' && github.aw.context.item_number)}}\n- **issue-number**: #__GH_AW_EXPR_802A9F6A__\n{{/if}}\n{{#if github.event.discussion.number || (github.aw.context.item_type == 'discussion' && github.aw.context.item_number)}}\n- **discussion-number**: #__GH_AW_EXPR_1A3A194A__\n{{/if}}\n{{#if github.event.pull_request.number || (github.aw.context.item_type == 'pull_request' && github.aw.context.item_number)}}\n- **pull-request-number**: #__GH_AW_EXPR_463A214A__\n{{/if}}\n{{#if github.event.comment.id || github.aw.context.comment_id}}\n- **comment-id**: __GH_AW_EXPR_FF1D34CE__\n{{/if}}\n{{#if github.run_id}}\n- **workflow-run-id**: __GH_AW_GITHUB_RUN_ID__\n{{/if}}\n</github-context>\n\n"
           GH_AW_PROMPT_CONTENT_0004: "</system>\n"
-          GH_AW_PROMPT_CONTENT_0005: "{{#runtime-import .github/workflows/aw-t0-patch-export.md}}\n"
+          GH_AW_PROMPT_CONTENT_0005: "{{#runtime-import .github/workflows/aw-smoke-test.md}}\n"
         with:
           script: |
             const { setupGlobals } = require(process.env.GH_AW_ACTIONS_DIR + '/setup_globals.cjs');
@@ -391,7 +390,7 @@ jobs:
       GH_AW_PR_HEAD_BASE_SHA: ""
       GH_AW_PR_HEAD_REPO: ""
       GH_AW_RUNTIME_FEATURES: ${{ vars.GH_AW_RUNTIME_FEATURES }}
-      GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+      GH_AW_WORKFLOW_ID_SANITIZED: awsmoketest
     outputs:
       agentic_engine_timeout: ${{ steps.detect-agent-errors.outputs.agentic_engine_timeout || 'false' }}
       ai_credits_rate_limit_error: ${{ steps.parse-mcp-gateway.outputs.ai_credits_rate_limit_error || 'false' }}
@@ -425,8 +424,8 @@ jobs:
           trace-id: ${{ needs.activation.outputs.setup-trace-id }}
           parent-span-id: ${{ needs.activation.outputs.setup-parent-span-id || needs.activation.outputs.setup-span-id }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -536,7 +535,7 @@ jobs:
         env:
           GH_AW_FILE_ROOT: "${{ runner.temp }}/gh-aw"
           GH_AW_FILE_CONFIG: "{\"files\":[{\"path\":\"safeoutputs/config.json\",\"content_env\":\"GH_AW_SAFE_OUTPUTS_CONFIG\"}]}"
-          GH_AW_SAFE_OUTPUTS_CONFIG: "{\"create_report_incomplete_issue\":{},\"missing_data\":{},\"missing_tool\":{},\"noop\":{\"max\":1,\"report-as-issue\":\"false\"},\"push-branch\":{\"description\":\"Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.\",\"inputs\":{\"base\":{\"default\":null,\"description\":\"Base branch the patch was made against\",\"required\":true,\"type\":\"string\"},\"branch\":{\"default\":null,\"description\":\"Branch name to push. Must match aw-t0/<name>\",\"required\":true,\"type\":\"string\"},\"title\":{\"default\":null,\"description\":\"Short PR title\",\"required\":true,\"type\":\"string\"}}},\"report_incomplete\":{}}"
+          GH_AW_SAFE_OUTPUTS_CONFIG: "{\"create_issue\":{\"max\":1,\"title_prefix\":\"[aw-smoke] \"},\"create_report_incomplete_issue\":{},\"missing_data\":{},\"missing_tool\":{},\"noop\":{\"max\":1,\"report-as-issue\":\"false\"},\"report_incomplete\":{}}"
         with:
           script: |
             const path = require('path');
@@ -549,40 +548,52 @@ jobs:
         env:
           GH_AW_TOOLS_META_JSON: |
             {
-              "description_suffixes": {},
+              "description_suffixes": {
+                "create_issue": " CONSTRAINTS: Maximum 1 issue(s) can be created. Title will be prefixed with \"[aw-smoke] \"."
+              },
               "repo_params": {},
-              "dynamic_tools": [
-                {
-                  "description": "Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.",
-                  "inputSchema": {
-                    "additionalProperties": false,
-                    "properties": {
-                      "base": {
-                        "description": "Base branch the patch was made against",
-                        "type": "string"
-                      },
-                      "branch": {
-                        "description": "Branch name to push. Must match aw-t0/\u003cname\u003e",
-                        "type": "string"
-                      },
-                      "title": {
-                        "description": "Short PR title",
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "base",
-                      "branch",
-                      "title"
-                    ],
-                    "type": "object"
-                  },
-                  "name": "push_branch"
-                }
-              ]
+              "dynamic_tools": []
             }
           GH_AW_VALIDATION_JSON: |
             {
+              "create_issue": {
+                "defaultMax": 1,
+                "fields": {
+                  "blocked_by": {},
+                  "body": {
+                    "required": true,
+                    "type": "string",
+                    "sanitize": true,
+                    "maxLength": 65000,
+                    "minLength": 20
+                  },
+                  "fields": {
+                    "type": "array"
+                  },
+                  "labels": {
+                    "type": "array",
+                    "itemType": "string",
+                    "itemSanitize": true,
+                    "itemMaxLength": 128
+                  },
+                  "parent": {
+                    "issueOrPRNumber": true
+                  },
+                  "repo": {
+                    "type": "string",
+                    "maxLength": 256
+                  },
+                  "temporary_id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "required": true,
+                    "type": "string",
+                    "sanitize": true,
+                    "maxLength": 128
+                  }
+                }
+              },
               "missing_data": {
                 "defaultMax": 20,
                 "fields": {
@@ -714,7 +725,7 @@ jobs:
 
           mkdir -p "$HOME/.copilot"
           GH_AW_NODE=$(which node 2>/dev/null || command -v node 2>/dev/null || echo node)
-          cat << GH_AW_MCP_CONFIG_6e47705499a41fbb_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
+          cat << GH_AW_MCP_CONFIG_68a114613d22a92a_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
           {
             "mcpServers": {
               "github": {
@@ -725,7 +736,7 @@ jobs:
                   "GITHUB_HOST": "${GITHUB_SERVER_URL}",
                   "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_MCP_SERVER_TOKEN}",
                   "GITHUB_READ_ONLY": "1",
-                  "GITHUB_TOOLSETS": "context,repos,issues,pull_requests"
+                  "GITHUB_TOOLSETS": "repos"
                 },
                 "guard-policies": {
                   "allow-only": {
@@ -789,7 +800,7 @@ jobs:
               }
             }
           }
-          GH_AW_MCP_CONFIG_6e47705499a41fbb_EOF
+          GH_AW_MCP_CONFIG_68a114613d22a92a_EOF
       - name: Mount MCP servers as CLIs
         id: mount-mcp-clis
         continue-on-error: true
@@ -1111,7 +1122,6 @@ jobs:
       - activation
       - agent
       - detection
-      - push_branch
       - safe_outputs
     if: >
       always() && (needs.agent.result != 'skipped' || needs.activation.outputs.lockdown_check_failed == 'true' ||
@@ -1123,7 +1133,7 @@ jobs:
       actions: read
       issues: write
     concurrency:
-      group: "gh-aw-conclusion-aw-t0-patch-export"
+      group: "gh-aw-conclusion-aw-smoke-test"
       cancel-in-progress: false
       queue: max
     env:
@@ -1143,8 +1153,8 @@ jobs:
           trace-id: ${{ needs.activation.outputs.setup-trace-id }}
           parent-span-id: ${{ needs.activation.outputs.setup-parent-span-id || needs.activation.outputs.setup-span-id }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -1245,15 +1255,15 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: "1"
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_NOOP_REPORT_AS_ISSUE: "false"
           GH_AW_AIC: ${{ needs.agent.outputs.aic }}
           GH_AW_THREAT_DETECTION_AIC: ${{ needs.detection.outputs.aic }}
           GH_AW_AMBIENT_CONTEXT: ${{ needs.agent.outputs.ambient_context }}
-          GH_AW_WORKFLOW_ID: "aw-t0-patch-export"
+          GH_AW_WORKFLOW_ID: "aw-smoke-test"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -1268,8 +1278,8 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_DETECTION_CONCLUSION: ${{ needs.detection.outputs.detection_conclusion }}
           GH_AW_DETECTION_REASON: ${{ needs.detection.outputs.detection_reason }}
@@ -1288,8 +1298,8 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
           GH_AW_MISSING_TOOL_CREATE_ISSUE: "true"
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -1305,8 +1315,8 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
           GH_AW_REPORT_INCOMPLETE_CREATE_ISSUE: "true"
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -1322,11 +1332,11 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
-          GH_AW_WORKFLOW_ID: "aw-t0-patch-export"
+          GH_AW_WORKFLOW_ID: "aw-smoke-test"
           GH_AW_ACTION_FAILURE_ISSUE_EXPIRES_HOURS: "0"
           GH_AW_ENGINE_ID: "copilot"
           GH_AW_CHECKOUT_PR_SUCCESS: ${{ needs.agent.outputs.checkout_pr_success }}
@@ -1374,8 +1384,8 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+          GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_REPORT_FAILED_JOBS: "true"
         with:
@@ -1415,8 +1425,8 @@ jobs:
           trace-id: ${{ needs.activation.outputs.setup-trace-id }}
           parent-span-id: ${{ needs.activation.outputs.setup-parent-span-id || needs.activation.outputs.setup-span-id }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -1491,7 +1501,7 @@ jobs:
         if: always() && steps.detection_guard.outputs.run_detection == 'true'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
+          WORKFLOW_NAME: "Agentic Workflows smoke test"
           WORKFLOW_DESCRIPTION: "No description provided"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
           GH_AW_DETECTION_CONTINUE_ON_ERROR: "true"
@@ -1561,7 +1571,7 @@ jobs:
           RUNNER_TEMP: ${{ runner.temp }}
           S2STOKENS: true
           TRACEPARENT: ${{ env.GITHUB_AW_OTEL_TRACE_ID != '' && env.GITHUB_AW_OTEL_PARENT_SPAN_ID != '' && format('00-{0}-{1}-01', env.GITHUB_AW_OTEL_TRACE_ID, env.GITHUB_AW_OTEL_PARENT_SPAN_ID) || '' }}
-          WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
+          WORKFLOW_NAME: "Agentic Workflows smoke test"
           WORKFLOW_DESCRIPTION: "No description provided"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
           GH_AW_DETECTION_CONTINUE_ON_ERROR: "true"
@@ -1692,8 +1702,8 @@ jobs:
           destination: ${{ runner.temp }}/gh-aw/actions
           job-name: ${{ github.job }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -1712,108 +1722,6 @@ jobs:
             const { main } = require(path.join(actionsDir, 'check_membership.cjs'));
             await main();
 
-  push_branch:
-    needs:
-      - agent
-      - detection
-    if: >
-      (!cancelled()) && needs.agent.result != 'skipped' && contains(needs.agent.outputs.output_types, 'push_branch') &&
-      (needs.agent.result == 'success' && needs.detection.result == 'success' && needs.detection.outputs.detection_success == 'true')
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: read
-    steps:
-      - name: Download agent output artifact
-        continue-on-error: true
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        with:
-          pattern: "{agent,agent-output-fallback}"
-          merge-multiple: true
-          path: ${{ runner.temp }}/gh-aw/safe-jobs/
-      - name: Locate request and patch
-        id: req
-        run: |
-          set -euo pipefail
-          ITEM=$(jq -c '[.items[] | select(.type == "push_branch")][0] // empty' "$GH_AW_AGENT_OUTPUT")
-          [ -n "$ITEM" ] || { echo "::error::no push_branch item"; exit 1; }
-          BRANCH=$(jq -r '.branch' <<<"$ITEM"); BASE=$(jq -r '.base' <<<"$ITEM"); TITLE=$(jq -r '.title' <<<"$ITEM" | head -c 200)
-          [[ "$BRANCH" =~ $BRANCH_RE ]] || { echo "::error::branch not allowed: $BRANCH"; exit 1; }
-          [[ "$BASE" =~ $BASE_RE ]] || { echo "::error::base not allowed: $BASE"; exit 1; }
-          PATCH=$(find "$(dirname "$GH_AW_AGENT_OUTPUT")" -type f -name 'aw-export.patch' | head -1)
-          [ -n "$PATCH" ] || { echo "::error::aw-export.patch not found in agent artifact"; exit 1; }
-          { echo "branch=$BRANCH"; echo "base=$BASE"; echo "patch=$PATCH"; echo 'title<<EOF_T'; echo "$TITLE"; echo 'EOF_T'; } >> "$GITHUB_OUTPUT"
-        env:
-          ALLOWED_PATHS_RE: ^hack/aw-t0/
-          BASE_RE: "^(master|try/gh-aw-t0|release/v[0-9]+\\.[0-9]+)$"
-          BRANCH_RE: ^aw-t0/[A-Za-z0-9._-]+$
-          GH_AW_AGENT_OUTPUT: ${{ runner.temp }}/gh-aw/safe-jobs/agent_output.json
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-        env:
-          ALLOWED_PATHS_RE: ^hack/aw-t0/
-          BASE_RE: "^(master|try/gh-aw-t0|release/v[0-9]+\\.[0-9]+)$"
-          BRANCH_RE: ^aw-t0/[A-Za-z0-9._-]+$
-          GH_AW_AGENT_OUTPUT: ${{ runner.temp }}/gh-aw/safe-jobs/agent_output.json
-        with:
-          path: repo
-          ref: ${{ steps.req.outputs.base }}
-      - name: Apply, guard, commit, push (idempotent)
-        run: |
-          set -euo pipefail
-          git apply --check "$PATCH"
-          git apply --index "$PATCH"
-          CHANGED=$(git diff --cached --name-only --no-renames)
-          [ -n "$CHANGED" ] || { echo "::warning::empty patch, nothing to push"; exit 0; }
-          echo "Changed files:"; echo "$CHANGED"
-          if grep -E '^\.github/workflows/' <<<"$CHANGED"; then
-            echo "::error::patch touches .github/workflows; GITHUB_TOKEN cannot push it (A2)"; exit 1
-          fi
-          BAD=$(grep -v -E "$ALLOWED_PATHS_RE" <<<"$CHANGED" || true)
-          [ -z "$BAD" ] || { echo "::error::paths outside allowlist ($ALLOWED_PATHS_RE):"; echo "$BAD"; exit 1; }
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "$TITLE"
-
-          enc() { jq -rn --arg s "$1" '$s|@uri'; }
-          BODY="Automated change from run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          LINK="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/${BASE}...${BRANCH}?expand=1&title=$(enc "$TITLE")&body=$(enc "$BODY")"
-          OWNER="${GITHUB_REPOSITORY%%/*}"
-          OPEN_PR=$(gh api "repos/${GITHUB_REPOSITORY}/pulls?state=open&head=${OWNER}:${BRANCH}" --jq '.[0].html_url // empty')
-          OLD=$(git ls-remote --heads origin "refs/heads/$BRANCH" | cut -f1)
-
-          if [ -n "$OLD" ]; then
-            git fetch -q --depth=1 origin "refs/heads/$BRANCH"
-            if [ "$(git rev-parse 'HEAD^{tree}')" = "$(git rev-parse 'FETCH_HEAD^{tree}')" ]; then
-              ACTION="unchanged: $BRANCH already has identical content ($OLD); not pushing"
-            elif [ -n "$OPEN_PR" ]; then
-              echo "::warning::$BRANCH has an open PR ($OPEN_PR) and different content; not overwriting a branch under review"
-              ACTION="skipped: open PR $OPEN_PR"
-            else
-              git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$OLD"
-              ACTION="updated: $BRANCH $OLD -> $(git rev-parse HEAD)"
-            fi
-          else
-            git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:"
-            ACTION="created: $BRANCH at $(git rev-parse HEAD)"
-          fi
-          echo "::notice title=push-branch::$ACTION"
-          if [ -n "$OPEN_PR" ]; then
-            echo "::notice title=Existing PR::$OPEN_PR"
-            { echo "### Existing PR"; echo; echo "$OPEN_PR"; } >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "::notice title=Create PR::$LINK"
-            { echo "### One-click PR"; echo; echo "$ACTION"; echo; echo "[Create pull request]($LINK)"; } >> "$GITHUB_STEP_SUMMARY"
-          fi
-        env:
-          ALLOWED_PATHS_RE: ^hack/aw-t0/
-          BASE: ${{ steps.req.outputs.base }}
-          BASE_RE: "^(master|try/gh-aw-t0|release/v[0-9]+\\.[0-9]+)$"
-          BRANCH: ${{ steps.req.outputs.branch }}
-          BRANCH_RE: ^aw-t0/[A-Za-z0-9._-]+$
-          GH_AW_AGENT_OUTPUT: ${{ runner.temp }}/gh-aw/safe-jobs/agent_output.json
-          GH_TOKEN: ${{ github.token }}
-          PATCH: ${{ steps.req.outputs.patch }}
-          TITLE: ${{ steps.req.outputs.title }}
-        working-directory: repo
-
   safe_outputs:
     needs:
       - activation
@@ -1828,21 +1736,23 @@ jobs:
       GH_AW_AGENT_AIC: ${{ needs.agent.outputs.aic }}
       GH_AW_AIC: ${{ needs.agent.outputs.aic }}
       GH_AW_AMBIENT_CONTEXT: ${{ needs.agent.outputs.ambient_context }}
-      GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/aw-t0-patch-export"
+      GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/aw-smoke-test"
       GH_AW_DETECTION_CONCLUSION: ${{ needs.detection.outputs.detection_conclusion }}
       GH_AW_DETECTION_REASON: ${{ needs.detection.outputs.detection_reason }}
       GH_AW_ENGINE_ID: "copilot"
       GH_AW_ENGINE_MODEL: ${{ needs.agent.outputs.model }}
       GH_AW_RUNTIME_FEATURES: ${{ vars.GH_AW_RUNTIME_FEATURES }}
       GH_AW_THREAT_DETECTION_AIC: ${{ needs.detection.outputs.aic }}
-      GH_AW_WORKFLOW_ID: "aw-t0-patch-export"
-      GH_AW_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-      GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-t0-patch-export.md"
+      GH_AW_WORKFLOW_ID: "aw-smoke-test"
+      GH_AW_WORKFLOW_NAME: "Agentic Workflows smoke test"
+      GH_AW_WORKFLOW_SOURCE_URL: "${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/.github/workflows/aw-smoke-test.md"
     outputs:
       code_push_failure_count: ${{ steps.process_safe_outputs.outputs.code_push_failure_count }}
       code_push_failure_errors: ${{ steps.process_safe_outputs.outputs.code_push_failure_errors }}
       create_discussion_error_count: ${{ steps.process_safe_outputs.outputs.create_discussion_error_count }}
       create_discussion_errors: ${{ steps.process_safe_outputs.outputs.create_discussion_errors }}
+      created_issue_number: ${{ steps.process_safe_outputs.outputs.created_issue_number }}
+      created_issue_url: ${{ steps.process_safe_outputs.outputs.created_issue_url }}
       process_safe_outputs_items_applied: ${{ steps.process_safe_outputs.outputs.items_applied }}
       process_safe_outputs_items_cancelled: ${{ steps.process_safe_outputs.outputs.items_cancelled }}
       process_safe_outputs_items_deferred: ${{ steps.process_safe_outputs.outputs.items_deferred }}
@@ -1862,8 +1772,8 @@ jobs:
           trace-id: ${{ needs.activation.outputs.setup-trace-id }}
           parent-span-id: ${{ needs.activation.outputs.setup-parent-span-id || needs.activation.outputs.setup-span-id }}
         env:
-          GH_AW_SETUP_WORKFLOW_NAME: "T0: export a patch from the agent without opening a PR"
-          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-t0-patch-export.lock.yml@${{ github.ref }}
+          GH_AW_SETUP_WORKFLOW_NAME: "Agentic Workflows smoke test"
+          GH_AW_CURRENT_WORKFLOW_REF: ${{ github.repository }}/.github/workflows/aw-smoke-test.lock.yml@${{ github.ref }}
           GH_AW_INFO_VERSION: "1.0.87"
           GH_AW_INFO_AWF_VERSION: "v0.28.23"
           GH_AW_INFO_ENGINE_ID: "copilot"
@@ -1904,8 +1814,7 @@ jobs:
           GH_AW_ALLOWED_DOMAINS: "api.snapcraft.io,archive.ubuntu.com,azure.archive.ubuntu.com,crl.geotrust.com,crl.globalsign.com,crl.identrust.com,crl.sectigo.com,crl.thawte.com,crl.usertrust.com,crl.verisign.com,crl3.digicert.com,crl4.digicert.com,crls.ssl.com,json-schema.org,json.schemastore.org,keyserver.ubuntu.com,ocsp.digicert.com,ocsp.geotrust.com,ocsp.globalsign.com,ocsp.identrust.com,ocsp.sectigo.com,ocsp.ssl.com,ocsp.thawte.com,ocsp.usertrust.com,ocsp.verisign.com,packagecloud.io,packages.cloud.google.com,packages.microsoft.com,ppa.launchpad.net,s.symcb.com,s.symcd.com,security.ubuntu.com,ts-crl.ws.symantec.com,ts-ocsp.ws.symantec.com,www.googleapis.com"
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_API_URL: ${{ github.api_url }}
-          GH_AW_SAFE_OUTPUT_JOBS: "{\"push_branch\":\"\"}"
-          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"create_report_incomplete_issue\":{},\"missing_data\":{},\"missing_tool\":{},\"noop\":{\"max\":1,\"report-as-issue\":\"false\"},\"report_incomplete\":{}}"
+          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"create_issue\":{\"max\":1,\"title_prefix\":\"[aw-smoke] \"},\"create_report_incomplete_issue\":{},\"missing_data\":{},\"missing_tool\":{},\"noop\":{\"max\":1,\"report-as-issue\":\"false\"},\"report_incomplete\":{}}"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |

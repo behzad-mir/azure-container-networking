@@ -1,0 +1,35 @@
+﻿2026-10-08T23:12:40.4403664Z ##[group]Run set -euo pipefail
+2026-10-08T23:12:40.4403980Z [36;1mset -euo pipefail[0m
+2026-10-08T23:12:40.4404209Z [36;1mgit apply --check "$PATCH"[0m
+2026-10-08T23:12:40.4404460Z [36;1mgit apply --index "$PATCH"[0m
+2026-10-08T23:12:40.4404776Z [36;1mif git diff --cached --name-only | grep -E '^\.github/workflows/'; then[0m
+2026-10-08T23:12:40.4405230Z [36;1m  echo "::error::patch touches .github/workflows; GITHUB_TOKEN cannot push it (A2)"; exit 1[0m
+2026-10-08T23:12:40.4405604Z [36;1mfi[0m
+2026-10-08T23:12:40.4406049Z [36;1mgit -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "$TITLE"[0m
+2026-10-08T23:12:40.4406581Z [36;1mgit push origin "HEAD:refs/heads/$BRANCH" --force-with-lease[0m
+2026-10-08T23:12:40.4406908Z [36;1menc() { jq -rn --arg s "$1" '$s|@uri'; }[0m
+2026-10-08T23:12:40.4407345Z [36;1mBODY="Automated change from run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"[0m
+2026-10-08T23:12:40.4407992Z [36;1mLINK="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/${BASE}...${BRANCH}?expand=1&title=$(enc "$TITLE")&body=$(enc "$BODY")"[0m
+2026-10-08T23:12:40.4408462Z [36;1mecho "::notice title=Create PR::$LINK"[0m
+2026-10-08T23:12:40.4408938Z [36;1m{ echo "### One-click PR"; echo; echo "[Create pull request]($LINK)"; echo; git show --stat HEAD; } >> "$GITHUB_STEP_SUMMARY"[0m
+2026-10-08T23:12:40.4464533Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:12:40.4464762Z env:
+2026-10-08T23:12:40.4464947Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:12:40.4465212Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:12:40.4466028Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:12:40.4466796Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:12:40.4467036Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:12:40.4467294Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:12:40.4467511Z   BASE: try/gh-aw-t0
+2026-10-08T23:12:40.4467844Z   BRANCH: aw-t0/probe-37857819623
+2026-10-08T23:12:40.4468180Z   GH_AW_AGENT_OUTPUT: /home/runner/work/_temp/gh-aw/safe-jobs/agent_output.json
+2026-10-08T23:12:40.4468557Z   PATCH: /home/runner/work/_temp/gh-aw/safe-jobs/aw-export.patch
+2026-10-08T23:12:40.4468849Z   TITLE: chore: aw-t0 probe
+2026-10-08T23:12:40.4469051Z ##[endgroup]
+2026-10-08T23:12:41.9822858Z remote: 
+2026-10-08T23:12:41.9823789Z remote: Create a pull request for 'aw-t0/probe-37857819623' on GitHub by visiting:        
+2026-10-08T23:12:41.9824623Z remote:      https://github.com/behzad-mir/azure-container-networking/pull/new/aw-t0/probe-37857819623        
+2026-10-08T23:12:41.9825049Z remote: 
+2026-10-08T23:12:41.9834585Z To https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:12:41.9835285Z  * [new branch]      HEAD -> aw-t0/probe-37857819623
+2026-10-08T23:12:41.9950927Z ##[notice]https://github.com/behzad-mir/azure-container-networking/compare/try/gh-aw-t0...aw-t0/probe-37857819623?expand=1&title=chore%3A%20aw-t0%20probe&body=Automated%20change%20from%20run%20https%3A%2F%2Fgithub.com%2Fbehzad-mir%2Fazure-container-networking%2Factions%2Fruns%2F37857819623

@@ -1,0 +1,33 @@
+{
+  "engine_id": "copilot",
+  "engine_name": "GitHub Copilot CLI",
+  "model": "auto",
+  "version": "1.0.87",
+  "agent_version": "1.0.87",
+  "workflow_name": "T0: export a patch from the agent without opening a PR",
+  "experimental": false,
+  "supports_tools_allowlist": true,
+  "cache_memory": false,
+  "run_id": 37857819623,
+  "run_number": 1,
+  "run_attempt": "1",
+  "repository": "behzad-mir/azure-container-networking",
+  "ref": "refs/heads/try/gh-aw-t0",
+  "sha": "fdf74cb336cfbb5d465f9eadad1d4e6726823422",
+  "actor": "behzad-mir",
+  "event_name": "push",
+  "target_repo": "",
+  "staged": false,
+  "allowed_domains": [
+    "defaults"
+  ],
+  "firewall_enabled": true,
+  "awf_version": "v0.28.23",
+  "awmg_version": "",
+  "agent_runtime": "",
+  "steps": {
+    "firewall": "squid"
+  },
+  "created_at": "2026-10-08T23:09:45.300Z",
+  "cli_version": "v0.89.21"
+}

@@ -1,0 +1,37 @@
+﻿2026-10-08T23:09:58.2827001Z Current runner version: '2.337.0'
+2026-10-08T23:09:58.2849806Z ##[group]Runner Image Provisioner
+2026-10-08T23:09:58.2850564Z Hosted Compute Agent
+2026-10-08T23:09:58.2851047Z Version: 20261002.596
+2026-10-08T23:09:58.2851606Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T23:09:58.2852208Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T23:09:58.2852742Z Worker ID: {37a2bc1c-cbfd-4385-a452-2016a84def53}
+2026-10-08T23:09:58.2853395Z Region: westus3
+2026-10-08T23:09:58.2853839Z Cloud: Azure
+2026-10-08T23:09:58.2854321Z ##[endgroup]
+2026-10-08T23:09:58.2855408Z ##[group]Operating System
+2026-10-08T23:09:58.2855899Z Ubuntu
+2026-10-08T23:09:58.2856420Z 24.04.5
+2026-10-08T23:09:58.2856843Z LTS
+2026-10-08T23:09:58.2857296Z ##[endgroup]
+2026-10-08T23:09:58.2857935Z ##[group]Runner Image
+2026-10-08T23:09:58.2858434Z Image: ubuntu-24.04
+2026-10-08T23:09:58.2858965Z Version: 20261004.327.1
+2026-10-08T23:09:58.2859822Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T23:09:58.2861307Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T23:09:58.2862106Z ##[endgroup]
+2026-10-08T23:09:58.2863189Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T23:09:58.2864913Z Contents: read
+2026-10-08T23:09:58.2865505Z CopilotRequests: write
+2026-10-08T23:09:58.2866037Z Metadata: read
+2026-10-08T23:09:58.2866549Z ##[endgroup]
+2026-10-08T23:09:58.2868396Z Secret source: Actions
+2026-10-08T23:09:58.2869125Z Cache mode: write
+2026-10-08T23:09:58.2869792Z Prepare workflow directory
+2026-10-08T23:09:58.3305236Z Prepare all required actions
+2026-10-08T23:09:58.3344368Z Getting action download info
+2026-10-08T23:09:58.6316447Z Download action repository 'github/gh-aw-actions@924af5fdc64061cfbf66fb584c8b07e2ac230c60' (SHA:924af5fdc64061cfbf66fb584c8b07e2ac230c60)
+2026-10-08T23:09:58.9995787Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T23:09:59.0325087Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-10-08T23:09:59.6736253Z Download action repository 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' (SHA:3a2844b7e9c422d3c10d287c895573f7108da1b3)
+2026-10-08T23:10:00.2731350Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-10-08T23:10:00.5512736Z Complete job name: agent

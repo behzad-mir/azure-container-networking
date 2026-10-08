@@ -1,0 +1,35 @@
+﻿2026-10-08T23:09:46.6555455Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-08T23:09:46.6556257Z with:
+2026-10-08T23:09:46.6556672Z   name: aic-usage-scan-v2
+2026-10-08T23:09:46.6557241Z   path: /tmp/gh-aw/agentic-workflow-usage-scan-v2.jsonl
+2026-10-08T23:09:46.6557877Z   overwrite: true
+2026-10-08T23:09:46.6558322Z   if-no-files-found: ignore
+2026-10-08T23:09:46.6558794Z   retention-days: 3
+2026-10-08T23:09:46.6559228Z   compression-level: 6
+2026-10-08T23:09:46.6559691Z   include-hidden-files: false
+2026-10-08T23:09:46.6560171Z   archive: true
+2026-10-08T23:09:46.6560578Z env:
+2026-10-08T23:09:46.6560985Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:46.6562462Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:46.6565301Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:46.6567268Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:46.6568755Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:46.6569368Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:46.6570431Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:46.6570964Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:46.6571533Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:46.6572215Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:46.6572815Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:46.6574206Z ##[endgroup]
+2026-10-08T23:09:46.8426132Z With the provided path, there will be 1 file uploaded
+2026-10-08T23:09:46.9611524Z Artifact name is valid!
+2026-10-08T23:09:46.9620983Z Root directory input is valid!
+2026-10-08T23:09:47.1468748Z Uploading artifact: aic-usage-scan-v2.zip
+2026-10-08T23:09:47.1531829Z Beginning upload of artifact content to blob storage
+2026-10-08T23:09:47.2360774Z Uploaded bytes 189
+2026-10-08T23:09:47.2502204Z Finished uploading artifact content to blob storage!
+2026-10-08T23:09:47.2508025Z SHA256 digest of uploaded artifact is 18ca608bdb4c6a660af162e8aaa6f25fde56496041889f34ae68e9f64a43b089
+2026-10-08T23:09:47.2511932Z Finalizing artifact upload
+2026-10-08T23:09:47.4979825Z Artifact aic-usage-scan-v2 successfully finalized. Artifact ID 11584368525
+2026-10-08T23:09:47.4984195Z Artifact aic-usage-scan-v2 has been successfully uploaded! Final size is 189 bytes. Artifact ID is 11584368525
+2026-10-08T23:09:47.4990929Z Artifact download URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623/artifacts/11584368525

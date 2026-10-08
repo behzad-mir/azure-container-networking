@@ -1,0 +1,58 @@
+﻿2026-10-08T23:09:49.9935227Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:49.9936068Z with:
+2026-10-08T23:09:49.9942166Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+
+const substitutePlaceholders = require(path.join(actionsDir, 'substitute_placeholders.cjs'));
+
+// Call the substitution function
+return await substitutePlaceholders({
+  file: process.env.GH_AW_PROMPT,
+  substitutions: {
+    GH_AW_EXPR_1A3A194A: process.env.GH_AW_EXPR_1A3A194A,
+    GH_AW_EXPR_463A214A: process.env.GH_AW_EXPR_463A214A,
+    GH_AW_EXPR_802A9F6A: process.env.GH_AW_EXPR_802A9F6A,
+    GH_AW_EXPR_FF1D34CE: process.env.GH_AW_EXPR_FF1D34CE,
+    GH_AW_GITHUB_ACTOR: process.env.GH_AW_GITHUB_ACTOR,
+    GH_AW_GITHUB_REPOSITORY: process.env.GH_AW_GITHUB_REPOSITORY,
+    GH_AW_GITHUB_RUN_ID: process.env.GH_AW_GITHUB_RUN_ID,
+    GH_AW_GITHUB_WORKSPACE: process.env.GH_AW_GITHUB_WORKSPACE,
+    GH_AW_MCP_CLI_SERVERS_LIST: process.env.GH_AW_MCP_CLI_SERVERS_LIST,
+    GH_AW_NEEDS_PRE_ACTIVATION_OUTPUTS_ACTIVATED: process.env.GH_AW_NEEDS_PRE_ACTIVATION_OUTPUTS_ACTIVATED
+  }
+});
+
+2026-10-08T23:09:49.9952812Z   github-token: ***
+2026-10-08T23:09:49.9953464Z   debug: false
+2026-10-08T23:09:49.9954528Z   user-agent: actions/github-script
+2026-10-08T23:09:49.9955087Z   result-encoding: json
+2026-10-08T23:09:49.9955541Z   retries: 0
+2026-10-08T23:09:49.9956025Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:49.9956595Z env:
+2026-10-08T23:09:49.9957018Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:49.9957564Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:49.9959332Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:49.9961074Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:49.9961627Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:49.9962221Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:49.9962749Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:49.9963449Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:49.9964029Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:49.9964721Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:49.9965341Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:49.9966031Z   GH_AW_PROMPT: /home/runner/work/_temp/gh-aw/aw-prompts/prompt.txt
+2026-10-08T23:09:49.9966715Z   GH_AW_EXPR_1A3A194A: false
+2026-10-08T23:09:49.9967203Z   GH_AW_EXPR_463A214A: false
+2026-10-08T23:09:49.9967700Z   GH_AW_EXPR_802A9F6A: false
+2026-10-08T23:09:49.9968176Z   GH_AW_EXPR_FF1D34CE: 
+2026-10-08T23:09:49.9968645Z   GH_AW_GITHUB_ACTOR: behzad-mir
+2026-10-08T23:09:49.9969269Z   GH_AW_GITHUB_REPOSITORY: behzad-mir/azure-container-networking
+2026-10-08T23:09:49.9969960Z   GH_AW_GITHUB_RUN_ID: 37857819623
+2026-10-08T23:09:49.9970791Z   GH_AW_GITHUB_WORKSPACE: /home/runner/work/azure-container-networking/azure-container-networking
+2026-10-08T23:09:49.9972552Z   GH_AW_MCP_CLI_SERVERS_LIST: - `github` — run `github --help` to see available tools
+- `safeoutputs` — run `safeoutputs --help` to see available tools
+2026-10-08T23:09:49.9973978Z   GH_AW_NEEDS_PRE_ACTIVATION_OUTPUTS_ACTIVATED: true
+2026-10-08T23:09:49.9974828Z ##[endgroup]
+2026-10-08T23:09:50.1413049Z [substitutePlaceholders] /home/runner/work/_temp/gh-aw/aw-prompts/prompt.txt (10 substitution(s))

@@ -1,0 +1,46 @@
+﻿2026-10-08T23:09:51.1287054Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-08T23:09:51.1287869Z with:
+2026-10-08T23:09:51.1288298Z   name: activation
+2026-10-08T23:09:51.1288766Z   include-hidden-files: true
+2026-10-08T23:09:51.1290587Z   path: /tmp/gh-aw/aw_info.json
+/tmp/gh-aw/models.json
+/tmp/gh-aw/aw-prompts/prompt.txt
+/tmp/gh-aw/aw-prompts/prompt-template.txt
+/tmp/gh-aw/aw-prompts/prompt-import-tree.json
+/tmp/gh-aw/github_rate_limits.jsonl
+/tmp/gh-aw/base
+/tmp/gh-aw/.github/agents
+/tmp/gh-aw/.github/skills
+
+2026-10-08T23:09:51.1292542Z   if-no-files-found: ignore
+2026-10-08T23:09:51.1293036Z   retention-days: 1
+2026-10-08T23:09:51.1293850Z   compression-level: 6
+2026-10-08T23:09:51.1294324Z   overwrite: false
+2026-10-08T23:09:51.1294776Z   archive: true
+2026-10-08T23:09:51.1295200Z env:
+2026-10-08T23:09:51.1295625Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:51.1296202Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:51.1298013Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:51.1300407Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:51.1300981Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:51.1301588Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:51.1302113Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:51.1302922Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:51.1303784Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:51.1304719Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:51.1305428Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:51.1306145Z ##[endgroup]
+2026-10-08T23:09:51.4309854Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T23:09:51.4314516Z The least common ancestor is /tmp/gh-aw. This will be the root directory of the artifact
+2026-10-08T23:09:51.4315968Z With the provided path, there will be 52 files uploaded
+2026-10-08T23:09:51.4316926Z Artifact name is valid!
+2026-10-08T23:09:51.4317423Z Root directory input is valid!
+2026-10-08T23:09:51.6821083Z Uploading artifact: activation.zip
+2026-10-08T23:09:51.6900048Z Beginning upload of artifact content to blob storage
+2026-10-08T23:09:51.8671782Z Uploaded bytes 171930
+2026-10-08T23:09:51.8822875Z Finished uploading artifact content to blob storage!
+2026-10-08T23:09:51.8828900Z SHA256 digest of uploaded artifact is 8113bd0445dccddccf20f491e68d25cbc2f6329eee491a9a06caf16c92dfeb71
+2026-10-08T23:09:51.8832735Z Finalizing artifact upload
+2026-10-08T23:09:52.1218623Z Artifact activation successfully finalized. Artifact ID 11585156089
+2026-10-08T23:09:52.1221096Z Artifact activation has been successfully uploaded! Final size is 171930 bytes. Artifact ID is 11585156089
+2026-10-08T23:09:52.1223021Z Artifact download URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623/artifacts/11585156089

@@ -1,0 +1,44 @@
+name: crdgen
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+        - opened
+        - reopened
+        - synchronize
+        - ready_for_review
+  merge_group:
+    types:
+      - checks_requested
+
+permissions:
+  contents: read
+
+jobs:
+  crdgen:
+    name: CRDs are Generated
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      with:
+        go-version-file: go.mod
+    - name: Regenerate NodeNetworkConfig CRD
+      run: make -C crd/nodenetworkconfig
+    - name: Regenerate MultitenantNetworkContainer CRD
+      run: make -C crd/multitenantnetworkcontainer
+    - name: Regenerate Multitenancy CRDs
+      run: make -C crd/multitenancy
+    - name: Regenerate ClusterSubnetState CRD
+      run: make -C crd/clustersubnetstate
+    - name: Regenerate OverlayExtensionConfig CRD
+      run: make -C crd/overlayextensionconfig
+    - name: Fail if the tree is dirty
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "Changes detected. Please run 'make regenerate-crd' locally to regenerate crds."
+          exit 1
+        fi

@@ -1,0 +1,59 @@
+﻿2026-10-08T23:11:26.5874684Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:11:26.5875008Z with:
+2026-10-08T23:11:26.5875874Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'parse_token_usage.cjs'));
+await main();
+
+2026-10-08T23:11:26.5878939Z   github-token: ***
+2026-10-08T23:11:26.5879142Z   debug: false
+2026-10-08T23:11:26.5879337Z   user-agent: actions/github-script
+2026-10-08T23:11:26.5879582Z   result-encoding: json
+2026-10-08T23:11:26.5879796Z   retries: 0
+2026-10-08T23:11:26.5879997Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:11:26.5880236Z env:
+2026-10-08T23:11:26.5880416Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:26.5880657Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:26.5881440Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:26.5882218Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:26.5882451Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:26.5882707Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:26.5882921Z   DEFAULT_BRANCH: master
+2026-10-08T23:11:26.5883118Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:11:26.5883329Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:11:26.5883520Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:11:26.5883914Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:11:26.5884172Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:11:26.5884374Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:11:26.5884581Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:11:26.5884774Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:11:26.5884980Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:11:26.5885175Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:11:26.5885362Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:26.5885580Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:11:26.5885866Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:26.5886160Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:11:26.5886430Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:11:26.5886683Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:11:26.5886923Z   GH_AW_AIC: 14.03299
+2026-10-08T23:11:26.5887116Z   GH_AW_AMBIENT_CONTEXT: 8106
+2026-10-08T23:11:26.5887313Z ##[endgroup]
+2026-10-08T23:11:26.6737893Z Parsing token usage from 1 file(s): /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl (3689 bytes)
+2026-10-08T23:11:26.6849333Z Token Usage
+2026-10-08T23:11:26.6849648Z 
+2026-10-08T23:11:26.6850399Z # | Alias | Input | Output | Cache Read | Cache Write | ΔAI Credits | AI Credits | Duration 
+2026-10-08T23:11:26.6850899Z 
+2026-10-08T23:11:26.6851109Z  1 | sonnet55 | 4,216 | 71 | 0 | 38,903 | 10.63995 | 10.63995 | 2.4s 
+2026-10-08T23:11:26.6851598Z  2 | sonnet55 | 2 | 120 | 38,903 | 4,308 | 1.58643 | 12.22638 | 2.0s 
+2026-10-08T23:11:26.6852086Z  3 | sonnet55 | 2 | 99 | 43,211 | 172 | 0.57451 | 12.80089 | 2.0s 
+2026-10-08T23:11:26.6852572Z  4 | sonnet55 | 2 | 129 | 43,383 | 239 | 0.62298 | 13.42387 | 2.1s 
+2026-10-08T23:11:26.6853019Z  5 | sonnet55 | 2 | 137 | 43,622 | 142 | 0.60912 | 14.03299 | 2.4s 
+2026-10-08T23:11:26.6853465Z  Total |  | 4,224 | 556 | 169,119 | 43,764 |  | 14.03299 | 10.8s 
+2026-10-08T23:11:26.6853757Z 
+2026-10-08T23:11:26.6854625Z Legend: `Alias` shows the model shorthand used in the table. `ΔAI Credits` is the per-request cost, and `AI Credits` is the running total mirrored from AWF fields for reporting.
+2026-10-08T23:11:26.6855589Z Token usage summary appended to step summary
+2026-10-08T23:11:26.6857387Z Primary model: claude-sonnet-5.5
+2026-10-08T23:11:26.6858210Z AI Credits: 14.03299
+2026-10-08T23:11:26.6858924Z Ambient context: 8106

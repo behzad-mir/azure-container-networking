@@ -1,0 +1,32 @@
+﻿2026-10-08T23:11:41.6955688Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-10-08T23:11:41.6956042Z with:
+2026-10-08T23:11:41.6956240Z   name: activation
+2026-10-08T23:11:41.6956416Z   path: /tmp/gh-aw
+2026-10-08T23:11:41.6956600Z   merge-multiple: false
+2026-10-08T23:11:41.6956841Z   repository: behzad-mir/azure-container-networking
+2026-10-08T23:11:41.6957097Z   run-id: 37857819623
+2026-10-08T23:11:41.6957282Z   skip-decompress: false
+2026-10-08T23:11:41.6957471Z   digest-mismatch: error
+2026-10-08T23:11:41.6957650Z env:
+2026-10-08T23:11:41.6957830Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:41.6958061Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:41.6958841Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:41.6959616Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:41.6959874Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:41.6960118Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:41.6960324Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:41.6960562Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:41.6960851Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:11:41.6961109Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:11:41.6961352Z ##[endgroup]
+2026-10-08T23:11:41.8039178Z Downloading single artifact
+2026-10-08T23:11:41.9451838Z Preparing to download the following artifacts:
+2026-10-08T23:11:41.9452805Z - activation (ID: 11585156089, Size: 171930, Expected Digest: sha256:8113bd0445dccddccf20f491e68d25cbc2f6329eee491a9a06caf16c92dfeb71)
+2026-10-08T23:11:42.2176553Z Redirecting to blob download url: https://productionresultssa1.blob.core.windows.net/actions-results/92726ccd-aa4f-8157-a17e-1be55837e652/workflow-job-run-e16168d7-ec90-559f-b775-886139c7a250/artifacts/b15526c9c0e75acea3d1f8055de216c85f0330baf8604e13d8c6ce90fb90d6d7.zip
+2026-10-08T23:11:42.2177728Z Starting download of artifact to: /tmp/gh-aw
+2026-10-08T23:11:42.2997360Z (node:3406) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-08T23:11:42.2998539Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T23:11:42.3507946Z SHA256 digest of downloaded artifact is 8113bd0445dccddccf20f491e68d25cbc2f6329eee491a9a06caf16c92dfeb71
+2026-10-08T23:11:42.3508815Z Artifact download completed successfully.
+2026-10-08T23:11:42.3509220Z Total of 1 artifact(s) downloaded
+2026-10-08T23:11:42.3511808Z Download artifact has finished successfully

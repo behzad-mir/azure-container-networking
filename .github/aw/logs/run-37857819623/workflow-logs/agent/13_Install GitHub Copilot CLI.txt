@@ -1,0 +1,61 @@
+﻿2026-10-08T23:10:05.4631744Z ##[group]Run bash "${RUNNER_TEMP}/gh-aw/actions/install_copilot_cli.sh"
+2026-10-08T23:10:05.4632177Z [36;1mbash "${RUNNER_TEMP}/gh-aw/actions/install_copilot_cli.sh"[0m
+2026-10-08T23:10:05.4681349Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:10:05.4681567Z env:
+2026-10-08T23:10:05.4681743Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:05.4682000Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:05.4682893Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:05.4684066Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:05.4684306Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:05.4684587Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:05.4684804Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:05.4685022Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:05.4685237Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:05.4685459Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:05.4685693Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:05.4685944Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:05.4686158Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:05.4686367Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:05.4686581Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:05.4686791Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:05.4686980Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:05.4687180Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:05.4687391Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:05.4687853Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:05.4688162Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:10:05.4688432Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:10:05.4688662Z   GH_HOST: github.com
+2026-10-08T23:10:05.4688857Z   GH_AW_COMPILED_VERSION: v0.89.21
+2026-10-08T23:10:05.4689080Z ##[endgroup]
+2026-10-08T23:10:05.4794049Z Ensuring correct ownership of /home/runner/.copilot...
+2026-10-08T23:10:05.4904265Z Cleaning up stale AWF chroot directories...
+2026-10-08T23:10:05.5036906Z Installing GitHub Copilot CLI (os: Linux, arch: x86_64)...
+2026-10-08T23:10:05.5054528Z No explicit Copilot CLI version requested. Attempting compat-driven version resolution...
+2026-10-08T23:10:05.5059035Z Attempting to download compatibility matrix from https://raw.githubusercontent.com/github/gh-aw-actions/main/.github/aw/compat.json...
+2026-10-08T23:10:05.5505085Z Successfully downloaded compatibility matrix from https://raw.githubusercontent.com/github/gh-aw-actions/main/.github/aw/compat.json
+2026-10-08T23:10:05.5553227Z Compatibility matrix source: https://raw.githubusercontent.com/github/gh-aw-actions/main/.github/aw/compat.json
+2026-10-08T23:10:05.5554136Z Compatibility matrix matched row 0: gh-aw 0.72.0..*, copilot 1.0.21..1.0.90
+2026-10-08T23:10:05.5554761Z Resolved Copilot CLI version from compatibility matrix: 1.0.90
+2026-10-08T23:10:05.5555258Z Cache TTL: 14 days
+2026-10-08T23:10:05.5557118Z Using compat-resolved Copilot CLI window: 1.0.21..1.0.90
+2026-10-08T23:10:05.5557843Z Will install compat max-agent 1.0.90 if no cached version satisfies the window.
+2026-10-08T23:10:05.5562151Z Searching toolcache for GitHub Copilot CLI (requested: latest, arch: x64, range: 1.0.21..1.0.90)...
+2026-10-08T23:10:05.5562773Z   Cache TTL enabled: 14 days
+2026-10-08T23:10:05.5563178Z   Scanning toolcache root: /opt/hostedtoolcache/copilot-cli
+2026-10-08T23:10:05.5716051Z   Found candidate: /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot (version: 1.0.90, arch: x64)
+2026-10-08T23:10:05.5720492Z   Cache TTL skipped (candidate equals max-agent: 1.0.90)
+2026-10-08T23:10:05.5721051Z   New best candidate: /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot (1.0.90 > none)
+2026-10-08T23:10:05.5721565Z   Selected best cached version: 1.0.90 at /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot
+2026-10-08T23:10:05.5724608Z Using cached GitHub Copilot CLI from /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot
+2026-10-08T23:10:05.5735874Z Activating cached Copilot CLI from /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot...
+2026-10-08T23:10:05.5736609Z   Prepended /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin to PATH
+2026-10-08T23:10:05.5737784Z   Exporting /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin to GITHUB_PATH (/home/runner/work/_temp/_runner_file_commands/add_path_cb4a8fae-0662-4042-974c-9d750949b3a9)
+2026-10-08T23:10:05.5739474Z   Installing wrapper at /usr/local/bin/copilot
+2026-10-08T23:10:05.5820307Z   Wrapper installed at /usr/local/bin/copilot
+2026-10-08T23:10:05.5820758Z Verifying cached Copilot CLI installation...
+2026-10-08T23:10:05.5826083Z   Resolved copilot binary: /opt/hostedtoolcache/copilot-cli/1.0.90/x64/bin/copilot
+2026-10-08T23:10:05.5826933Z   Canonical install path: /usr/local/bin/copilot
+2026-10-08T23:10:16.8765890Z Package extraction took 6522ms
+2026-10-08T23:10:16.8918110Z GitHub Copilot CLI 1.0.90.
+2026-10-08T23:10:16.8918514Z Run 'copilot update' to check for updates.
+2026-10-08T23:10:16.9476383Z ✓ Copilot CLI installation complete (cached)

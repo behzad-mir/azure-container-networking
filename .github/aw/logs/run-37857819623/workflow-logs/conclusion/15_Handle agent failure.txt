@@ -1,0 +1,106 @@
+﻿2026-10-08T23:13:23.8496839Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:13:23.8499092Z with:
+2026-10-08T23:13:23.8536740Z   github-token: ***
+2026-10-08T23:13:23.8563464Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'handle_agent_failure.cjs'));
+await main();
+
+2026-10-08T23:13:23.8601918Z   debug: false
+2026-10-08T23:13:23.8613019Z   user-agent: actions/github-script
+2026-10-08T23:13:23.8651931Z   result-encoding: json
+2026-10-08T23:13:23.8653141Z   retries: 0
+2026-10-08T23:13:23.8654193Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:13:23.8657459Z env:
+2026-10-08T23:13:23.8658467Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:13:23.8659699Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:13:23.8672717Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:13:23.8678444Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:13:23.8679675Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:13:23.8681233Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:13:23.8682449Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:13:23.8683824Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:13:23.8685320Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: bcfb1b5b03ee4a8d
+2026-10-08T23:13:23.8686674Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501188844
+2026-10-08T23:13:23.8766105Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:13:23.8769995Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:13:23.8778802Z   GH_AW_WORKFLOW_SOURCE_URL: https://github.com/behzad-mir/azure-container-networking/blob/try/gh-aw-t0/.github/workflows/aw-t0-patch-export.md
+2026-10-08T23:13:23.8785643Z   GH_AW_RUN_URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623
+2026-10-08T23:13:23.8788465Z   GH_AW_AGENT_CONCLUSION: success
+2026-10-08T23:13:23.8789657Z   GH_AW_WORKFLOW_ID: aw-t0-patch-export
+2026-10-08T23:13:23.8791104Z   GH_AW_ACTION_FAILURE_ISSUE_EXPIRES_HOURS: 0
+2026-10-08T23:13:23.8792370Z   GH_AW_ENGINE_ID: copilot
+2026-10-08T23:13:23.8793474Z   GH_AW_CHECKOUT_PR_SUCCESS: true
+2026-10-08T23:13:23.8794673Z   GH_AW_AI_CREDITS_RATE_LIMIT_ERROR: false
+2026-10-08T23:13:23.8795934Z   GH_AW_UNKNOWN_MODEL_AI_CREDITS: false
+2026-10-08T23:13:23.8797092Z   GH_AW_AIC: 14.03299
+2026-10-08T23:13:23.8798119Z   GH_AW_THREAT_DETECTION_AIC: 0.705152
+2026-10-08T23:13:23.8799314Z   GH_AW_MAX_AI_CREDITS: 1000
+2026-10-08T23:13:23.8800609Z   GH_AW_INFERENCE_ACCESS_ERROR: false
+2026-10-08T23:13:23.8801816Z   GH_AW_MCP_POLICY_ERROR: false
+2026-10-08T23:13:23.8802949Z   GH_AW_AGENTIC_ENGINE_TIMEOUT: false
+2026-10-08T23:13:23.8804187Z   GH_AW_MODEL_NOT_SUPPORTED_ERROR: false
+2026-10-08T23:13:23.8805416Z   GH_AW_HTTP_400_RESPONSE_ERROR: false
+2026-10-08T23:13:23.8806631Z   GH_AW_MAX_CACHE_MISSES_EXCEEDED: false
+2026-10-08T23:13:23.8807889Z   GH_AW_MISSING_MODEL_PRICING_ERROR: false
+2026-10-08T23:13:23.8809139Z   GH_AW_MISSING_MODEL_PRICING_MODEL_NAME: 
+2026-10-08T23:13:23.8810588Z   GH_AW_SHELL_EXPANSION_GUARD_REJECTED: false
+2026-10-08T23:13:23.8813466Z   GH_AW_ENGINE_API_HOSTS: api.enterprise.githubcopilot.com,api.githubcopilot.com,api.business.githubcopilot.com,api.individual.githubcopilot.com
+2026-10-08T23:13:23.8816208Z   GH_AW_LOCKDOWN_CHECK_FAILED: false
+2026-10-08T23:13:23.8817406Z   GH_AW_OAUTH_TOKEN_CHECK_FAILED: false
+2026-10-08T23:13:23.8818607Z   GH_AW_STALE_LOCK_FILE_FAILED: false
+2026-10-08T23:13:23.8819807Z   GH_AW_DAILY_AI_CREDITS_EXCEEDED: false
+2026-10-08T23:13:23.8821573Z   GH_AW_DAILY_AI_CREDITS_GUARDRAIL_STATUS: under_budget
+2026-10-08T23:13:23.8822958Z   GH_AW_DAILY_AI_CREDITS_GUARDRAIL_ERROR: 
+2026-10-08T23:13:23.8824797Z   GH_AW_DAILY_AI_CREDITS_TOTAL: 0
+2026-10-08T23:13:23.8826529Z   GH_AW_DAILY_AI_CREDITS_THRESHOLD: 5000
+2026-10-08T23:13:23.8830198Z   GH_AW_DAILY_AI_CREDITS_CONTINUE_ON_ERROR: false
+2026-10-08T23:13:23.8837968Z   GH_AW_GROUP_REPORTS: false
+2026-10-08T23:13:23.8841169Z   GH_AW_FAILURE_REPORT_AS_ISSUE: true
+2026-10-08T23:13:23.8855946Z   GH_AW_MISSING_TOOL_REPORT_AS_FAILURE: true
+2026-10-08T23:13:23.8857303Z   GH_AW_MISSING_DATA_REPORT_AS_FAILURE: true
+2026-10-08T23:13:23.8858569Z   GH_AW_TIMEOUT_MINUTES: 20
+2026-10-08T23:13:23.8859597Z ##[endgroup]
+2026-10-08T23:13:24.4367133Z [ai-credits] aiCredits source=env(GH_AW_AIC) value=14.03299
+2026-10-08T23:13:24.4377604Z [ai-credits] maxAICredits source=env(GH_AW_MAX_AI_CREDITS) value=1000
+2026-10-08T23:13:24.4382770Z [ai-credits] rateLimitSignal source=none
+2026-10-08T23:13:24.4409939Z Agent conclusion: success
+2026-10-08T23:13:24.4414236Z Workflow name: T0: export a patch from the agent without opening a PR
+2026-10-08T23:13:24.4418217Z Workflow ID: aw-t0-patch-export
+2026-10-08T23:13:24.4422463Z Secret verification result: 
+2026-10-08T23:13:24.4426958Z Engine secret failure message: (none)
+2026-10-08T23:13:24.4433152Z Assignment error count: 0
+2026-10-08T23:13:24.4438025Z Assign copilot failure count: 0
+2026-10-08T23:13:24.4440815Z Skill install failure count: 0
+2026-10-08T23:13:24.4522254Z Create discussion error count: 0
+2026-10-08T23:13:24.4525441Z Code push failure count: 0
+2026-10-08T23:13:24.4528583Z Checkout PR success: true
+2026-10-08T23:13:24.4529747Z AI credits: 14.03299
+2026-10-08T23:13:24.4699380Z Configured max AI credits: 1000
+2026-10-08T23:13:24.4702807Z AI credits rate-limit error: false
+2026-10-08T23:13:24.4706930Z Max AI credits exceeded (harness budget abort): false
+2026-10-08T23:13:24.4709689Z Daily workflow AIC guardrail exceeded: false
+2026-10-08T23:13:24.4781898Z Daily workflow AIC guardrail status: under_budget; error detail: (none)
+2026-10-08T23:13:24.4784048Z Daily workflow AIC guardrail continue-on-error (warning mode): false
+2026-10-08T23:13:24.4785681Z Inference access error: false
+2026-10-08T23:13:24.4786799Z MCP policy error: false
+2026-10-08T23:13:24.4844477Z Agentic engine timeout: false
+2026-10-08T23:13:24.4845887Z Model not supported error: false
+2026-10-08T23:13:24.4847096Z HTTP 400 response error: false
+2026-10-08T23:13:24.4848260Z Unknown model AI credits error: false
+2026-10-08T23:13:24.4849690Z Unknown model AI credits sources (audit/output): false/false
+2026-10-08T23:13:24.4851534Z Missing model pricing error: false (model: (unknown))
+2026-10-08T23:13:24.4853354Z Shell expansion guard rejected: false
+2026-10-08T23:13:24.4860017Z Push repo-memory result: 
+2026-10-08T23:13:24.4862555Z App token minting failed (safe_outputs/conclusion/activation): false/false/false
+2026-10-08T23:13:24.4868999Z Lockdown check failed: false
+2026-10-08T23:13:24.4874893Z OAuth token check failed: false
+2026-10-08T23:13:24.4879615Z Stale lock file check failed: false
+2026-10-08T23:13:24.5185464Z Cache memory enabled: false
+2026-10-08T23:13:24.5193717Z Cache memory restored (from restore outputs): false
+2026-10-08T23:13:24.5197674Z Missing tool report-as-failure: true
+2026-10-08T23:13:24.5199021Z Missing data report-as-failure: true
+2026-10-08T23:13:24.5204024Z Agent output content length: 132
+2026-10-08T23:13:24.5215673Z Agent job did not fail and no assignment/discussion/code-push/push-repo-memory/app-token/lockdown/oauth-token-check/stale-lock-file/daily-workflow-aic/daily-workflow-aic-accounting/ai-credits/max-ai-credits-exceeded/report-incomplete/cache-miss/missing-tool/missing-data/tool-denials-exceeded/secret-verification/docker-sbx-secret errors and has safe outputs (conclusion: success), skipping failure handling

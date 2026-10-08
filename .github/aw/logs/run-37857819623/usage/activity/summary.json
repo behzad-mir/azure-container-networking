@@ -1,0 +1,88 @@
+{
+  "schema": "usage-activity-summary/v1",
+  "firewall": {
+    "total_requests": 20,
+    "allowed_requests": 20,
+    "blocked_requests": 0,
+    "allowed_domains": [
+      "api.githubcopilot.com:443"
+    ],
+    "blocked_domains": [],
+    "requests_by_domain": {
+      "api.githubcopilot.com:443": {
+        "allowed": 20,
+        "blocked": 0
+      }
+    }
+  },
+  "gateway": {
+    "total_calls": 1,
+    "failed_calls": 0,
+    "total_input_size": 87,
+    "total_output_size": 0,
+    "max_input_size": 87,
+    "max_output_size": 0,
+    "total_duration_ms": 0,
+    "max_duration_ms": 0,
+    "tool_calls": [
+      {
+        "tool_call_id": "call-1",
+        "timestamp": "2026-10-08T23:11:19.845Z",
+        "server_name": "safeoutputs",
+        "tool_name": "push_branch",
+        "request_size": 87,
+        "response_size": 0,
+        "duration_ms": 0,
+        "outcome": "incomplete"
+      }
+    ],
+    "servers": [
+      {
+        "server_name": "safeoutputs",
+        "request_count": 1,
+        "tool_call_count": 1,
+        "failed_calls": 0,
+        "total_input_size": 87,
+        "total_output_size": 0,
+        "total_duration_ms": 0,
+        "avg_duration_ms": 0
+      }
+    ],
+    "tools": [
+      {
+        "server_name": "safeoutputs",
+        "tool_name": "push_branch",
+        "call_count": 1,
+        "failed_calls": 0,
+        "total_input_size": 87,
+        "total_output_size": 0,
+        "max_input_size": 87,
+        "max_output_size": 0,
+        "total_duration_ms": 0,
+        "max_duration_ms": 0,
+        "avg_duration_ms": 0
+      }
+    ]
+  },
+  "safe_outputs": {
+    "total_items": 1,
+    "items_by_type": {
+      "push_branch": 1
+    },
+    "items": [
+      {
+        "type": "push_branch",
+        "provider": "github",
+        "timestamp": "2026-10-08T23:12:46.047Z"
+      }
+    ]
+  },
+  "working_set": {
+    "measurement_state": "measured",
+    "cumulative_input_tokens": 4224,
+    "peak_input_tokens": 4216,
+    "rebuild_excess_tokens": 8,
+    "invocations": 5,
+    "rebuild_factor": 1.0018975332068312
+  }
+}

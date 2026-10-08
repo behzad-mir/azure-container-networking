@@ -1,0 +1,40 @@
+﻿2026-10-08T23:13:21.1602241Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:13:21.1604032Z with:
+2026-10-08T23:13:21.1619578Z   github-token: ***
+2026-10-08T23:13:21.1674226Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'handle_noop_message.cjs'));
+await main();
+
+2026-10-08T23:13:21.1702915Z   debug: false
+2026-10-08T23:13:21.1704076Z   user-agent: actions/github-script
+2026-10-08T23:13:21.1705322Z   result-encoding: json
+2026-10-08T23:13:21.1706332Z   retries: 0
+2026-10-08T23:13:21.1707650Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:13:21.1708958Z env:
+2026-10-08T23:13:21.1709858Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:13:21.1711292Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:13:21.1715335Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:13:21.1735022Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:13:21.1737259Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:13:21.1738664Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:13:21.1741019Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:13:21.1742369Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:13:21.1743937Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: bcfb1b5b03ee4a8d
+2026-10-08T23:13:21.1745330Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501188844
+2026-10-08T23:13:21.1746716Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:13:21.1779448Z   GH_AW_NOOP_MAX: 1
+2026-10-08T23:13:21.1797360Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:13:21.1803531Z   GH_AW_WORKFLOW_SOURCE_URL: https://github.com/behzad-mir/azure-container-networking/blob/try/gh-aw-t0/.github/workflows/aw-t0-patch-export.md
+2026-10-08T23:13:21.1808855Z   GH_AW_RUN_URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623
+2026-10-08T23:13:21.1812745Z   GH_AW_AGENT_CONCLUSION: success
+2026-10-08T23:13:21.1814014Z   GH_AW_NOOP_REPORT_AS_ISSUE: false
+2026-10-08T23:13:21.1816930Z   GH_AW_AIC: 14.03299
+2026-10-08T23:13:21.1818025Z   GH_AW_THREAT_DETECTION_AIC: 0.705152
+2026-10-08T23:13:21.1853010Z   GH_AW_AMBIENT_CONTEXT: 8106
+2026-10-08T23:13:21.1854231Z   GH_AW_WORKFLOW_ID: aw-t0-patch-export
+2026-10-08T23:13:21.1858236Z ##[endgroup]
+2026-10-08T23:13:21.7834455Z Agent output content length: 132
+2026-10-08T23:13:21.7841820Z No noop items found in agent output

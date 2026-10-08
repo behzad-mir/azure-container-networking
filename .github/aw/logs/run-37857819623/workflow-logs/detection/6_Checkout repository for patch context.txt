@@ -1,0 +1,125 @@
+﻿2026-10-08T23:11:43.2570119Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T23:11:43.2570446Z with:
+2026-10-08T23:11:43.2570655Z   persist-credentials: false
+2026-10-08T23:11:43.2571058Z   repository: behzad-mir/azure-container-networking
+2026-10-08T23:11:43.2573398Z   token: ***
+2026-10-08T23:11:43.2573597Z   ssh-strict: true
+2026-10-08T23:11:43.2573801Z   ssh-user: git
+2026-10-08T23:11:43.2573997Z   clean: true
+2026-10-08T23:11:43.2574203Z   sparse-checkout-cone-mode: true
+2026-10-08T23:11:43.2574451Z   fetch-depth: 1
+2026-10-08T23:11:43.2574650Z   fetch-tags: false
+2026-10-08T23:11:43.2574857Z   show-progress: true
+2026-10-08T23:11:43.2575057Z   lfs: false
+2026-10-08T23:11:43.2575426Z   submodules: false
+2026-10-08T23:11:43.2575675Z   set-safe-directory: true
+2026-10-08T23:11:43.2575915Z   allow-unsafe-pr-checkout: false
+2026-10-08T23:11:43.2576145Z env:
+2026-10-08T23:11:43.2576342Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:43.2576597Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:43.2577449Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:43.2578240Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:43.2578499Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:43.2578765Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:43.2578989Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:43.2579251Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:43.2579578Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: b4542ab414f14065
+2026-10-08T23:11:43.2579862Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501101674
+2026-10-08T23:11:43.2580112Z ##[endgroup]
+2026-10-08T23:11:43.3284491Z Syncing repository: behzad-mir/azure-container-networking
+2026-10-08T23:11:43.3286019Z ##[group]Getting Git version info
+2026-10-08T23:11:43.3286584Z Working directory is '/home/runner/work/azure-container-networking/azure-container-networking'
+2026-10-08T23:11:43.3287410Z [command]/usr/bin/git version
+2026-10-08T23:11:43.3323807Z git version 2.55.0
+2026-10-08T23:11:43.3339985Z ##[endgroup]
+2026-10-08T23:11:43.3348357Z Temporarily overriding HOME='/home/runner/work/_temp/c48f4ceb-66f1-4b35-8b22-bfac23e9371c' before making global git config changes
+2026-10-08T23:11:43.3349139Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T23:11:43.3354200Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-container-networking/azure-container-networking
+2026-10-08T23:11:43.3391856Z Deleting the contents of '/home/runner/work/azure-container-networking/azure-container-networking'
+2026-10-08T23:11:43.3400917Z ##[group]Determining repository object format
+2026-10-08T23:11:43.3406181Z ##[endgroup]
+2026-10-08T23:11:43.3406758Z ##[group]Initializing the repository
+2026-10-08T23:11:43.3407615Z [command]/usr/bin/git init /home/runner/work/azure-container-networking/azure-container-networking
+2026-10-08T23:11:43.3471670Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T23:11:43.3472358Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T23:11:43.3473043Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T23:11:43.3473558Z hint: call:
+2026-10-08T23:11:43.3473808Z hint:
+2026-10-08T23:11:43.3474151Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T23:11:43.3474574Z hint:
+2026-10-08T23:11:43.3474961Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T23:11:43.3475819Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T23:11:43.3476410Z hint:
+2026-10-08T23:11:43.3476668Z hint: 	git branch -m <name>
+2026-10-08T23:11:43.3476971Z hint:
+2026-10-08T23:11:43.3477390Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T23:11:43.3478549Z Initialized empty Git repository in /home/runner/work/azure-container-networking/azure-container-networking/.git/
+2026-10-08T23:11:43.3485411Z [command]/usr/bin/git remote add origin https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:11:43.3523563Z ##[endgroup]
+2026-10-08T23:11:43.3524095Z ##[group]Disabling automatic garbage collection
+2026-10-08T23:11:43.3526286Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T23:11:43.3552336Z ##[endgroup]
+2026-10-08T23:11:43.3552832Z ##[group]Setting up auth
+2026-10-08T23:11:43.3553318Z Removing SSH command configuration
+2026-10-08T23:11:43.3558616Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T23:11:43.3586354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T23:11:43.3861624Z Removing HTTP extra header
+2026-10-08T23:11:43.3873104Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T23:11:43.3908314Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T23:11:43.4106064Z Removing includeIf entries pointing to credentials config files
+2026-10-08T23:11:43.4110899Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T23:11:43.4147446Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T23:11:43.4340267Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T23:11:43.4373496Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git.path /home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:43.4401436Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:43.4432343Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:43.4461617Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:43.4488198Z ##[endgroup]
+2026-10-08T23:11:43.4488579Z ##[group]Fetching the repository
+2026-10-08T23:11:43.4493191Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fdf74cb336cfbb5d465f9eadad1d4e6726823422:refs/remotes/origin/try/gh-aw-t0
+2026-10-08T23:11:44.3329592Z From https://github.com/behzad-mir/azure-container-networking
+2026-10-08T23:11:44.3330334Z  * [new ref]         fdf74cb336cfbb5d465f9eadad1d4e6726823422 -> origin/try/gh-aw-t0
+2026-10-08T23:11:44.3337698Z [command]/usr/bin/git branch --list --remote origin/try/gh-aw-t0
+2026-10-08T23:11:44.3362947Z   origin/try/gh-aw-t0
+2026-10-08T23:11:44.3369903Z [command]/usr/bin/git rev-parse refs/remotes/origin/try/gh-aw-t0
+2026-10-08T23:11:44.3392498Z fdf74cb336cfbb5d465f9eadad1d4e6726823422
+2026-10-08T23:11:44.3395984Z ##[endgroup]
+2026-10-08T23:11:44.3396328Z ##[group]Determining the checkout info
+2026-10-08T23:11:44.3396948Z ##[endgroup]
+2026-10-08T23:11:44.3399981Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T23:11:44.3444134Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T23:11:44.3472971Z ##[group]Checking out the ref
+2026-10-08T23:11:44.3477176Z [command]/usr/bin/git checkout --progress --force -B try/gh-aw-t0 refs/remotes/origin/try/gh-aw-t0
+2026-10-08T23:11:44.4481350Z Switched to a new branch 'try/gh-aw-t0'
+2026-10-08T23:11:44.4485162Z branch 'try/gh-aw-t0' set up to track 'origin/try/gh-aw-t0'.
+2026-10-08T23:11:44.4525072Z ##[endgroup]
+2026-10-08T23:11:44.4568158Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T23:11:44.4593269Z fdf74cb336cfbb5d465f9eadad1d4e6726823422
+2026-10-08T23:11:44.4600162Z ##[group]Removing auth
+2026-10-08T23:11:44.4600414Z Removing SSH command configuration
+2026-10-08T23:11:44.4603472Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T23:11:44.4634206Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T23:11:44.4829998Z Removing HTTP extra header
+2026-10-08T23:11:44.4833301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T23:11:44.4861789Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T23:11:44.5051936Z Removing includeIf entries pointing to credentials config files
+2026-10-08T23:11:44.5054876Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T23:11:44.5081695Z includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git.path
+2026-10-08T23:11:44.5082515Z includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git/worktrees/*.path
+2026-10-08T23:11:44.5083004Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T23:11:44.5083345Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T23:11:44.5089977Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git.path
+2026-10-08T23:11:44.5113793Z /home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:44.5121183Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-425d91e7\-9814\-4bba\-82cd\-64e24d1243de\.config
+2026-10-08T23:11:44.5160906Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git/worktrees/*.path
+2026-10-08T23:11:44.5183407Z /home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:44.5196776Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/azure-container-networking/azure-container-networking/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-425d91e7\-9814\-4bba\-82cd\-64e24d1243de\.config
+2026-10-08T23:11:44.5308390Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T23:11:44.5356168Z /github/runner_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:44.5365491Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-425d91e7\-9814\-4bba\-82cd\-64e24d1243de\.config
+2026-10-08T23:11:44.5409494Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T23:11:44.5431058Z /github/runner_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config
+2026-10-08T23:11:44.5436600Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-425d91e7\-9814\-4bba\-82cd\-64e24d1243de\.config
+2026-10-08T23:11:44.5469278Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T23:11:44.5659787Z Removing credentials config '/home/runner/work/_temp/git-credentials-425d91e7-9814-4bba-82cd-64e24d1243de.config'
+2026-10-08T23:11:44.5666798Z ##[endgroup]

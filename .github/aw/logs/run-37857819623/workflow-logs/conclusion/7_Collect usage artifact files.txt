@@ -1,0 +1,42 @@
+﻿2026-10-08T23:13:18.7766363Z ##[group]Run bash "${RUNNER_TEMP}/gh-aw/actions/collect_usage_artifact_files.sh"
+2026-10-08T23:13:18.7770121Z [36;1mbash "${RUNNER_TEMP}/gh-aw/actions/collect_usage_artifact_files.sh"[0m
+2026-10-08T23:13:18.7779081Z shell: /usr/bin/bash -e {0}
+2026-10-08T23:13:18.7780843Z env:
+2026-10-08T23:13:18.7783262Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:13:18.7784100Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:13:18.7786583Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:13:18.7789037Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:13:18.7791999Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:13:18.7794929Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:13:18.7798110Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:13:18.7798992Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:13:18.7800017Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: bcfb1b5b03ee4a8d
+2026-10-08T23:13:18.7801099Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501188844
+2026-10-08T23:13:18.7801821Z ##[endgroup]
+2026-10-08T23:13:18.8156496Z Usage artifact source file status:
+2026-10-08T23:13:18.8203540Z MISSING: /tmp/gh-aw/aw_info.json
+2026-10-08T23:13:18.8205536Z MISSING: /tmp/gh-aw/aw-info.jsonl
+2026-10-08T23:13:18.8207854Z FOUND: /tmp/gh-aw/agent_usage.json
+2026-10-08T23:13:18.8210580Z MISSING: /tmp/gh-aw/agent_usage.jsonl
+2026-10-08T23:13:18.8214232Z MISSING: /tmp/gh-aw/detection_usage.jsonl
+2026-10-08T23:13:18.8217804Z MISSING: /tmp/gh-aw/threat-detection/detection_usage.jsonl
+2026-10-08T23:13:18.8222479Z MISSING: /tmp/gh-aw/evals/evals.jsonl
+2026-10-08T23:13:18.8223431Z MISSING: /tmp/gh-aw/agent/graders/grader_manifest.json
+2026-10-08T23:13:18.8224370Z MISSING: /tmp/gh-aw/agent/graders/grader_results.json
+2026-10-08T23:13:18.8225304Z FOUND: /tmp/gh-aw/github_rate_limits.jsonl
+2026-10-08T23:13:18.8226635Z FOUND: /tmp/gh-aw/safe-output-items.jsonl
+2026-10-08T23:13:18.8227744Z MISSING: /tmp/gh-aw/sandbox/firewall-audit-logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:18.8229054Z FOUND: /tmp/gh-aw/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:18.8230297Z MISSING: /tmp/gh-aw/sandbox/firewall/audit/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:18.8232018Z MISSING: /tmp/gh-aw/threat-detection/sandbox/firewall-audit-logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:18.8233614Z FOUND: /tmp/gh-aw/threat-detection/sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:18.8235147Z MISSING: /tmp/gh-aw/threat-detection/sandbox/firewall/audit/api-proxy-logs/token-usage.jsonl
+2026-10-08T23:13:19.3322087Z [info] safe-output-items manifest: 1 item(s) logged (types: push_branch)
+2026-10-08T23:13:19.3402584Z [info] /tmp/gh-aw/usage/activity/summary.json
+2026-10-08T23:13:19.3897867Z /tmp/gh-aw/usage/activity/summary.json
+2026-10-08T23:13:19.3903480Z /tmp/gh-aw/usage/agent/execution.json
+2026-10-08T23:13:19.3905310Z /tmp/gh-aw/usage/agent/token_usage.jsonl
+2026-10-08T23:13:19.3908155Z /tmp/gh-aw/usage/agent_usage.json
+2026-10-08T23:13:19.3909184Z /tmp/gh-aw/usage/detection/execution.json
+2026-10-08T23:13:19.3913664Z /tmp/gh-aw/usage/detection/token_usage.jsonl
+2026-10-08T23:13:19.4026083Z /tmp/gh-aw/usage/github_rate_limits.jsonl

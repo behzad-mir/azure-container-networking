@@ -1,0 +1,69 @@
+﻿2026-10-08T23:11:28.0692636Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-08T23:11:28.0693186Z with:
+2026-10-08T23:11:28.0693438Z   name: agent
+2026-10-08T23:11:28.0696119Z   path: /tmp/gh-aw/aw-prompts/prompt.txt
+/tmp/gh-aw/agent_execution.json
+/tmp/gh-aw/sandbox/agent/logs/
+/tmp/gh-aw/redacted-urls.log
+/tmp/gh-aw/mcp-logs/
+/tmp/gh-aw/agent_usage.json
+/tmp/gh-aw/agent_usage.jsonl
+/tmp/gh-aw/agent-stdio.log
+/tmp/gh-aw/pre-agent-audit.txt
+/tmp/gh-aw/github_rate_limits.jsonl
+/tmp/gh-aw/otel.jsonl
+/tmp/gh-aw/otlp-export-errors.jsonl
+/tmp/gh-aw/safeoutputs.jsonl
+/tmp/gh-aw/agent_output.json
+/tmp/gh-aw/aw-*.patch
+/tmp/gh-aw/aw-*.bundle
+/tmp/gh-aw/awf-config.json
+/tmp/gh-aw/sandbox/firewall/logs/
+/tmp/gh-aw/sandbox/firewall/audit/
+/tmp/gh-aw/sandbox/firewall/awf-reflect.json
+
+2026-10-08T23:11:28.0699193Z   if-no-files-found: ignore
+2026-10-08T23:11:28.0699534Z   compression-level: 6
+2026-10-08T23:11:28.0699839Z   overwrite: false
+2026-10-08T23:11:28.0700139Z   include-hidden-files: false
+2026-10-08T23:11:28.0700494Z   archive: true
+2026-10-08T23:11:28.0700759Z env:
+2026-10-08T23:11:28.0701019Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:11:28.0701391Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:11:28.0702744Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:11:28.0704053Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:11:28.0704670Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:11:28.0705081Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:11:28.0705431Z   DEFAULT_BRANCH: master
+2026-10-08T23:11:28.0705749Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:11:28.0706088Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:11:28.0706393Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:11:28.0706782Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:11:28.0707196Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:11:28.0707846Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:11:28.0708190Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:11:28.0708508Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:11:28.0708842Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:11:28.0709153Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:11:28.0709467Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:11:28.0709815Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:11:28.0710309Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:11:28.0710798Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:11:28.0711226Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:11:28.0711645Z   GH_AW_AGENT_OUTPUT: /tmp/gh-aw/agent_output.json
+2026-10-08T23:11:28.0712035Z   GH_AW_AIC: 14.03299
+2026-10-08T23:11:28.0712339Z   GH_AW_AMBIENT_CONTEXT: 8106
+2026-10-08T23:11:28.0712685Z   GH_AW_PRIMARY_MODEL: claude-sonnet-5.5
+2026-10-08T23:11:28.0713052Z ##[endgroup]
+2026-10-08T23:11:28.1927074Z With the provided path, there will be 32 files uploaded
+2026-10-08T23:11:28.1932032Z Artifact name is valid!
+2026-10-08T23:11:28.1932367Z Root directory input is valid!
+2026-10-08T23:11:28.5145580Z Uploading artifact: agent.zip
+2026-10-08T23:11:28.5178077Z Beginning upload of artifact content to blob storage
+2026-10-08T23:11:29.0050821Z Uploaded bytes 237115
+2026-10-08T23:11:29.0658436Z Finished uploading artifact content to blob storage!
+2026-10-08T23:11:29.0659261Z SHA256 digest of uploaded artifact is 2663add4e076ff5b5d5409a7e4896713295d26d39507bafd6053505ef82eb280
+2026-10-08T23:11:29.0659952Z Finalizing artifact upload
+2026-10-08T23:11:29.4142473Z Artifact agent successfully finalized. Artifact ID 11585042111
+2026-10-08T23:11:29.4143235Z Artifact agent has been successfully uploaded! Final size is 237115 bytes. Artifact ID is 11585042111
+2026-10-08T23:11:29.4146032Z Artifact download URL: https://github.com/behzad-mir/azure-container-networking/actions/runs/37857819623/artifacts/11585042111

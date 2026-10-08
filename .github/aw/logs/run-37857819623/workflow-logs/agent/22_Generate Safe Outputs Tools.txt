@@ -1,0 +1,149 @@
+﻿2026-10-08T23:10:38.0193285Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:10:38.0193797Z with:
+2026-10-08T23:10:38.0195304Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'generate_safe_outputs_tools.cjs'));
+await main();
+
+2026-10-08T23:10:38.0200462Z   github-token: ***
+2026-10-08T23:10:38.0200745Z   debug: false
+2026-10-08T23:10:38.0201017Z   user-agent: actions/github-script
+2026-10-08T23:10:38.0201357Z   result-encoding: json
+2026-10-08T23:10:38.0201629Z   retries: 0
+2026-10-08T23:10:38.0201922Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:10:38.0202292Z env:
+2026-10-08T23:10:38.0202538Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:10:38.0202891Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:10:38.0204207Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:10:38.0205555Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:10:38.0205905Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:10:38.0206505Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:10:38.0206818Z   DEFAULT_BRANCH: master
+2026-10-08T23:10:38.0207111Z   GH_AW_ASSETS_ALLOWED_EXTS: 
+2026-10-08T23:10:38.0207413Z   GH_AW_ASSETS_BRANCH: 
+2026-10-08T23:10:38.0207851Z   GH_AW_ASSETS_MAX_SIZE_KB: 0
+2026-10-08T23:10:38.0208206Z   GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
+2026-10-08T23:10:38.0208595Z   GH_AW_PR_HEAD_BASE_BRANCH: 
+2026-10-08T23:10:38.0208912Z   GH_AW_PR_HEAD_BASE_PR_NUMBER: 
+2026-10-08T23:10:38.0209236Z   GH_AW_PR_HEAD_BASE_REF: 
+2026-10-08T23:10:38.0209527Z   GH_AW_PR_HEAD_BASE_REPO: 
+2026-10-08T23:10:38.0209820Z   GH_AW_PR_HEAD_BASE_SHA: 
+2026-10-08T23:10:38.0210111Z   GH_AW_PR_HEAD_REPO: 
+2026-10-08T23:10:38.0210395Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:10:38.0210719Z   GH_AW_WORKFLOW_ID_SANITIZED: awt0patchexport
+2026-10-08T23:10:38.0211163Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:10:38.0211616Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: 3ec1479e69d0d643
+2026-10-08T23:10:38.0212021Z   GITHUB_AW_OTEL_JOB_START_MS: 1791501002410
+2026-10-08T23:10:38.0215197Z   GH_AW_TOOLS_META_JSON: {
+  "description_suffixes": {},
+  "repo_params": {},
+  "dynamic_tools": [
+    {
+      "description": "Push the prepared patch (/tmp/gh-aw/aw-export.patch) to a new branch and publish a one-click create-PR link. Call exactly once, after writing the patch file.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "base": {
+            "description": "Base branch the patch was made against",
+            "type": "string"
+          },
+          "branch": {
+            "description": "Branch name to push. Must start with aw-t0/",
+            "type": "string"
+          },
+          "title": {
+            "description": "Short PR title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base",
+          "branch",
+          "title"
+        ],
+        "type": "object"
+      },
+      "name": "push_branch"
+    }
+  ]
+}
+
+2026-10-08T23:10:38.0222639Z   GH_AW_VALIDATION_JSON: {
+  "missing_data": {
+    "defaultMax": 20,
+    "fields": {
+      "alternatives": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 256
+      },
+      "context": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 256
+      },
+      "data_type": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 128
+      },
+      "reason": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 256
+      }
+    }
+  },
+  "missing_tool": {
+    "defaultMax": 20,
+    "fields": {
+      "alternatives": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 512
+      },
+      "reason": {
+        "required": true,
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 256
+      },
+      "tool": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 128
+      }
+    }
+  },
+  "noop": {
+    "defaultMax": 1,
+    "fields": {
+      "message": {
+        "required": true,
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 65000
+      }
+    }
+  },
+  "report_incomplete": {
+    "defaultMax": 5,
+    "fields": {
+      "details": {
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 65000
+      },
+      "reason": {
+        "required": true,
+        "type": "string",
+        "sanitize": true,
+        "maxLength": 1024
+      }
+    }
+  }
+}
+
+2026-10-08T23:10:38.0227655Z ##[endgroup]

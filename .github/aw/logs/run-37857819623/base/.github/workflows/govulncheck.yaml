@@ -1,0 +1,135 @@
+name: govulncheck
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+  merge_group:
+    types:
+      - checks_requested
+
+permissions:
+  contents: read
+
+jobs:
+  govulncheck:
+    name: Run govulncheck (${{ matrix.module }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module:
+          - .
+          - azure-ip-masq-merger
+          - azure-ipam
+          - azure-iptables-monitor
+          - bpf-prog/ipv6-hp-bpf
+          - cilium-log-collector
+          - dropgz
+          - pkgerrlint
+          - tools/azure-npm-to-cilium-validator
+          - tools/failure-agent
+          - tools/release
+          - zapai
+        include:
+          - module: .
+            bpf: true
+          - module: bpf-prog/ipv6-hp-bpf
+            bpf: true
+          - module: azure-iptables-monitor
+            bpf: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        if: matrix.bpf
+        with:
+          go-version-file: go.mod
+
+      - name: Build BPF lib
+        if: matrix.bpf
+        run: make bpf-lib
+
+      - name: Go generate
+        if: matrix.bpf
+        run: go generate ./...
+        working-directory: ${{ matrix.module }}
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: ${{ matrix.module }}/go.mod
+
+      - name: Run govulncheck
+        uses: golang/govulncheck-action@032d45514ae346b1db93c04b0c90b841c370344f # v1.1.0
+        with:
+          go-version-file: ${{ matrix.module }}/go.mod
+          work-dir: ${{ matrix.module }}
+          go-package: ./...
+          repo-checkout: false
+
+  check-gomod-coverage:
+    name: Check all go.mod files are in matrix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Verify matrix covers all go.mod files
+        run: |
+          MATRIX_MODULES=(
+            "."
+            "azure-ip-masq-merger"
+            "azure-ipam"
+            "azure-iptables-monitor"
+            "bpf-prog/ipv6-hp-bpf"
+            "cilium-log-collector"
+            "dropgz"
+            "pkgerrlint"
+            "tools/azure-npm-to-cilium-validator"
+            "tools/failure-agent"
+            "tools/release"
+            "zapai"
+          )
+
+          mapfile -t FOUND_MODULES < <(
+            find . -name "go.mod" -not -path "*/vendor/*" \
+              | xargs -I{} dirname {} \
+              | sed 's|^\./||' \
+              | sort
+          )
+
+          MISSING=()
+          for mod in "${FOUND_MODULES[@]}"; do
+            found=false
+            for matrix_mod in "${MATRIX_MODULES[@]}"; do
+              if [[ "$mod" == "$matrix_mod" ]]; then
+                found=true
+                break
+              fi
+            done
+            if [[ "$found" == "false" ]]; then
+              MISSING+=("$mod")
+            fi
+          done
+
+          if [[ ${#MISSING[@]} -gt 0 ]]; then
+            echo "ERROR: The following go.mod files are not in the govulncheck matrix:"
+            for m in "${MISSING[@]}"; do
+              echo "  - $m"
+            done
+            echo ""
+            echo "Add them to the 'matrix.module' list in .github/workflows/govulncheck.yaml"
+            exit 1
+          fi
+
+          echo "All go.mod files are covered by the govulncheck matrix."

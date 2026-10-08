@@ -1,0 +1,34 @@
+﻿2026-10-08T23:09:49.4175099Z ##[group]Run actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+2026-10-08T23:09:49.4175888Z with:
+2026-10-08T23:09:49.4177865Z   script: const path = require('path');
+const actionsDir = path.join(process.env.RUNNER_TEMP, 'gh-aw', 'actions');
+const { setupGlobals } = require(path.join(actionsDir, 'setup_globals.cjs'));
+setupGlobals(core, github, context, exec, io, getOctokit);
+const { main } = require(path.join(actionsDir, 'check_version_updates.cjs'));
+await main();
+
+2026-10-08T23:09:49.4183737Z   github-token: ***
+2026-10-08T23:09:49.4184206Z   debug: false
+2026-10-08T23:09:49.4184874Z   user-agent: actions/github-script
+2026-10-08T23:09:49.4185423Z   result-encoding: json
+2026-10-08T23:09:49.4185881Z   retries: 0
+2026-10-08T23:09:49.4186362Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-08T23:09:49.4186948Z env:
+2026-10-08T23:09:49.4187366Z   OTEL_EXPORTER_OTLP_ENDPOINT: 
+2026-10-08T23:09:49.4187923Z   OTEL_SERVICE_NAME: gh-aw.aw-t0-patch-export
+2026-10-08T23:09:49.4190415Z   OTEL_RESOURCE_ATTRIBUTES: gh-aw.workflow.name=T0%3A%20export%20a%20patch%20from%20the%20agent%20without%20opening%20a%20PR,gh-aw.repository=behzad-mir/azure-container-networking,gh-aw.run.id=37857819623,github.run_id=37857819623,gh-aw.engine.id=copilot
+2026-10-08T23:09:49.4192226Z   OTEL_EXPORTER_OTLP_HEADERS: 
+2026-10-08T23:09:49.4192779Z   GH_AW_OTLP_ENDPOINTS: [{"url":"","headers":""}]
+2026-10-08T23:09:49.4193606Z   GH_AW_OTLP_IF_MISSING: ignore
+2026-10-08T23:09:49.4194130Z   GH_AW_MAX_DAILY_AI_CREDITS: 5000
+2026-10-08T23:09:49.4213879Z   GH_AW_RUNTIME_FEATURES: 
+2026-10-08T23:09:49.4214735Z   GITHUB_AW_OTEL_TRACE_ID: 9cf5d7ad3aff42624cafa0b9906ee6d7
+2026-10-08T23:09:49.4215485Z   GITHUB_AW_OTEL_PARENT_SPAN_ID: de8ed0ec9207ecaf
+2026-10-08T23:09:49.4216120Z   GITHUB_AW_OTEL_JOB_START_MS: 1791500984824
+2026-10-08T23:09:49.4216699Z   GH_AW_COMPILED_VERSION: v0.89.21
+2026-10-08T23:09:49.4217252Z   GH_AW_BLOCKED_VERSION_REPORT_AS_ISSUE: true
+2026-10-08T23:09:49.4218008Z   GH_AW_WORKFLOW_NAME: T0: export a patch from the agent without opening a PR
+2026-10-08T23:09:49.4219515Z ##[endgroup]
+2026-10-08T23:09:49.5354367Z Checking compile-agentic version: v0.89.21
+2026-10-08T23:09:49.5360166Z Fetching update configuration from: https://raw.githubusercontent.com/github/gh-aw-actions/main/.github/aw/compat.json
+2026-10-08T23:09:49.6148170Z ✅ Version check passed: v0.89.21
