@@ -1,0 +1,10 @@
+name: aw-t1 hello
+on:
+  push:
+    branches: [try/gh-aw-t1]
+permissions: {}
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello
